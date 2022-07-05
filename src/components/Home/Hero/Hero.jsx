@@ -1,0 +1,175 @@
+import { useEffect, useRef, useState } from 'react';
+import './hero.scss';
+import { BiMap,BiCalendar,BiMale,BiPlus,BiMinus } from 'react-icons/bi';
+import { FaSistrix } from "react-icons/fa";
+
+import { DateRange } from 'react-date-range';
+import { format } from 'date-fns';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
+
+const Hero = () => {
+	const [openDate, setOpenDate] = useState(false);
+	const [date, setDate] = useState([
+		{
+		  startDate: new Date(),
+		  endDate: new Date(),
+		  key: 'selection'
+		}
+	]);
+
+	const [openOptions, setOpenOptions] = useState(false);
+	const [options, setOptions] = useState({
+		adult: 1,
+		children: 0,
+		room: 1
+	})
+
+	function handleClick(name,operation){
+		setOptions(prev => {
+			return {
+				...prev, [name]: operation === "i" ? options[name]+1 : options[name]-1
+			}
+		})
+	}
+
+	// close dropDown
+	let menuRef = useRef();
+	useEffect(() => {
+		let handler = (event) => {
+			if(!menuRef.current.contains(event.target)){
+				setOpenDate(false);
+				setOpenOptions(false);
+			}
+		}
+		document.addEventListener("mousedown", handler);
+		return () => {
+			document.removeEventListener("mousedown", handler);
+		}
+	})
+
+	return (
+		<header className='hero'>
+			<div className="hero_container">
+				<div className="hero_content">
+					<h1 className='heading'>Find <span>your next</span>  stay</h1>
+					<p className='para'>
+						Accompanying us, you have a trip full of experiences. With Chisfis,
+						booking accommodation, resort villas, hotels
+					</p>
+					<button className='btn_primary'>Start your search</button>
+				</div>
+				<div className="hero_image">
+					<img src="/assets/home_hero.png" alt="hero_img" />
+				</div>
+			</div>
+			<div className='search_container'>
+				<div className='search_wrapper'>
+				<div className='input_section'>
+					<BiMap className='input_icons' />
+					<input type="text" placeholder='Where are you going?' />
+				</div>
+				<div className='input_section'>
+					<BiCalendar className='input_icons' />
+					<span onClick={() => setOpenDate(!openDate)}>
+						{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(date[0].endDate, "dd/MM/yyyy")}`}
+					</span>
+					<div ref={menuRef} className="date_container_box">
+						{ openDate &&
+							<DateRange
+								editableDateInputs={true}
+								onChange={item => setDate([item.selection])}
+								moveRangeOnFirstSelection={false}
+								ranges={date}
+							/>
+						}
+					</div>
+				</div>
+				<div className='input_section'>
+					<BiMale className='input_icons' />
+					<span onClick={()=>setOpenOptions(!openOptions)}>
+						{`${options.adult} adult . ${options.children} children . ${options.room} room`}
+					</span>
+					{
+						openOptions &&
+						<div className='options' ref={menuRef}>
+							<div className="optionItem">
+								<div className='counter_content'>
+									<p className='counter_heading'>Adults</p>
+									<p className='counter_sub'>Ages min 13</p>
+								</div>
+								<div className='counter_container'>
+									<button 
+										disabled={options.adult<=1}
+										className='counter_button' 
+										onClick={()=>{handleClick("adult","d")}}
+									>
+										<BiMinus />
+									</button>
+									<div className='counter_number'>{options.adult}</div>
+									<button 
+										disabled={options.adult>=10}
+										className='counter_button' 
+										onClick={()=>{handleClick("adult","i")}}
+									>
+										<BiPlus />
+									</button>
+								</div>
+							</div>
+							<div className="optionItem">
+								<div className='counter_content'>
+									<p className='counter_heading'>Children</p>
+									<p className='counter_sub'>Ages 2-12</p>
+								</div>
+								<div className='counter_container'>
+									<button 
+										disabled={options.children<=0}
+										className='counter_button'
+										onClick={()=>{handleClick("children","d")}}
+									>
+										<BiMinus />
+									</button>
+									<div className='counter_number'>{options.children}</div>
+									<button 
+										disabled={options.children>=9}
+										className='counter_button' 
+										onClick={()=>{handleClick("children","i")}}
+									>
+										<BiPlus />
+									</button>
+								</div>
+							</div>
+							<div className="optionItem">
+								<div className='counter_content'>
+									<p className='counter_heading'>Room</p>
+									<p className='counter_sub'>Total rooms</p>
+								</div>
+								<div className='counter_container'>
+									<button
+										disabled={options.room<=1}
+										className='counter_button'
+										onClick={()=>{handleClick("room","d")}}
+									>
+										<BiMinus />
+									</button>
+									<div className='counter_number'>{options.room}</div>
+									<button 
+										disabled={options.room>=9}
+										className='counter_button'
+										onClick={()=>{handleClick("room","i")}}
+									>
+										<BiPlus />
+									</button>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+				<button className='search_btn'><FaSistrix /></button>
+				</div>
+			</div>
+		</header>
+	);
+};
+
+export default Hero;
