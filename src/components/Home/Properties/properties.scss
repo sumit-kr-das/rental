@@ -1,0 +1,46 @@
+.properties {
+    padding: 0 4rem;
+    margin-bottom: 6rem;
+
+    .main_heading {
+        font-weight: 500;
+        font-size: 2rem;
+        color: #000;
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+
+    .property_container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        justify-items: center;
+        .card {
+            width: 220px;
+            width: 220px;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                height: 180px;
+                object-fit: cover;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            }
+
+            .heading {
+                font-weight: 600;
+                color: #000;
+                line-height: 0;
+                margin-top: 0.8rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .para {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

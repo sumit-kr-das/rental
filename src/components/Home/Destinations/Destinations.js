@@ -31,11 +31,11 @@ const Destinations = () => {
 						<div className="des_card">
 							<div className="img_container">
 								<img
-									src="/assets/top_destinations/beach.jpg"
+									src="/assets/top_destinations/Los-Angeles.jpg"
 									alt="destination"
 								/>
 							</div>
-							<p className="heading">Virginia Beach</p>
+							<p className="heading">Los Angeles</p>
 							<p>17 Rentals</p>
 						</div>
 					</SwiperSlide>
@@ -43,11 +43,11 @@ const Destinations = () => {
 						<div className="des_card">
 							<div className="img_container">
 								<img
-									src="/assets/top_destinations/beach.jpg"
+									src="/assets/top_destinations/New-Jersey.jpg"
 									alt="destination"
 								/>
 							</div>
-							<p className="heading">Virginia Beach</p>
+							<p className="heading">New Jersey</p>
 							<p>17 Rentals</p>
 						</div>
 					</SwiperSlide>
@@ -55,11 +55,11 @@ const Destinations = () => {
 						<div className="des_card">
 							<div className="img_container">
 								<img
-									src="/assets/top_destinations/beach.jpg"
+									src="/assets/top_destinations/New-York-City.jpg"
 									alt="destination"
 								/>
 							</div>
-							<p className="heading">Virginia Beach</p>
+							<p className="heading">New York</p>
 							<p>17 Rentals</p>
 						</div>
 					</SwiperSlide>
@@ -67,11 +67,23 @@ const Destinations = () => {
 						<div className="des_card">
 							<div className="img_container">
 								<img
-									src="/assets/top_destinations/beach.jpg"
+									src="/assets/top_destinations/San-Francisco.jpg"
 									alt="destination"
 								/>
 							</div>
-							<p className="heading">Virginia Beach</p>
+							<p className="heading">San Francisco</p>
+							<p>17 Rentals</p>
+						</div>
+					</SwiperSlide>
+					<SwiperSlide>
+						<div className="des_card">
+							<div className="img_container">
+								<img
+									src="/assets/top_destinations/Wilmington.jpg"
+									alt="destination"
+								/>
+							</div>
+							<p className="heading">Wilmington</p>
 							<p>17 Rentals</p>
 						</div>
 					</SwiperSlide>
