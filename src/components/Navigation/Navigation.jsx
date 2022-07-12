@@ -18,7 +18,9 @@ const Navigation = () => {
   return (
     <nav className={nav ? 'container active' : 'container'}>
       <div className='left_wrapper'>
-        <img src="/assets/logo.png" alt="main_logo" />
+        <Link to="/">
+          <img src="/assets/logo.png" alt="main_logo" />
+        </Link>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/">Destination</Link></li>
@@ -28,7 +30,7 @@ const Navigation = () => {
       </div>
       <div className='right_wrapper'>
         <img src="/assets/icons/wishlist.svg" alt="wishlist" />
-        <Link className='btn_primary' to="/">Sign up</Link>
+        <Link className='btn_primary' to="/register">Sign up</Link>
       </div>
     </nav>
   )

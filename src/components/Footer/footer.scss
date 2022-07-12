@@ -1,0 +1,92 @@
+.footer {
+    padding: 0 4rem;
+    background-color: #F3F4F6;
+
+    .footer_container {
+        padding: 4rem 0;
+        display: flex;
+        justify-content: space-between;
+
+        .wrapper {
+            &:not(:last-child) {
+                flex: 0 1 20%;
+            }
+
+            &:last-child {
+                flex: 0 1 30%;
+            }
+
+            .foo_header {
+                color: #000;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    margin-top: 0.5rem;
+
+                    a {
+                        text-decoration: none;
+                        color: #727272;
+                    }
+                }
+            }
+        }
+
+        .contact {
+            ul {
+                display: flex;
+
+                li {
+                    margin-right: 1rem;
+
+                    a {
+                        display: block;
+                        font-size: 1.2rem;
+                        color: #fff;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                    }
+
+                    .facebook {
+                        background-color: #3D52A6;
+                    }
+
+                    .youtube {
+                        background-color: #F62D3A;
+                    }
+
+                    .instagram {
+                        background-color: #D9498C;
+                    }
+
+                    .twitter {
+                        background-color: #58B1F7;
+                    }
+                }
+            }
+        }
+    }
+    .underline {
+        border-bottom: 1px solid #dbdbdb;
+    }
+    .copyright {
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p{
+            font-size: 0.9rem;
+        }
+        a{
+            color: #727272;
+        }
+    }
+}

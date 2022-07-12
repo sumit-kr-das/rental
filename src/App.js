@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
 import { Home, Hotel, HotelList, Login, Register, Error } from "./Pages";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 	return (
@@ -8,12 +9,13 @@ function App() {
 			<Navigation />
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/hotel" element={<Hotel />} />
+				<Route path="/hotels" element={<Hotel />} />
 				<Route path="/hotel/:id" element={<HotelList />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/*" element={<Error />} />
 			</Routes>
+			<Footer />
 		</Router>
 	);
 }
