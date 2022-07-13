@@ -1,0 +1,18 @@
+.listContainer {
+    width: 100%;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: space-between;
+
+    .search_list {
+        flex: 0 1 25%;
+        background-color: #F7F8FA;
+        border-radius: 1rem;
+        padding: 2rem;
+}
+
+    .hotel_list {
+        background-color: aliceblue;
+        flex: 0 1 70%;
+    }
+}

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './hero.scss';
 import { BiMap,BiCalendar,BiMale,BiPlus,BiMinus } from 'react-icons/bi';
 import { FaSistrix } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
@@ -9,7 +10,11 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
 const Hero = () => {
+	const navigate = useNavigate();
+	const [destination, setDestination] = useState("");
 	const [openDate, setOpenDate] = useState(false);
+	const [openOptions, setOpenOptions] = useState(false);
+
 	const [date, setDate] = useState([
 		{
 		  startDate: new Date(),
@@ -18,7 +23,6 @@ const Hero = () => {
 		}
 	]);
 
-	const [openOptions, setOpenOptions] = useState(false);
 	const [options, setOptions] = useState({
 		adult: 1,
 		children: 0,
@@ -47,7 +51,11 @@ const Hero = () => {
 			document.removeEventListener("mousedown", handler);
 		}
 	})
-
+	
+	function handleSearch() {
+		navigate("/hotels",{state:{destination,date,options}});
+	}
+	
 	return (
 		<header className='hero'>
 			<div className="hero_container">
@@ -67,7 +75,7 @@ const Hero = () => {
 				<div className='search_wrapper'>
 				<div className='input_section'>
 					<BiMap className='input_icons' />
-					<input type="text" placeholder='Where are you going?' />
+					<input type="text" placeholder='Where are you going?' onChange={(e)=>setDestination(e.target.value)} />
 				</div>
 				<div className='input_section'>
 					<BiCalendar className='input_icons' />
@@ -165,7 +173,7 @@ const Hero = () => {
 						</div>
 					}
 				</div>
-				<button className='search_btn'><FaSistrix /></button>
+				<button onClick={handleSearch} className='search_btn'><FaSistrix /></button>
 				</div>
 			</div>
 		</header>

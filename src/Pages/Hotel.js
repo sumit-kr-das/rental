@@ -1,9 +1,11 @@
-import React from 'react'
+import ListContainer from "../components/Hotel/ListContainer/ListContainer";
 
 const Hotel = () => {
-  return (
-    <div>Hotel</div>
-  )
-}
+	return (
+		<>
+			<ListContainer />
+		</>
+	);
+};
 
-export default Hotel
+export default Hotel;
