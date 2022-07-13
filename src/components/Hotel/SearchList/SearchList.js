@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import "./searchList.scss";
-import { BiMap, BiCalendar, BiMale, BiPlus, BiMinus } from "react-icons/bi";
 
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
@@ -8,9 +7,9 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
 const SearchList = (props) => {
-	const {destination,date,setDate,option} = props;
+	const {destination,setDestination,date,setDate,option,setoption} = props;
 	const [openDate, setOpenDate] = useState(false);
-	console.log(option)
+	
 	// close dropDown
 	let menuRef = useRef();
 	useEffect(() => {

@@ -13,9 +13,11 @@
 
     .input_section {
         position: relative;
-        p{
+
+        p {
             font-size: 1rem;
         }
+
         .se_input_box {
             border: none;
             outline: none;
@@ -27,7 +29,8 @@
             font-family: 'DM Sans', sans-serif;
             border-radius: 0.5rem;
             font-size: 0.9rem;
-            &::placeholder{
+
+            &::placeholder {
                 font-size: 0.9rem;
             }
         }

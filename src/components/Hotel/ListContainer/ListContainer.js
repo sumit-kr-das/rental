@@ -15,12 +15,23 @@ const ListContainer = () => {
 			<div className="search_list">
 				<SearchList 
 					destination={destination}
+					setDestination={setDestination}
 					date={date}
 					option={option}
+					setoption={setoption}
 					setDate={setDate}
 				/>
 			</div>
 			<div className="hotel_list">
+				<div className="hotel_list_heading">
+					<p>Tokyo, Jappan</p>
+					<p>112 properties found</p>
+				</div>
+				<HotelList />
+				<HotelList />
+				<HotelList />
+				<HotelList />
+				<HotelList />
 				<HotelList />
 			</div>
 		</section>

@@ -1,18 +1,31 @@
 .listContainer {
+    margin-top: 2rem;
     width: 100%;
     padding: 0 4rem;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 4rem;
 
     .search_list {
+        margin-top: rem;
         flex: 0 1 25%;
-        background-color: #F7F8FA;
+        background-color: rgb(243, 243, 247);
         border-radius: 1rem;
         padding: 2rem;
-}
+        height: 50%;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    }
 
     .hotel_list {
-        background-color: aliceblue;
         flex: 0 1 70%;
+        .hotel_list_heading{
+            display: flex;
+            margin-bottom: 2rem;
+            p:first-child{
+                margin-right: 1rem;
+                color: #000000;
+                font-weight: 600;
+            }
+        }
     }
 }
