@@ -1,9 +1,13 @@
-import React from 'react'
+import ListSlider from "../components/HotelList/ListSlider/ListSlider";
+import HotelDetails from "../components/HotelList/HotelDetails/HotelDetails";
 
 const HotelList = () => {
-  return (
-    <div>HotelList</div>
-  )
-}
+	return (
+		<>
+			<ListSlider />
+			<HotelDetails />
+		</>
+	);
+};
 
-export default HotelList
+export default HotelList;
