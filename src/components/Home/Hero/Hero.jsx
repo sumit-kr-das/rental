@@ -89,6 +89,7 @@ const Hero = () => {
 								onChange={item => setDate([item.selection])}
 								moveRangeOnFirstSelection={false}
 								ranges={date}
+								className="date_renger"
 							/>
 						}
 					</div>

@@ -11,9 +11,25 @@ const Destinations = () => {
 			<div className="des_container">
 				<Swiper
 					spaceBetween={60}
-					slidesPerView={5}
-					onSlideChange={() => console.log("slide change")}
-					onSwiper={(swiper) => console.log(swiper)}
+					// slidesPerView={5}
+					breakpoints={{
+						"@0.00": {
+							slidesPerView: 2,
+							spaceBetween: 50,
+						},
+						"@0.75": {
+							slidesPerView: 2,
+							spaceBetween: 50,
+						},
+						"@1.00": {
+							slidesPerView: 3,
+							spaceBetween: 50,
+						},
+						"@1.50": {
+							slidesPerView: 4,
+							spaceBetween: 50,
+						},
+					}}
 				>
 					<SwiperSlide>
 						<div className="des_card">
@@ -39,7 +55,7 @@ const Destinations = () => {
 							<p>17 Rentals</p>
 						</div>
 					</SwiperSlide>
-                    <SwiperSlide>
+					<SwiperSlide>
 						<div className="des_card">
 							<div className="img_container">
 								<img

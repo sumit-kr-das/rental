@@ -12,6 +12,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 p{
@@ -41,4 +42,10 @@ p{
   &:hover {
       background-color: rgb(61, 53, 215);
   }
+}
+
+.des_container{
+.swiper{
+  height: 100%;
+}
 }

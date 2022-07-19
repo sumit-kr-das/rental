@@ -7,11 +7,19 @@
     flex-direction: column;
     margin-bottom: 6rem;
 
+    @media(max-width:460px) {
+        padding: 1.2rem 2rem;
+    }
+
     .main_heading {
         font-weight: 500;
         font-size: 2rem;
         color: #000;
         margin-bottom: 4rem;
+
+        @media(max-width:460px) {
+            font-size: 1.2rem;
+        }
     }
 
     .des_container {
@@ -30,6 +38,11 @@
                 overflow: hidden;
                 border-radius: 50%;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+                @media(max-width:460px) {
+                    max-width: 100px;
+                    height: 100px;
+                }
 
                 img {
                     width: 100%;

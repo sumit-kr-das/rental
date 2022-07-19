@@ -4,13 +4,25 @@
     align-items: center;
     justify-content: space-between;
 
+    @media(max-width:880px) {
+        flex-direction: column-reverse;
+    }
+
     .news_content {
         flex: 0 1 40%;
+
+        @media(max-width:880px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
         .news_heading {
             color: #000000;
             font-size: 2.5rem;
             font-weight: 500;
+            line-height: 2rem;
         }
 
         .news_para {
@@ -33,6 +45,10 @@
                 font-family: 'DM Sans', sans-serif;
                 font-size: 0.9rem;
                 flex: 0 1 50%;
+
+                @media(max-width:880px) {
+                    width: 200px;
+                }
             }
 
             button {
@@ -51,6 +67,10 @@
 
         img {
             width: 70%;
+        }
+
+        @media(max-width:880px) {
+            margin-bottom: 2rem;
         }
     }
 }

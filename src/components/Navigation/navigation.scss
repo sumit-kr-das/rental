@@ -1,10 +1,15 @@
 .container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.2rem 4rem;
 
-    .left_wrapper{
+    @media(max-width:460px) {
+        padding: 1.2rem 2rem;
+    }
+
+    .left_wrapper {
         display: flex;
         align-items: center;
 
@@ -12,6 +17,10 @@
             list-style-type: none;
             display: flex;
             margin-left: 3rem;
+
+            @media(max-width:1000px) {
+                display: none;
+            }
 
             li {
                 a {
@@ -28,18 +37,40 @@
                     }
                 }
             }
+
         }
+
     }
 
     .right_wrapper {
         display: flex;
         align-items: center;
+        gap: 1rem;
 
         img {
             width: 25px;
             height: 25px;
-            margin-right: 2rem;
             cursor: pointer;
+        }
+
+        .wishlist_icon {
+            @media(max-width:1000px) {
+                display: none;
+            }
+        }
+
+        .nav_ham_burger {
+            display: none;
+
+            @media(max-width:1000px) {
+                display: block;
+            }
+        }
+
+        .btn_primary {
+            @media(max-width:460px) {
+                font-size: 0.9rem;
+            }
         }
     }
 }
@@ -53,4 +84,64 @@
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(40px);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+// mobile nav 
+
+.mobile_nav_menu {
+    background-color: #fff;
+    backdrop-filter: blur(2rem);
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0.5s;
+
+    .back_menu {
+        width: 100%;
+        height: 60px;
+        background-color: #F5F5F5;
+        display: flex;
+        align-items: center;
+        padding-left: 2rem;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+
+        li {
+            margin-top: 2rem;
+
+            a {
+                text-decoration: none;
+                color: #000;
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-left: 0.5rem;
+                padding: 0.5rem 1rem;
+                transition: 0.4s;
+
+                &:hover {
+                    background-color: rgba(243, 244, 246, 1);
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+.show_menu {
+    left: -1000px;
+    transition: all 0.5s;
 }
