@@ -24,15 +24,22 @@ const ListContainer = () => {
 			</div>
 			<div className="hotel_list">
 				<div className="hotel_list_heading">
-					<p>Tokyo, Jappan</p>
-					<p>112 properties found</p>
+					<div>
+						<p>Tokyo, Jappan</p>
+						<p>112 properties found</p>
+					</div>
+					<div>
+						<button>search</button>
+					</div>
 				</div>
+				<div className="hotel_list_main_container">
 				<HotelList />
 				<HotelList />
 				<HotelList />
 				<HotelList />
 				<HotelList />
 				<HotelList />
+				</div>
 			</div>
 		</section>
 	);

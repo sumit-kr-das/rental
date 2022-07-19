@@ -15,10 +15,10 @@ html {
   overflow-x: hidden;
 }
 
-p{
+p {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  color: rgb(107,114,128);
+  color: rgb(107, 114, 128);
 }
 
 .main_container {
@@ -28,7 +28,7 @@ p{
 
 .btn_primary {
   background-color: rgb(79, 70, 229);
-  font-family: 'DM Sans',sans-serif;
+  font-family: 'DM Sans', sans-serif;
   padding: 0.6rem 1rem;
   color: #fff;
   text-decoration: none;
@@ -39,13 +39,22 @@ p{
   display: inline-block;
   font-size: 1.125rem;
   cursor: pointer;
+
   &:hover {
-      background-color: rgb(61, 53, 215);
+    background-color: rgb(61, 53, 215);
   }
 }
 
-.des_container{
-.swiper{
-  height: 100%;
+.des_container {
+  .swiper {
+    height: 100%;
+  }
 }
+
+.list_slider_container {
+  .swiper {
+    @media(max-width:662px) {
+      height: 100%;
+    }
+  }
 }

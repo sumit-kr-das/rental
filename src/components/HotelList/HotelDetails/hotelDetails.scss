@@ -5,9 +5,25 @@
     display: flex;
     justify-content: space-between;
 
+    @media(max-width:820px) {
+        flex-direction: column;
+    }
+
+    @media(max-width:662px) {
+        margin-top: 2rem;
+    }
+
+    @media(max-width:460px) {
+        padding: 1.2rem 2rem;
+    }
+
     .hotel_content {
         flex: 0 1 70%;
         margin-right: 2rem;
+
+        @media(max-width:820px) {
+            margin-right: 0;
+        }
 
         .hd_title {
             display: flex;
@@ -46,6 +62,10 @@
                     margin-left: 1rem;
                     color: rgb(107, 114, 128);
                     cursor: pointer;
+
+                    @media(max-width:481px) {
+                        margin-left: 0;
+                    }
                 }
             }
         }
@@ -59,11 +79,16 @@
             display: flex;
             align-items: center;
             margin-top: 2rem;
+            flex-wrap: wrap;
 
             .single_features {
                 display: flex;
                 align-items: center;
                 margin-right: 1rem;
+
+                @media(max-width:610px) {
+                    margin-bottom: 1rem;
+                }
 
                 p {
                     font-size: 0.9rem;
@@ -98,6 +123,11 @@
         flex: 0 1 30%;
         padding-left: 1rem;
 
+        @media(max-width:820px) {
+            padding-left: 0;
+            margin-top: 2rem;
+        }
+
         p {
             font-size: .9rem;
         }
@@ -112,13 +142,15 @@
         .booking_price {
             font-size: 1.5rem;
             margin: 1rem 0;
+
             span {
                 font-weight: 500;
                 color: #000;
                 margin-right: .2rem;
             }
         }
-        button{
+
+        button {
             font-size: .9rem;
             margin-top: 1rem;
         }
