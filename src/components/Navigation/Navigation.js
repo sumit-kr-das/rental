@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import MobileNav from './MobileNav';
+import Avatar from '../Avatar/Avatar';
 import { Link } from 'react-router-dom';
 import './navigation.scss';
+import { AuthContext } from '../../context/AuthContext';
 
 
 const Navigation = () => {
@@ -18,24 +20,31 @@ const Navigation = () => {
 
   window.addEventListener('scroll',changeBackground);
 
+  const { user } = useContext(AuthContext)
+
   return (
     <>
       <nav className={nav ? 'container active' : 'container'}>
         <div className='left_wrapper'>
           <Link to="/">
-            <img src="/assets/logo.png" alt="main_logo" />
+            <img className='main_nav_img' src="/assets/logo.png" alt="main_logo" />
           </Link>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/">Destination</Link></li>
-            <li><Link to="/">Blog</Link></li>
-            <li><Link to="/">About</Link></li>
-          </ul>
+            {["Home", "Destination", "Blog", "About"].map((item, index) => (
+              <li key={index}>
+                <Link to={`${item === "Home" ? "/" : item.trim().toLowerCase()}`}>
+                  {item}
+                </Link>
+              </li>
+            ))}
+        </ul>
         </div>
         <div className='right_wrapper'>
           <img className='wishlist_icon' src="/assets/icons/wishlist.svg" alt="wishlist" />
-          <Link className='btn_primary' to="/register">Sign up</Link>
-          <img onClick={() => setMobNav(!mobNav)} className='nav_ham_burger' src="/assets/icons/grid-outline.svg" alt="grid_outline" />
+          {
+            user ? <Avatar /> : <Link className='btn_primary' to="/login">Sign in</Link>
+          }
+          <img onClick={() => setMobNav(!mobNav)} className='wishlist_icon nav_ham_burger' src="/assets/icons/grid-outline.svg" alt="grid_outline" />
         </div>
       </nav>
       <MobileNav mobNav={mobNav} setMobNav={setMobNav} />

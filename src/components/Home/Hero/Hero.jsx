@@ -8,14 +8,16 @@ import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
+import { useContext } from 'react';
+import { SearchContext } from '../../../context/SearchContext';
 
 const Hero = () => {
 	const navigate = useNavigate();
-	const [destination, setDestination] = useState("");
+	const [destination, setDestination] = useState("london");
 	const [openDate, setOpenDate] = useState(false);
 	const [openOptions, setOpenOptions] = useState(false);
 
-	const [date, setDate] = useState([
+	const [dates, setDate] = useState([
 		{
 		  startDate: new Date(),
 		  endDate: new Date(),
@@ -51,9 +53,13 @@ const Hero = () => {
 			document.removeEventListener("mousedown", handler);
 		}
 	})
+
+	// context api
+	const { dispatch } = useContext(SearchContext);
 	
 	function handleSearch() {
-		navigate("/hotels",{state:{destination,date,options}});
+		dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options}})
+		navigate("/hotels",{state:{destination,dates,options}});
 	}
 	
 	return (
@@ -80,7 +86,7 @@ const Hero = () => {
 				<div className='input_section'>
 					<BiCalendar className='input_icons' />
 					<span onClick={() => setOpenDate(!openDate)}>
-						{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(date[0].endDate, "dd/MM/yyyy")}`}
+						{`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(dates[0].endDate, "dd/MM/yyyy")}`}
 					</span>
 					<div ref={menuRef} className="date_container_box">
 						{ openDate &&
@@ -88,7 +94,7 @@ const Hero = () => {
 								editableDateInputs={true}
 								onChange={item => setDate([item.selection])}
 								moveRangeOnFirstSelection={false}
-								ranges={date}
+								ranges={dates}
 								className="date_renger"
 							/>
 						}

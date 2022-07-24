@@ -2,189 +2,49 @@ import React from "react";
 import "./featuredPlaces.scss";
 import { BiMap } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
+import useFetch from "../../../services/apiRequest";
 
 const FeaturedPlaces = () => {
+	const { data, loading, error, refetch } = useFetch(
+		"/hotel?featured=true&limit=4"
+	);
 	return (
 		<section className="featured">
 			<p className="main_heading">Featured places to stay</p>
 			<p className="main_para">Popular places to stay</p>
 			<div className="fe_container">
-				<div className="fe_cards">
-					<img src="/assets/hotels/hotel_1.jpeg" alt="hotel_img" />
-					<div className="fe_content">
-						<div className="fa_de">
-							<p className="fe_items">Entire Cabin . 10 beds</p>
-							<p className="fe_title">White Horse Hotel</p>
-							<p className="fe_loction">
-								<BiMap />
-								211 Park Street
-							</p>
-						</div>
-						<div className="fe_border"></div>
-						<div className="fe_pr_ra">
-							<p className="fe_price">
-								<span>$26</span>/night
-							</p>
-							<p className="fe_feating">
-								<AiFillStar className="icn" /> 4.8
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="fe_cards">
-					<img src="/assets/hotels/hotel_2.jpeg" alt="hotel_img" />
-					<div className="fe_content">
-						<div className="fa_de">
-							<p className="fe_items">Entire Cabin . 10 beds</p>
-							<p className="fe_title">White Horse Hotel</p>
-							<p className="fe_loction">
-								<BiMap />
-								211 Park Street
-							</p>
-						</div>
-						<div className="fe_border"></div>
-						<div className="fe_pr_ra">
-							<p className="fe_price">
-								<span>$26</span>/night
-							</p>
-							<p className="fe_feating">
-								<AiFillStar className="icn" /> 4.8
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="fe_cards">
-					<img src="/assets/hotels/hotel_3.jpeg" alt="hotel_img" />
-					<div className="fe_content">
-						<div className="fa_de">
-							<p className="fe_items">Entire Cabin . 10 beds</p>
-							<p className="fe_title">White Horse Hotel</p>
-							<p className="fe_loction">
-								<BiMap />
-								211 Park Street
-							</p>
-						</div>
-						<div className="fe_border"></div>
-						<div className="fe_pr_ra">
-							<p className="fe_price">
-								<span>$26</span>/night
-							</p>
-							<p className="fe_feating">
-								<AiFillStar className="icn" /> 4.8
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="fe_cards">
-					<img src="/assets/hotels/hotel_4.jpeg" alt="hotel_img" />
-					<div className="fe_content">
-						<div className="fa_de">
-							<p className="fe_items">Entire Cabin . 10 beds</p>
-							<p className="fe_title">White Horse Hotel</p>
-							<p className="fe_loction">
-								<BiMap />
-								211 Park Street
-							</p>
-						</div>
-						<div className="fe_border"></div>
-						<div className="fe_pr_ra">
-							<p className="fe_price">
-								<span>$26</span>/night
-							</p>
-							<p className="fe_feating">
-								<AiFillStar className="icn" /> 4.8
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="fe_cards">
-					<img src="/assets/hotels/hotel_5.jpeg" alt="hotel_img" />
-					<div className="fe_content">
-						<div className="fa_de">
-							<p className="fe_items">Entire Cabin . 10 beds</p>
-							<p className="fe_title">White Horse Hotel</p>
-							<p className="fe_loction">
-								<BiMap />
-								211 Park Street
-							</p>
-						</div>
-						<div className="fe_border"></div>
-						<div className="fe_pr_ra">
-							<p className="fe_price">
-								<span>$26</span>/night
-							</p>
-							<p className="fe_feating">
-								<AiFillStar className="icn" /> 4.8
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="fe_cards">
-					<img src="/assets/hotels/hotel_6.jpeg" alt="hotel_img" />
-					<div className="fe_content">
-						<div className="fa_de">
-							<p className="fe_items">Entire Cabin . 10 beds</p>
-							<p className="fe_title">White Horse Hotel</p>
-							<p className="fe_loction">
-								<BiMap />
-								211 Park Street
-							</p>
-						</div>
-						<div className="fe_border"></div>
-						<div className="fe_pr_ra">
-							<p className="fe_price">
-								<span>$26</span>/night
-							</p>
-							<p className="fe_feating">
-								<AiFillStar className="icn" /> 4.8
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="fe_cards">
-					<img src="/assets/hotels/hotel_7.jpeg" alt="hotel_img" />
-					<div className="fe_content">
-						<div className="fa_de">
-							<p className="fe_items">Entire Cabin . 10 beds</p>
-							<p className="fe_title">White Horse Hotel</p>
-							<p className="fe_loction">
-								<BiMap />
-								211 Park Street
-							</p>
-						</div>
-						<div className="fe_border"></div>
-						<div className="fe_pr_ra">
-							<p className="fe_price">
-								<span>$26</span>/night
-							</p>
-							<p className="fe_feating">
-								<AiFillStar className="icn" /> 4.8
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="fe_cards">
-					<img src="/assets/hotels/hotel_8.jpeg" alt="hotel_img" />
-					<div className="fe_content">
-						<div className="fa_de">
-							<p className="fe_items">Entire Cabin . 10 beds</p>
-							<p className="fe_title">White Horse Hotel</p>
-							<p className="fe_loction">
-								<BiMap />
-								211 Park Street
-							</p>
-						</div>
-						<div className="fe_border"></div>
-						<div className="fe_pr_ra">
-							<p className="fe_price">
-								<span>$26</span>/night
-							</p>
-							<p className="fe_feating">
-								<AiFillStar className="icn" /> 4.8
-							</p>
-						</div>
-					</div>
-				</div>
+				{loading ? (
+					"Loading"
+				) : (
+					<>
+						{data.map((item, index) => (
+							<div className="fe_cards" key={index}>
+								<img src="/assets/hotels/hotel_1.jpeg" alt="hotel_img" />
+								<div className="fe_content">
+									<div className="fa_de">
+										<p className="fe_items">Entire Cabin . 10 beds</p>
+										<p className="fe_title">{item.name}</p>
+										<p className="fe_loction">
+											<BiMap />
+											{item.address}
+										</p>
+									</div>
+									<div className="fe_border"></div>
+									<div className="fe_pr_ra">
+										<p className="fe_price">
+											<span>${item.cheapestPrice}</span>/night
+										</p>
+										{item.rating && (
+											<p className="fe_feating">
+												<AiFillStar className="icn" /> {item.rating}
+											</p>
+										)}
+									</div>
+								</div>
+							</div>
+						))}
+					</>
+				)}
 			</div>
 		</section>
 	);
