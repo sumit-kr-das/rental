@@ -22,7 +22,7 @@ const HotelDetails = ({ item, loading, id }) => {
 	// context api
 	const { dates, options } = useContext(SearchContext);
 	const { user } = useContext(AuthContext);
-
+	console.log("contabe",dates);
 	// calculate total days
 	const milliseconds_per_day = 1000 * 60 * 60 * 24;
 	function dayDifference(date1, date2) {
@@ -30,8 +30,20 @@ const HotelDetails = ({ item, loading, id }) => {
 		const diffDays = Math.ceil(timeDiff / milliseconds_per_day);
 		return diffDays;
 	}
-	const days = dayDifference(dates[0].endDate, dates[0].startDate);
+	let  days;
+	const today = new Date()
+	const tomorrow = new Date(today)
+	const nextDay = tomorrow.setDate(tomorrow.getDate() + 1)
 
+	if(dates.length == 0 || dates.length==0){
+	 days = dayDifference(nextDay, today);
+
+	}else{
+		days = dayDifference(dates[0].endDate, dates[0].startDate);
+		console.log("empty not");
+	}
+
+	console.log(days);
 	const handleClick = () => {
 		if(user){
 

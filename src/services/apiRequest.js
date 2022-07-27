@@ -10,7 +10,7 @@ const useFetch = (url) => {
         const fetchData = async () => {
             setLoading(true);
             try{
-                const res = await axios.get(url);
+                const res = await axios.get(`${process.env.REACT_APP_BASE_URL}`+url);
                 setData(res.data);
             }catch(err){
                 setError(err);
@@ -23,7 +23,7 @@ const useFetch = (url) => {
     const refetch = async () => {
         setLoading(true);
         try{
-            const res = await axios.get(url);
+            const res = await axios.get(`${process.env.REACT_APP_BASE_URL}`+url);
             setData(res.data);
         }catch(err){
             setError(err);

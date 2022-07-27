@@ -11,7 +11,7 @@ const images = [
 ];
 
 const Properties = () => {
-	const { data, loading, error, refetch } = useFetch("/hotel/countByType");
+	const { data, loading, error, refetch } = useFetch("/v1/hotel/countByType");
 	// console.log(data);
 	return (
 		<section className="properties">

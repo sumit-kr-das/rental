@@ -6,7 +6,7 @@ import "swiper/css";
 import useFetch from "../../../services/apiRequest";
 
 const Destinations = () => {
-	const {data, loading,error,refetch} = useFetch("/hotel/countByCity?cities=barlin,madrid,london")
+	const {data, loading,error,refetch} = useFetch("/v1/hotel/countByCity?cities=barlin,madrid,london")
 	// console.log(data);
 	return (
 		<section className="destination">

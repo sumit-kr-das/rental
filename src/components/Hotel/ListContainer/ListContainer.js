@@ -35,7 +35,7 @@ const ListContainer = () => {
 
 	// fetch api data
 	const { data, loading, error, refetch } = useFetch(
-		`/hotel?city=${destination}&min=${min || 1}&max=${max || 999}`
+		`/v1/hotel?city=${destination}&min=${min || 1}&max=${max || 999}`
 	);
 
 	const handleClick = () => {

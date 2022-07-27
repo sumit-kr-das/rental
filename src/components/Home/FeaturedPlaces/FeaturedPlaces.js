@@ -6,7 +6,7 @@ import useFetch from "../../../services/apiRequest";
 
 const FeaturedPlaces = () => {
 	const { data, loading, error, refetch } = useFetch(
-		"/hotel?featured=true&limit=4"
+		"/v1/hotel?featured=true&limit=4"
 	);
 	return (
 		<section className="featured">

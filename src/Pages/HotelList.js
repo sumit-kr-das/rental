@@ -10,7 +10,7 @@ const HotelList = () => {
 	const id = location.pathname.split("/")[2];
 
 	// fetch api data
-	const { data, loading, error, refetch } = useFetch(`/hotel/find/${id}`);
+	const { data, loading, error, refetch } = useFetch(`/v1/hotel/find/${id}`);
 	
 	return (
 		<>

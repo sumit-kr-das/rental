@@ -17,6 +17,10 @@ const Hero = () => {
 	const [openDate, setOpenDate] = useState(false);
 	const [openOptions, setOpenOptions] = useState(false);
 
+	// const today = new Date()
+	// const tomorrow = new Date(today)
+	// const nextDay = tomorrow.setDate(tomorrow.getDate() + 1)
+
 	const [dates, setDate] = useState([
 		{
 		  startDate: new Date(),

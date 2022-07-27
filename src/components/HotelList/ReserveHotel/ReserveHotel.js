@@ -1,26 +1,39 @@
-import './reserveHotel.scss';
-import useFetch from '../../../services/apiRequest'
-import {BiXCircle} from "react-icons/bi";
-import { useContext, useState } from 'react';
-import { SearchContext } from '../../../context/SearchContext';
+import "./reserveHotel.scss";
+import useFetch from "../../../services/apiRequest";
+import { BiXCircle } from "react-icons/bi";
+import { useContext, useState } from "react";
+import { SearchContext } from "../../../context/SearchContext";
 
 const ReserveHotel = ({ setOpen, hotelId }) => {
-	const { data, loading, error } = useFetch(`/hotel/room/${hotelId}`);
+	const { data, loading, error } = useFetch(`/v1/hotel/room/${hotelId}`);
 	const [selectedRooms, setSelectedRooms] = useState([]);
 
 	const { dates } = useContext(SearchContext);
 
-	// const getDateInRange = (startDate,endDate) => {
+	const getDateInRange = (startDate, endDate) => {
+		const start = new Date(startDate);
+		const end = new Date(endDate);
 
-	//   const date = new Date(start).getTime();
-	//   let list = []
-	//   while(date <= end){
-	//     list.push(date)
-	//     date.setDate(date.getDate()+1)
-	//   }
+		const date = new Date(start.getTime());
 
-	//   return list;
-	// }
+		const dates = [];
+		while (date <= end) {
+			dates.push(new Date(date).getTime());
+			date.setDate(date.getDate() + 1);
+		}
+
+		return dates;
+	};
+
+	const allDates = getDateInRange(dates[0].startDate, dates[0].endDate);
+
+	const isAvailable = (roomNumber) => {
+		const isFound = roomNumber.unAavailableDates.some(date => 
+			allDates.includes(new Date(date).getTime())	
+		);
+
+		return !isFound;
+	}
 
 	const handleSelect = (e) => {
 		const checked = e.target.checked;
@@ -32,7 +45,7 @@ const ReserveHotel = ({ setOpen, hotelId }) => {
 		);
 	};
 
-	console.log(selectedRooms);
+	// console.log(selectedRooms);
 
 	const handleClick = () => {};
 	return (
@@ -56,6 +69,7 @@ const ReserveHotel = ({ setOpen, hotelId }) => {
 										type="checkbox"
 										value={roomNumber._id}
 										onChange={handleSelect}
+										disabled={!isAvailable(roomNumber)}
 									/>
 								</div>
 							))}
@@ -68,6 +82,6 @@ const ReserveHotel = ({ setOpen, hotelId }) => {
 			</div>
 		</div>
 	);
-}
+};
 
-export default ReserveHotel
+export default ReserveHotel;
