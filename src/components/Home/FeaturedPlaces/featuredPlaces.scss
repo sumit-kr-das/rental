@@ -50,6 +50,7 @@
             cursor: pointer;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             margin-bottom: 4rem;
+            text-decoration: none;
 
             img {
                 width: 100%;
@@ -67,7 +68,7 @@
                 .fa_de {
                     .fe_items {
                         font-size: 0.9rem;
-
+                        text-transform: capitalize;
                     }
 
                     .fe_title {

@@ -5,7 +5,7 @@ import { FaSistrix } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
 import { DateRange } from 'react-date-range';
-import { format } from 'date-fns';
+import { format, addDays } from 'date-fns';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { useContext } from 'react';
@@ -17,14 +17,11 @@ const Hero = () => {
 	const [openDate, setOpenDate] = useState(false);
 	const [openOptions, setOpenOptions] = useState(false);
 
-	// const today = new Date()
-	// const tomorrow = new Date(today)
-	// const nextDay = tomorrow.setDate(tomorrow.getDate() + 1)
 
 	const [dates, setDate] = useState([
 		{
 		  startDate: new Date(),
-		  endDate: new Date(),
+		  endDate: addDays(new Date(), 1),
 		  key: 'selection'
 		}
 	]);

@@ -1,8 +1,13 @@
 import { createContext, useReducer } from "react";
+import { addDays } from "date-fns";
 
 const INITIAL_STATE = {
-	city: undefined,
-	dates: [],
+	city: "london",
+	dates: [{
+		startDate: new Date(),
+		endDate: addDays(new Date(), 1),
+		key: 'selection'
+	  }],
 	options: {
 		adult: undefined,
 		children: undefined,
@@ -13,7 +18,7 @@ const INITIAL_STATE = {
 export const SearchContext = createContext(INITIAL_STATE);
 
 const SearchReducer = (state, action) => {
-	switch (action.type) {
+	switch(action.type) {
 		case "NEW_SEARCH":
 			return action.payload;
 		case "RESET_SEARCH":

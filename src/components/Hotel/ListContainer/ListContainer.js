@@ -16,7 +16,6 @@ const ListContainer = () => {
 	const [option, setoption] = useState(location.state.options);
 	const [min, setMin] = useState(undefined);
 	const [max, setMax] = useState(undefined);
-
 	const [openDate, setOpenDate] = useState(false);
 
 	// close dropDown
@@ -37,7 +36,6 @@ const ListContainer = () => {
 	const { data, loading, error, refetch } = useFetch(
 		`/v1/hotel?city=${destination}&min=${min || 1}&max=${max || 999}`
 	);
-
 	const handleClick = () => {
 		refetch();
 	};

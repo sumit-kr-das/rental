@@ -1,13 +1,14 @@
 import React from "react";
 import "./destination.scss";
+import useFetch from "../../../services/apiRequest";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import useFetch from "../../../services/apiRequest";
+import { Link } from "react-router-dom";
 
 const Destinations = () => {
-	const {data, loading,error,refetch} = useFetch("/v1/hotel/countByCity?cities=barlin,madrid,london")
-	// console.log(data);
+	const {data, loading} = useFetch("/v1/hotel/countByCity?cities=virginia,losangeles,newjersy,newyork,sanfrancisco,wilmington")
+	
 	return (
 		<section className="destination">
 			<p className="main_heading">Top Destinations</p>
@@ -37,7 +38,7 @@ const Destinations = () => {
 						}}
 					>
 						<SwiperSlide>
-							<div className="des_card">
+							<Link to={"/find/virginia"} className="des_card">
 								<div className="img_container">
 									<img
 										src="/assets/top_destinations/beach.jpg"
@@ -46,10 +47,10 @@ const Destinations = () => {
 								</div>
 								<p className="heading">Virginia Beach</p>
 								<p>{data[0]} Rentals</p>
-							</div>
+							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="des_card">
+							<Link to={"/find/losangeles"} className="des_card">
 								<div className="img_container">
 									<img
 										src="/assets/top_destinations/Los-Angeles.jpg"
@@ -58,10 +59,10 @@ const Destinations = () => {
 								</div>
 								<p className="heading">Los Angeles</p>
 								<p>{data[1]} Rentals</p>
-							</div>
+							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="des_card">
+							<Link to={"/find/newjersy"} className="des_card">
 								<div className="img_container">
 									<img
 										src="/assets/top_destinations/New-Jersey.jpg"
@@ -70,10 +71,10 @@ const Destinations = () => {
 								</div>
 								<p className="heading">New Jersey</p>
 								<p>{data[2]} Rentals</p>
-							</div>
+							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="des_card">
+							<Link to={"/find/newyork"} className="des_card">
 								<div className="img_container">
 									<img
 										src="/assets/top_destinations/New-York-City.jpg"
@@ -82,10 +83,10 @@ const Destinations = () => {
 								</div>
 								<p className="heading">New York</p>
 								<p>{data[3]} Rentals</p>
-							</div>
+							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="des_card">
+							<Link to={"/find/sanfrancisco"} className="des_card">
 								<div className="img_container">
 									<img
 										src="/assets/top_destinations/San-Francisco.jpg"
@@ -93,11 +94,11 @@ const Destinations = () => {
 									/>
 								</div>
 								<p className="heading">San Francisco</p>
-								<p>17 Rentals</p>
-							</div>
+								<p>{data[4]} Rentals</p>
+							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<div className="des_card">
+							<Link to={"/find/wilmington"} className="des_card">
 								<div className="img_container">
 									<img
 										src="/assets/top_destinations/Wilmington.jpg"
@@ -105,8 +106,8 @@ const Destinations = () => {
 									/>
 								</div>
 								<p className="heading">Wilmington</p>
-								<p>17 Rentals</p>
-							</div>
+								<p>{data[5]} Rentals</p>
+							</Link>
 						</SwiperSlide>
 					</Swiper>
 				</div>

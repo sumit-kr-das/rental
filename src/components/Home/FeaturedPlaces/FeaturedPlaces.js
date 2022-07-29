@@ -3,6 +3,7 @@ import "./featuredPlaces.scss";
 import { BiMap } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import useFetch from "../../../services/apiRequest";
+import { Link } from 'react-router-dom';
 
 const FeaturedPlaces = () => {
 	const { data, loading, error, refetch } = useFetch(
@@ -18,11 +19,11 @@ const FeaturedPlaces = () => {
 				) : (
 					<>
 						{data.map((item, index) => (
-							<div className="fe_cards" key={index}>
+							<Link to={`/hotel/${item._id}`} className="fe_cards" key={index}>
 								<img src="/assets/hotels/hotel_1.jpeg" alt="hotel_img" />
 								<div className="fe_content">
 									<div className="fa_de">
-										<p className="fe_items">Entire Cabin . 10 beds</p>
+										<p className="fe_items">{item.type} . 1 beds</p>
 										<p className="fe_title">{item.name}</p>
 										<p className="fe_loction">
 											<BiMap />
@@ -41,7 +42,7 @@ const FeaturedPlaces = () => {
 										)}
 									</div>
 								</div>
-							</div>
+							</Link>
 						))}
 					</>
 				)}

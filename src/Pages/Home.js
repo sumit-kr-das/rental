@@ -5,15 +5,15 @@ import FeaturedPlaces from "../components/Home/FeaturedPlaces/FeaturedPlaces";
 import NewsLetter from "../components/NewsLetter/NewsLetter";
 
 const Home = () => {
-  return (
-    <div className="main_container">
-      <Hero />
-      <Destinations />
-      <Properties />
-      <FeaturedPlaces />
-      <NewsLetter />
-    </div>
-  )
-}
+	return (
+		<div className="main_container">
+			<Hero />
+			<Destinations />
+			<Properties />
+			<FeaturedPlaces />
+			<NewsLetter />
+		</div>
+	);
+};
 
-export default Home
+export default Home;
