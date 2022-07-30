@@ -4,24 +4,20 @@ import { BiXCircle } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../../context/SearchContext";
 
-const ReserveHotel = ({ setOpen, hotelId }) => {
-	const { data, loading, error } = useFetch(`/v1/hotel/room/${hotelId}`);
+const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	const [selectedRooms, setSelectedRooms] = useState([]);
-
+	const { data, loading, error } = useFetch(`/v1/hotel/room/${hotelId}`);
 	const { dates } = useContext(SearchContext);
 
 	const getDateInRange = (startDate, endDate) => {
 		const start = new Date(startDate);
 		const end = new Date(endDate);
-
 		const date = new Date(start.getTime());
-
 		const dates = [];
 		while (date <= end) {
 			dates.push(new Date(date).getTime());
 			date.setDate(date.getDate() + 1);
 		}
-
 		return dates;
 	};
 
@@ -31,7 +27,6 @@ const ReserveHotel = ({ setOpen, hotelId }) => {
 		const isFound = roomNumber.unAavailableDates.some(date => 
 			allDates.includes(new Date(date).getTime())	
 		);
-
 		return !isFound;
 	}
 
@@ -44,18 +39,20 @@ const ReserveHotel = ({ setOpen, hotelId }) => {
 				: selectedRooms.filter((item) => item !== value)
 		);
 	};
-
 	// console.log(selectedRooms);
 
-	const handleClick = () => {};
+	const handleClick = () => {
+
+	};
+
 	return (
 		<div className="reserveHotel">
 			<div className="r_container">
-				<BiXCircle />
-				<span>Select your rooms:</span>
+				<BiXCircle className="cross_btn" onClick={() => setOpenModel(false)} />
+				<span className="main_heading">Select your rooms:</span>
 				{data.map((item, index) => (
-					<div key={index}>
-						<div>
+					<div key={index} className="r_wrapper">
+						<div className="des">
 							<div>{item.title}</div>
 							<div>{item.desc}</div>
 							<div>Max People: {item.maxPeople}</div>
@@ -63,7 +60,7 @@ const ReserveHotel = ({ setOpen, hotelId }) => {
 						</div>
 						<div className="room">
 							{item.roomNumbers.map((roomNumber, index) => (
-								<div key={index}>
+								<div key={index} className="room_wrapper">
 									<label>{roomNumber.number}</label>
 									<input
 										type="checkbox"
@@ -77,7 +74,7 @@ const ReserveHotel = ({ setOpen, hotelId }) => {
 					</div>
 				))}
 				<button onClick={handleClick} className="btn_primary">
-					Seserve Now
+					Reserve Now
 				</button>
 			</div>
 		</div>

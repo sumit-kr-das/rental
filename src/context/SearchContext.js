@@ -11,7 +11,7 @@ const INITIAL_STATE = {
 	options: {
 		adult: undefined,
 		children: undefined,
-		room: undefined,
+		room: 1,
 	},
 };
 

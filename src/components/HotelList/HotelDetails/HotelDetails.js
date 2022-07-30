@@ -31,11 +31,10 @@ const HotelDetails = ({ item, loading, id }) => {
 	}
 	
 	const days = dayDifference(dates[0].endDate, dates[0].startDate);
-	console.log(days);
 
 	const handleClick = () => {
 		if(user){
-
+			setOpenModel(true);
 		}else{
 			navigate("/login");
 		}
@@ -102,14 +101,13 @@ const HotelDetails = ({ item, loading, id }) => {
 							excellent location score of {item?.rating}
 						</p>
 						<p className="booking_price">
-							<span>${days * item.cheapestPrice * options.room}</span>({days}{" "}
-							night)
+							<span>${days * item.cheapestPrice * options.room}</span>({days} nights)
 						</p>
 						<button onClick={handleClick} className="btn_primary">Reverse of Book Now</button>
 					</>
 				)}
 			</div>
-			{ openModel && <ReserveHotel setOpen={setOpenModel} hotelId={id} />}
+			{ openModel && <ReserveHotel setOpenModel={setOpenModel} hotelId={id} />}
 		</section>
 	);
 };
