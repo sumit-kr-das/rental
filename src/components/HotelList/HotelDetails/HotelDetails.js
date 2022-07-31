@@ -17,7 +17,7 @@ import ReserveHotel from "../ReserveHotel/ReserveHotel";
 
 const HotelDetails = ({ item, loading, id }) => {
 	const navigate = useNavigate();
-	const [openModel, setOpenModel] = useState(true);
+	const [openModel, setOpenModel] = useState(false);
 
 	// context api
 	const { dates, options } = useContext(SearchContext);

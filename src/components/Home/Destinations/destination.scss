@@ -10,7 +10,14 @@
     @media(max-width:460px) {
         padding: 1.2rem 2rem;
     }
-
+    .skeleton_container {
+        padding: 0 2rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+    }
     .main_heading {
         font-weight: 500;
         font-size: 2rem;

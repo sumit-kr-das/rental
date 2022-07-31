@@ -3,6 +3,7 @@ import useFetch from "../../../services/apiRequest";
 import { BiXCircle } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../../context/SearchContext";
+import axios from "axios";
 
 const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	const [selectedRooms, setSelectedRooms] = useState([]);
@@ -24,11 +25,11 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	const allDates = getDateInRange(dates[0].startDate, dates[0].endDate);
 
 	const isAvailable = (roomNumber) => {
-		const isFound = roomNumber.unAavailableDates.some(date => 
-			allDates.includes(new Date(date).getTime())	
+		const isFound = roomNumber.unAavailableDates.some((date) =>
+			allDates.includes(new Date(date).getTime())
 		);
 		return !isFound;
-	}
+	};
 
 	const handleSelect = (e) => {
 		const checked = e.target.checked;
@@ -41,8 +42,20 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	};
 	// console.log(selectedRooms);
 
-	const handleClick = () => {
-
+	const handleClick = async () => {
+		try {
+			await Promise.all(
+				selectedRooms.map((roomId) => {
+					const res = axios.put(`${process.env.REACT_APP_BASE_URL}/v1/rooms/updateAvailability/${roomId}`, {
+						dates: allDates,
+					});
+					return res.data;
+				})
+			);
+			setOpenModel(false);
+		} catch (err) {
+			console.log();
+		}
 	};
 
 	return (

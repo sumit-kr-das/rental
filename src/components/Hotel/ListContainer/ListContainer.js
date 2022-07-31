@@ -43,6 +43,7 @@ const ListContainer = () => {
 	return (
 		<section className="listContainer">
 			<div className="search_list">
+				<div className="search_list_wrapper">
 				<p className="main_heading">Search</p>
 				<div className="input_section">
 					<p>Destination</p>
@@ -71,7 +72,7 @@ const ListContainer = () => {
 						)}
 					</div>
 				</div>
-				<div>
+				<div className="other_options">
 					<p className="main_heading heading_option">Options</p>
 					<div className="input_section">
 						<p>Min Price(per night)</p>
@@ -124,14 +125,15 @@ const ListContainer = () => {
 					</button>
 				</div>
 			</div>
+			</div>
 			<div className="hotel_list">
 				<div className="hotel_list_heading">
 					<div>
 						<p>Tokyo, Jappan</p>
 						<p>112 properties found</p>
 					</div>
-					<div>
-						<button>search</button>
+					<div className="filter_btn">
+						<button className="btn_primary">Filter</button>
 					</div>
 				</div>
 				<div className="hotel_list_main_container">

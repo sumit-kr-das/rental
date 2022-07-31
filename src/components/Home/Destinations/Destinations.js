@@ -1,5 +1,6 @@
 import React from "react";
 import "./destination.scss";
+import Skeleton from "../../Skeleton/Skeleton";
 import useFetch from "../../../services/apiRequest";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,14 +8,19 @@ import "swiper/css";
 import { Link } from "react-router-dom";
 
 const Destinations = () => {
-	const {data, loading} = useFetch("/v1/hotel/countByCity?cities=virginia,losangeles,newjersy,newyork,sanfrancisco,wilmington")
-	
+	const { data, loading } = useFetch(
+		"/v1/hotel/countByCity?cities=virginia,losangeles,newjersy,newyork,sanfrancisco,wilmington"
+	);
+
 	return (
 		<section className="destination">
 			<p className="main_heading">Top Destinations</p>
-			{
-				loading ? "Loading please wait" : (
-					<div className="des_container">
+			{loading ? (
+				<div className="skeleton_container">
+					{Array(4).fill(<Skeleton type="destination" />)}
+				</div>
+			) : (
+				<div className="des_container">
 					<Swiper
 						spaceBetween={60}
 						// slidesPerView={5}
@@ -111,8 +117,7 @@ const Destinations = () => {
 						</SwiperSlide>
 					</Swiper>
 				</div>
-				)
-			}
+			)}
 		</section>
 	);
 };
