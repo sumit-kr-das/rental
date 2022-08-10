@@ -16,8 +16,35 @@ const Destinations = () => {
 		<section className="destination">
 			<p className="main_heading">Top Destinations</p>
 			{loading ? (
-				<div className="skeleton_container">
-					{Array(4).fill(<Skeleton type="destination" />)}
+				<div className="des_container">
+					<Swiper
+						spaceBetween={60}
+						// slidesPerView={5}
+						breakpoints={{
+							"@0.00": {
+								slidesPerView: 2,
+								spaceBetween: 50,
+							},
+							"@0.75": {
+								slidesPerView: 2,
+								spaceBetween: 50,
+							},
+							"@1.00": {
+								slidesPerView: 3,
+								spaceBetween: 50,
+							},
+							"@1.50": {
+								slidesPerView: 4,
+								spaceBetween: 50,
+							},
+						}}
+					>
+						{Array(4).fill(
+							<SwiperSlide>
+								<Skeleton type="destination" />
+							</SwiperSlide>
+						)}
+					</Swiper>
 				</div>
 			) : (
 				<div className="des_container">
