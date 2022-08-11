@@ -3,7 +3,8 @@ import "./featuredPlaces.scss";
 import { BiMap } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import useFetch from "../../../services/apiRequest";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Skeleton from "../../Skeleton/Skeleton";
 
 const FeaturedPlaces = () => {
 	const { data, loading, error, refetch } = useFetch(
@@ -15,7 +16,7 @@ const FeaturedPlaces = () => {
 			<p className="main_para">Popular places to stay</p>
 			<div className="fe_container">
 				{loading ? (
-					"Loading"
+					<>{Array(4).fill(<Skeleton type="featured" />)}</>
 				) : (
 					<>
 						{data.map((item, index) => (

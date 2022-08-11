@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../../services/apiRequest";
+import Skeleton from "../../Skeleton/Skeleton";
 import "./properties.scss";
 
 const images = [
@@ -19,7 +20,7 @@ const Properties = () => {
 			<p className="main_heading">Browse by property type</p>
 			<div className="property_container">
 				{loading ? (
-					"loading"
+					<>{Array(5).fill(<Skeleton type="property" />)}</>
 				) : (
 					<>
 						{data &&
