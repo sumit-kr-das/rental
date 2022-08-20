@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Skeleton from "../../Skeleton/Skeleton";
 
 const FeaturedPlaces = () => {
-	const { data, loading, error, refetch } = useFetch(
+	const { data, loading } = useFetch(
 		"/v1/hotel?featured=true&limit=4"
 	);
 	return (
@@ -16,7 +16,7 @@ const FeaturedPlaces = () => {
 			<p className="main_para">Popular places to stay</p>
 			<div className="fe_container">
 				{loading ? (
-					<>{Array(4).fill(<Skeleton type="featured" />)}</>
+					<>{[...Array(4)].map((x,i) => <Skeleton key={i} type="featured" />)}</>
 				) : (
 					<>
 						{data.map((item, index) => (

@@ -39,11 +39,7 @@ const Destinations = () => {
 							},
 						}}
 					>
-						{Array(4).fill(
-							<SwiperSlide>
-								<Skeleton type="destination" />
-							</SwiperSlide>
-						)}
+						<>{[...Array(4)].map((x,i) => <Skeleton key={i} type="destination" />)}</>
 					</Swiper>
 				</div>
 			) : (

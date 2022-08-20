@@ -86,7 +86,9 @@
         }
 
         .hotel_addredd {
-            // text-align: center;
+            @media(max-width:964px) {
+            text-align: center;
+            }
         }
 
         .hotel_detls {
@@ -135,6 +137,9 @@
 
                     @media(max-width:964px) {
                         margin-bottom: 0;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        margin-right: 1rem;
                     }
                 }
 

@@ -34,4 +34,14 @@ const useFetch = (url) => {
 	return { data, loading, error, refetch };
 };
 
+// export const countByCity = async(type) => {
+// 	try {
+// 		const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/v1/hotel/countByCity?cities=${type}`);
+// 		return res;
+// 	} catch (err) {
+// 		console.log("Error from api request",err);
+// 	}
+// };
+
+
 export default useFetch;

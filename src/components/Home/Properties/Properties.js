@@ -13,19 +13,19 @@ const images = [
 ];
 
 const Properties = () => {
-	const { data, loading, error, refetch } = useFetch("/v1/hotel/countByType");
+	const { data, loading } = useFetch("/v1/hotel/countByType");
 
 	return (
 		<section className="properties">
 			<p className="main_heading">Browse by property type</p>
 			<div className="property_container">
 				{loading ? (
-					<>{Array(5).fill(<Skeleton type="property" />)}</>
+					<>{[...Array(5)].map((x,i) => <Skeleton key={i} type="property" />)}</>
 				) : (
 					<>
 						{data &&
 							images.map((img, i) => (
-								<Link to={`/type/${data[i]?.type}`} className="card" key={i}>
+								<Link to={`/type/${data[i]?.type}/${data[i]?.count}`} className="card" key={i}>
 									<img src={img} alt="property" />
 									<p className="heading">{data[i]?.type}</p>
 									<p className="para">

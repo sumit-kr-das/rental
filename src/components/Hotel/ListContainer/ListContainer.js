@@ -1,13 +1,13 @@
-import React,{ useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HotelList from "../HotelList/HotelList";
 import "./listContainer.scss";
 import { useLocation } from "react-router-dom";
+import useFetch from "../../../services/apiRequest";
 
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import useFetch from "../../../services/apiRequest";
 
 const ListContainer = () => {
 	const location = useLocation();
@@ -17,6 +17,7 @@ const ListContainer = () => {
 	const [min, setMin] = useState(undefined);
 	const [max, setMax] = useState(undefined);
 	const [openDate, setOpenDate] = useState(false);
+	const [openMenu, setOpenMenu] = useState(false);
 
 	// close dropDown
 	let menuRef = useRef();
@@ -42,98 +43,108 @@ const ListContainer = () => {
 
 	return (
 		<section className="listContainer">
-			<div className="search_list">
+			<div className={openMenu ? "search_list" : "search_list hide_list"}>
 				<div className="search_list_wrapper">
-				<p className="main_heading">Search</p>
-				<div className="input_section">
-					<p>Destination</p>
-					<input
-						className="se_input_box"
-						type="text"
-						placeholder={destination}
-					/>
-				</div>
-				<div className="input_section">
-					<p>Check in date</p>
-					<p className="se_input_date" onClick={() => setOpenDate(!openDate)}>
-						{`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(
-							dates[0].endDate,
-							"dd/MM/yyyy"
-						)}`}
-					</p>
-					<div ref={menuRef} className="se_date_container_box">
-						{openDate && (
-							<DateRange
-								editableDateInputs={true}
-								onChange={(item) => setDates([item.selection])}
-								minDate={new Date()}
-								ranges={dates}
+					<div className="search_heading">
+						<p className="main_heading">Search</p>
+						<img
+							onClick={() => setOpenMenu(false)}
+							className="cross_img"
+							src="/assets/icons/close.png"
+							alt="close"
+						/>
+					</div>
+					<div className="input_section">
+						<p>Destination</p>
+						<input
+							className="se_input_box"
+							type="text"
+							placeholder={destination}
+						/>
+					</div>
+					<div className="input_section">
+						<p>Check in date</p>
+						<p className="se_input_date" onClick={() => setOpenDate(!openDate)}>
+							{`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(
+								dates[0].endDate,
+								"dd/MM/yyyy"
+							)}`}
+						</p>
+						<div ref={menuRef} className="se_date_container_box">
+							{openDate && (
+								<DateRange
+									editableDateInputs={true}
+									onChange={(item) => setDates([item.selection])}
+									minDate={new Date()}
+									ranges={dates}
+								/>
+							)}
+						</div>
+					</div>
+					<div className="other_options">
+						<p className="main_heading heading_option">Options</p>
+						<div className="input_section">
+							<p>Min Price(per night)</p>
+							<input
+								className="se_input_box"
+								type="text"
+								onChange={(e) => setMin(e.target.value)}
 							/>
-						)}
+						</div>
+						<div className="input_section">
+							<p>Max Price(per night)</p>
+							<input
+								className="se_input_box"
+								type="text"
+								onChange={(e) => setMax(e.target.value)}
+							/>
+						</div>
+						<div className="input_section">
+							<p>Adult</p>
+							<input
+								min={1}
+								max={10}
+								placeholder={option.adult}
+								className="se_input_box"
+								type="number"
+							/>
+						</div>
+						<div className="input_section">
+							<p>Children</p>
+							<input
+								min={0}
+								max={9}
+								placeholder={option.children}
+								className="se_input_box"
+								type="number"
+							/>
+						</div>
+						<div className="input_section">
+							<p>Room</p>
+							<input
+								min={1}
+								max={9}
+								placeholder={option.room}
+								className="se_input_box"
+								type="number"
+							/>
+						</div>
+						<button onClick={handleClick} className="btn_primary">
+							Search
+						</button>
 					</div>
 				</div>
-				<div className="other_options">
-					<p className="main_heading heading_option">Options</p>
-					<div className="input_section">
-						<p>Min Price(per night)</p>
-						<input
-							className="se_input_box"
-							type="text"
-							onChange={(e) => setMin(e.target.value)}
-						/>
-					</div>
-					<div className="input_section">
-						<p>Max Price(per night)</p>
-						<input
-							className="se_input_box"
-							type="text"
-							onChange={(e) => setMax(e.target.value)}
-						/>
-					</div>
-					<div className="input_section">
-						<p>Adult</p>
-						<input
-							min={1}
-							max={10}
-							placeholder={option.adult}
-							className="se_input_box"
-							type="number"
-						/>
-					</div>
-					<div className="input_section">
-						<p>Children</p>
-						<input
-							min={0}
-							max={9}
-							placeholder={option.children}
-							className="se_input_box"
-							type="number"
-						/>
-					</div>
-					<div className="input_section">
-						<p>Room</p>
-						<input
-							min={1}
-							max={9}
-							placeholder={option.room}
-							className="se_input_box"
-							type="number"
-						/>
-					</div>
-					<button onClick={handleClick} className="btn_primary">
-						Search
-					</button>
-				</div>
-			</div>
 			</div>
 			<div className="hotel_list">
 				<div className="hotel_list_heading">
 					<div>
-						<p>Tokyo, Jappan</p>
+						<p>{data[0]?.city}</p>
 						<p>112 properties found</p>
 					</div>
 					<div className="filter_btn">
-						<button className="btn_primary">Filter</button>
+						<button onClick={() => setOpenMenu(true)} className="btn_primary">
+							Filter
+						</button>
 					</div>
 				</div>
 				<div className="hotel_list_main_container">
