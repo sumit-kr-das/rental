@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import HotelList from "../HotelList/HotelList";
 import "./listContainer.scss";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useFetch from "../../../services/apiRequest";
 
 import { DateRange } from "react-date-range";
@@ -40,6 +40,9 @@ const ListContainer = () => {
 	const handleClick = () => {
 		refetch();
 	};
+
+	console.log("data", data.length);
+	console.log("error", error);
 
 	return (
 		<section className="listContainer">
@@ -135,30 +138,37 @@ const ListContainer = () => {
 					</div>
 				</div>
 			</div>
-			<div className="hotel_list">
-				<div className="hotel_list_heading">
-					<div>
-						<p>{data[0]?.city}</p>
-						<p>112 properties found</p>
+			{data[0] ? (
+				<div className="hotel_list">
+					<div className="hotel_list_heading">
+						<div>
+							<p>{data[0]?.city}</p>
+							<p>{data?.length} properties found</p>
+						</div>
+						<div className="filter_btn">
+							<button onClick={() => setOpenMenu(true)} className="btn_primary">
+								Filter
+							</button>
+						</div>
 					</div>
-					<div className="filter_btn">
-						<button onClick={() => setOpenMenu(true)} className="btn_primary">
-							Filter
-						</button>
+					<div className="hotel_list_main_container">
+						{loading ? (
+							"loading"
+						) : (
+							<>
+								{data.map((item, index) => (
+									<HotelList key={index} item={item} />
+								))}
+							</>
+						)}
 					</div>
 				</div>
-				<div className="hotel_list_main_container">
-					{loading ? (
-						"loading"
-					) : (
-						<>
-							{data.map((item, index) => (
-								<HotelList key={index} item={item} />
-							))}
-						</>
-					)}
+			) : (
+				<div className="not_found">
+					<img src="/assets/search_not_found.jpg" alt="search_404" />
+					<p>Sorry, no result found! <Link to="/">Back to the home</Link></p>
 				</div>
-			</div>
+			)}
 		</section>
 	);
 };

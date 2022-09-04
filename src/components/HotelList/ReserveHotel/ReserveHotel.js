@@ -46,9 +46,12 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 		try {
 			await Promise.all(
 				selectedRooms.map((roomId) => {
-					const res = axios.put(`${process.env.REACT_APP_BASE_URL}/v1/rooms/updateAvailability/${roomId}`, {
-						dates: allDates,
-					});
+					const res = axios.put(
+						`${process.env.REACT_APP_BASE_URL}/v1/rooms/updateAvailability/${roomId}`,
+						{
+							dates: allDates,
+						}
+					);
 					return res.data;
 				})
 			);
@@ -59,36 +62,41 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	};
 
 	return (
-		<div className="reserveHotel">
-			<div className="r_container">
-				<BiXCircle className="cross_btn" onClick={() => setOpenModel(false)} />
-				<span className="main_heading">Select your rooms:</span>
-				{data.map((item, index) => (
-					<div key={index} className="r_wrapper">
-						<div className="des">
-							<div>{item.title}</div>
-							<div>{item.desc}</div>
-							<div>Max People: {item.maxPeople}</div>
-							<div>{item.price}</div>
+		<div className="reserveHotelCon">
+			<div className="reserveHotel">
+				<div className="r_container">
+					<BiXCircle
+						className="cross_btn"
+						onClick={() => setOpenModel(false)}
+					/>
+					<span className="main_heading">Select your rooms:</span>
+					{data.map((item, index) => (
+						<div key={index} className="r_wrapper">
+							<div className="des">
+								<div>{item.title}</div>
+								<div>{item.desc}</div>
+								<div>Max People: {item.maxPeople}</div>
+								<div>{item.price}</div>
+							</div>
+							<div className="room">
+								{item.roomNumbers.map((roomNumber, index) => (
+									<div key={index} className="room_wrapper">
+										<label>{roomNumber.number}</label>
+										<input
+											type="checkbox"
+											value={roomNumber._id}
+											onChange={handleSelect}
+											disabled={!isAvailable(roomNumber)}
+										/>
+									</div>
+								))}
+							</div>
 						</div>
-						<div className="room">
-							{item.roomNumbers.map((roomNumber, index) => (
-								<div key={index} className="room_wrapper">
-									<label>{roomNumber.number}</label>
-									<input
-										type="checkbox"
-										value={roomNumber._id}
-										onChange={handleSelect}
-										disabled={!isAvailable(roomNumber)}
-									/>
-								</div>
-							))}
-						</div>
-					</div>
-				))}
-				<button onClick={handleClick} className="btn_primary">
-					Reserve Now
-				</button>
+					))}
+					<button onClick={handleClick} className="btn_primary">
+						Reserve Now
+					</button>
+				</div>
 			</div>
 		</div>
 	);

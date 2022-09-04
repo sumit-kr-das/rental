@@ -9,6 +9,8 @@ import {
 	Login,
 	Register,
 	Error,
+	Blog,
+	BlogDetails
 } from "./Pages";
 import Footer from "./components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
@@ -26,6 +28,8 @@ function App() {
 				<Route path="/type/:type/:count" element={<HotelType />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/register" element={<Register />} />
+				<Route path="/blog" element={<Blog />} />
+				<Route path="/blog/:id" element={<BlogDetails />} />
 				<Route path="/*" element={<Error />} />
 			</Routes>
 			<Footer />

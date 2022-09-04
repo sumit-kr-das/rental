@@ -39,7 +39,13 @@ const Destinations = () => {
 							},
 						}}
 					>
-						<>{[...Array(4)].map((x,i) => <Skeleton key={i} type="destination" />)}</>
+						<>
+							{[...Array(4)].map((x, i) => (
+								<SwiperSlide>
+									<Skeleton key={i} type="destination" />
+								</SwiperSlide>
+							))}
+						</>
 					</Swiper>
 				</div>
 			) : (
