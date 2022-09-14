@@ -1,9 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import '../components/Hotel/ListContainer/listContainer.scss'
 
 const Error = () => {
   return (
     <div>
-        <h2 style={{ textAlign: "center"}}>404 ERROR</h2>
+        <div className="not_found">
+					<img src="/assets/search_not_found.jpg" alt="search_404" />
+					<p>Oops! Look like you're lost <Link to="/">Back to the home</Link></p>
+				</div>
     </div>
   )
 }

@@ -41,8 +41,8 @@ const Destinations = () => {
 					>
 						<>
 							{[...Array(4)].map((x, i) => (
-								<SwiperSlide>
-									<Skeleton key={i} type="destination" />
+								<SwiperSlide key={i}>
+									<Skeleton type="destination" />
 								</SwiperSlide>
 							))}
 						</>
@@ -73,75 +73,87 @@ const Destinations = () => {
 						}}
 					>
 						<SwiperSlide>
-							<Link to={"/find/virginia"} className="des_card">
-								<div className="img_container">
-									<img
-										src="/assets/top_destinations/beach.jpg"
-										alt="destination"
-									/>
+							<Link to={"/find/virginia"}>
+								<div className="des_card">
+									<div className="img_container">
+										<img
+											src="/assets/top_destinations/beach.jpg"
+											alt="destination"
+										/>
+									</div>
+									<p className="heading">Virginia Beach</p>
+									<p>{data[0]} Rentals</p>
 								</div>
-								<p className="heading">Virginia Beach</p>
-								<p>{data[0]} Rentals</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<Link to={"/find/losangeles"} className="des_card">
-								<div className="img_container">
-									<img
-										src="/assets/top_destinations/Los-Angeles.jpg"
-										alt="destination"
-									/>
+							<Link to={"/find/losangeles"}>
+								<div className="des_card">
+									<div className="img_container">
+										<img
+											src="/assets/top_destinations/Los-Angeles.jpg"
+											alt="destination"
+										/>
+									</div>
+									<p className="heading">Los Angeles</p>
+									<p>{data[1]} Rentals</p>
 								</div>
-								<p className="heading">Los Angeles</p>
-								<p>{data[1]} Rentals</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<Link to={"/find/newjersy"} className="des_card">
-								<div className="img_container">
-									<img
-										src="/assets/top_destinations/New-Jersey.jpg"
-										alt="destination"
-									/>
+							<Link to={"/find/newjersy"}>
+								<div className="des_card">
+									<div className="img_container">
+										<img
+											src="/assets/top_destinations/New-Jersey.jpg"
+											alt="destination"
+										/>
+									</div>
+									<p className="heading">New Jersey</p>
+									<p>{data[2]} Rentals</p>
 								</div>
-								<p className="heading">New Jersey</p>
-								<p>{data[2]} Rentals</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<Link to={"/find/newyork"} className="des_card">
-								<div className="img_container">
-									<img
-										src="/assets/top_destinations/New-York-City.jpg"
-										alt="destination"
-									/>
+							<Link to={"/find/newyork"}>
+								<div className="des_card">
+									<div className="img_container">
+										<img
+											src="/assets/top_destinations/New-York-City.jpg"
+											alt="destination"
+										/>
+									</div>
+									<p className="heading">New York</p>
+									<p>{data[3]} Rentals</p>
 								</div>
-								<p className="heading">New York</p>
-								<p>{data[3]} Rentals</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<Link to={"/find/sanfrancisco"} className="des_card">
-								<div className="img_container">
-									<img
-										src="/assets/top_destinations/San-Francisco.jpg"
-										alt="destination"
-									/>
+							<Link to={"/find/sanfrancisco"}>
+								<div className="des_card">
+									<div className="img_container">
+										<img
+											src="/assets/top_destinations/San-Francisco.jpg"
+											alt="destination"
+										/>
+									</div>
+									<p className="heading">San Francisco</p>
+									<p>{data[4]} Rentals</p>
 								</div>
-								<p className="heading">San Francisco</p>
-								<p>{data[4]} Rentals</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide>
-							<Link to={"/find/wilmington"} className="des_card">
-								<div className="img_container">
-									<img
-										src="/assets/top_destinations/Wilmington.jpg"
-										alt="destination"
-									/>
+							<Link to={"/find/wilmington"}>
+								<div className="des_card">
+									<div className="img_container">
+										<img
+											src="/assets/top_destinations/Wilmington.jpg"
+											alt="destination"
+										/>
+									</div>
+									<p className="heading">Wilmington</p>
+									<p>{data[5]} Rentals</p>
 								</div>
-								<p className="heading">Wilmington</p>
-								<p>{data[5]} Rentals</p>
 							</Link>
 						</SwiperSlide>
 					</Swiper>

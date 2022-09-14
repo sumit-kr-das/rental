@@ -1,61 +1,18 @@
 .avatar_container {
-    position: relative;
+	position: relative;
 
-    .avatar {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+	.avatar {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
 
-        .avatar_img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            transition: 0.2s;
-
-            &:hover {
-                border: 2px solid #4f46e5;
-            }
-        }
-    }
-
-    .popup {
-        position: absolute;
-        z-index: 1000;
-        top: 40px;
-        right: 0;
-        border-radius: 10px;
-        padding: 1rem;
-        background-color: #ffffff;
-        height: max-content;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
-        ul {
-            z-index: 10000;
-            list-style-type: none;
-            display: grid;
-            gap: 0.5rem;
-
-            li {
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-
-                &:first-child {
-                    font-weight: 600;
-                    text-align: center;
-                }
-
-                &:not(:first-child):hover {
-                    color: #4F46E5;
-                }
-
-                span {
-                    margin-left: 0.4rem;
-                }
-            }
-        }
-    }
-
+		.avatar_img {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			object-fit: cover;
+			box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+			transition: 0.2s;
+		}
+	}
 }

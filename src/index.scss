@@ -1,60 +1,59 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body,
 html {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+	font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 p {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  color: rgb(107, 114, 128);
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	color: rgb(107, 114, 128);
 }
 
 .main_container {
-  max-width: 1660px;
-  margin: 0 auto;
+	max-width: 1660px;
+	margin: 0 auto;
 }
 
 .btn_primary {
-  background-color: rgb(79, 70, 229);
-  font-family: 'DM Sans', sans-serif;
-  padding: 0.6rem 1rem;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 20px;
-  transition: 0.4s;
-  border: none;
-  outline: none;
-  display: inline-block;
-  font-size: 1.125rem;
-  cursor: pointer;
-
-  &:hover {
-    background-color: rgb(61, 53, 215);
-  }
+	background-color: rgb(79, 70, 229);
+	font-family: "DM Sans", sans-serif;
+	padding: 0.6rem 1.2rem;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 25px;
+	transition: 0.4s;
+	border: none;
+	outline: none;
+	display: inline-block;
+	font-size: 1.1rem;
+	cursor: pointer;
+	&:hover {
+		background-color: rgb(61, 53, 215);
+	}
 }
 
 .des_container {
-  .swiper {
-    height: 100%;
-  }
+	.swiper {
+		height: 100%;
+	}
 }
 
 .list_slider_container {
-  .swiper {
-    @media(max-width:662px) {
-      height: 100%;
-    }
-  }
+	.swiper {
+		@media (max-width: 662px) {
+			height: 100%;
+		}
+	}
 }

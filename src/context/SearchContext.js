@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 		startDate: new Date(),
 		endDate: addDays(new Date(), 1),
 		key: 'selection'
-	  }],
+	}],
 	options: {
 		adult: undefined,
 		children: undefined,

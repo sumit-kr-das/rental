@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import {
 	BiGroup,
@@ -9,15 +9,18 @@ import {
 	BiHeart,
 } from "react-icons/bi";
 import { SearchContext } from "../../../context/SearchContext";
-import { AuthContext } from '../../../context/AuthContext';
+import { AuthContext } from "../../../context/AuthContext";
 import "./hotelDetails.scss";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import ReserveHotel from "../ReserveHotel/ReserveHotel";
-
+import { Cart } from "../../../context/CartContext";
 
 const HotelDetails = ({ item, loading, id }) => {
 	const navigate = useNavigate();
 	const [openModel, setOpenModel] = useState(false);
+
+	// cart context
+	const { cart, dispatch } = useContext(Cart);
 
 	// context api
 	const { dates, options } = useContext(SearchContext);
@@ -25,20 +28,20 @@ const HotelDetails = ({ item, loading, id }) => {
 
 	const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
 	function dayDifference(date1, date2) {
-	  const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-	  const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
-	  return diffDays;
+		const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+		const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
+		return diffDays;
 	}
-	
+
 	const days = dayDifference(dates[0].endDate, dates[0].startDate);
 
 	const handleClick = () => {
-		if(user){
+		if (user) {
 			setOpenModel(true);
-		}else{
+		} else {
 			navigate("/login");
 		}
-	}
+	};
 
 	return (
 		<section className="hotel_contents">
@@ -57,7 +60,31 @@ const HotelDetails = ({ item, loading, id }) => {
 							</div>
 							<div className="hd_share">
 								<BiShareAlt className="hd_share_icn" />
-								<BiHeart className="hd_share_icn" />
+								{cart.some((p) => p._id === item._id) ? (
+									<div
+										onClick={() =>
+											dispatch({
+												type: "REMOVE_FROM_CART",
+												payload: { product: item._id },
+											})
+										}
+										className="hd_share_icn hd_heart_img"
+									>
+										<img src="/assets/icons/heart_fill.png" alt="heart" />
+									</div>
+								) : (
+									<div
+										onClick={() =>
+											dispatch({
+												type: "ADD_TO_CART",
+												payload: { product: item },
+											})
+										}
+										className="hd_share_icn hd_heart_img"
+									>
+										<img src="/assets/icons/heart.png" alt="heart" />
+									</div>
+								)}
 							</div>
 						</div>
 						<div className="features_con">
@@ -101,13 +128,16 @@ const HotelDetails = ({ item, loading, id }) => {
 							excellent location score of {item?.rating}
 						</p>
 						<p className="booking_price">
-							<span>${days * item.cheapestPrice * options.room}</span>({days} nights)
+							<span>${days * item.cheapestPrice * options.room}</span>({days}{" "}
+							nights)
 						</p>
-						<button onClick={handleClick} className="btn_primary">Reverse of Book Now</button>
+						<button onClick={handleClick} className="btn_primary">
+							Reverse of Book Now
+						</button>
 					</>
 				)}
 			</div>
-			{ openModel && <ReserveHotel setOpenModel={setOpenModel} hotelId={id} />}
+			{openModel && <ReserveHotel setOpenModel={setOpenModel} hotelId={id} />}
 		</section>
 	);
 };

@@ -97,7 +97,7 @@ const Hero = () => {
 						Accompanying us, you have a trip full of experiences. With Chisfis,
 						booking accommodation, resort villas, hotels
 					</p>
-					<button className="btn_primary">Start your search</button>
+					<a href="#search" className="btn_primary">Start your search</a>
 				</div>
 				<div className="hero_image">
 					<img src="/assets/home_hero.png" alt="hero_img" />
@@ -237,7 +237,7 @@ const Hero = () => {
 						)}
 					</div>
 					<button onClick={handleSearch} className="search_btn">
-						<FaSistrix />
+						<FaSistrix id="search" />
 					</button>
 				</div>
 			</div>

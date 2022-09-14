@@ -29,7 +29,6 @@
 			z-index: 1000;
 		}
 
-
 		.search_list_wrapper {
 			.search_heading {
 				display: flex;
@@ -113,9 +112,9 @@
 			}
 		}
 	}
-    .hide_list{
-        left: -10000px;
-    }
+	.hide_list {
+		left: -10000px;
+	}
 	.hotel_list {
 		flex: 0 1 70%;
 
@@ -165,20 +164,19 @@
 			}
 		}
 	}
-
-	.not_found {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		width: 100%;
-		height: 90vh;
-		img{
-			width: 220px;
-		}
-		p{
-			text-align: center;
-			margin-top: 2rem;
-		}
+}
+.not_found {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	height: 90vh;
+	img {
+		width: 220px;
+	}
+	p {
+		text-align: center;
+		margin-top: 2rem;
 	}
 }

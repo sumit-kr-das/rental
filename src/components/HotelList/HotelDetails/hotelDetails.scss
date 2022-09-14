@@ -1,158 +1,170 @@
 .hotel_contents {
-    padding: 0 4rem;
-    margin: 4rem 0;
+	padding: 0 4rem;
+	margin: 4rem 0;
 
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 
-    @media(max-width:820px) {
-        flex-direction: column;
-    }
+	@media (max-width: 820px) {
+		flex-direction: column;
+	}
 
-    @media(max-width:662px) {
-        margin-top: 2rem;
-    }
+	@media (max-width: 662px) {
+		margin-top: 2rem;
+	}
 
-    @media(max-width:460px) {
-        padding: 1.2rem 2rem;
-    }
+	@media (max-width: 460px) {
+		padding: 1.2rem 2rem;
+	}
 
-    .hotel_content {
-        flex: 0 1 70%;
-        margin-right: 2rem;
+	.hotel_content {
+		flex: 0 1 70%;
+		margin-right: 2rem;
 
-        @media(max-width:820px) {
-            margin-right: 0;
-        }
+		@media (max-width: 820px) {
+			margin-right: 0;
+		}
 
-        .hd_title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+		.hd_title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 
-            .hd_heading {
-                display: flex;
-                flex-direction: column;
+			.hd_heading {
+				display: flex;
+				flex-direction: column;
 
-                p:first-child {
-                    color: #000;
-                    font-weight: 600;
-                    font-size: 1.5rem;
-                    margin-bottom: 0.2rem;
-                }
+				p:first-child {
+					color: #000;
+					font-weight: 600;
+					font-size: 1.5rem;
+					margin-bottom: 0.2rem;
+				}
 
-                p:last-child {
-                    display: flex;
-                    align-items: center;
-                    font-size: 0.9rem;
+				p:last-child {
+					display: flex;
+					align-items: center;
+					font-size: 0.9rem;
 
-                    .star_icn {
-                        color: #EF4444;
-                        margin-right: 0.2rem;
-                    }
-                }
-            }
+					.star_icn {
+						color: #ef4444;
+						margin-right: 0.2rem;
+					}
+				}
+			}
 
-            .hd_share {
-                .hd_share_icn {
-                    font-size: 2.5rem;
-                    padding: 10px;
-                    border-radius: 50%;
-                    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-                    margin-left: 1rem;
-                    color: rgb(107, 114, 128);
-                    cursor: pointer;
+			.hd_share {
+				display: flex;
+				align-items: center;
+				.hd_share_icn {
+					font-size: 2.5rem;
+					padding: 10px;
+					border-radius: 50%;
+					box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+						rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+					margin-left: 1rem;
+					color: #B8BBC2;
+					cursor: pointer;
 
-                    @media(max-width:481px) {
-                        margin-left: 0;
-                    }
-                }
-            }
-        }
+					@media (max-width: 481px) {
+						margin-left: 0;
+					}
+				}
+				.hd_heart_img {
+					display: flex;
+					align-items: center;
+					img {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
 
-        .u_line {
-            border-bottom: 1px solid rgba(107, 114, 128, 0.2);
-            margin: 2rem 0;
-        }
+		.u_line {
+			border-bottom: 1px solid rgba(107, 114, 128, 0.2);
+			margin: 2rem 0;
+		}
 
-        .features_con {
-            display: flex;
-            align-items: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+		.features_con {
+			display: flex;
+			align-items: center;
+			margin-top: 2rem;
+			flex-wrap: wrap;
 
-            .single_features {
-                display: flex;
-                align-items: center;
-                margin-right: 1rem;
+			.single_features {
+				display: flex;
+				align-items: center;
+				margin-right: 1rem;
 
-                @media(max-width:610px) {
-                    margin-bottom: 1rem;
-                }
+				@media (max-width: 610px) {
+					margin-bottom: 1rem;
+				}
 
-                p {
-                    font-size: 0.9rem;
-                }
+				p {
+					font-size: 0.9rem;
+				}
 
-                .features_icn {
-                    font-size: 2.5rem;
-                    padding: 10px;
-                    border-radius: 10px;
-                    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-                    margin-right: 0.4rem;
-                    color: rgb(107, 114, 128);
-                }
-            }
-        }
+				.features_icn {
+					font-size: 2.5rem;
+					padding: 10px;
+					border-radius: 10px;
+					box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+						rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+					margin-right: 0.4rem;
+					color: rgb(107, 114, 128);
+				}
+			}
+		}
 
-        .features_des {
-            .features_des_title {
-                color: #000;
-                font-weight: 600;
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-            }
+		.features_des {
+			.features_des_title {
+				color: #000;
+				font-weight: 600;
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
 
-            .features_des_para {
-                font-size: .9rem;
-            }
-        }
-    }
+			.features_des_para {
+				font-size: 0.9rem;
+			}
+		}
+	}
 
-    .booking_details {
-        flex: 0 1 30%;
-        padding-left: 1rem;
+	.booking_details {
+		flex: 0 1 30%;
+		padding-left: 1rem;
 
-        @media(max-width:820px) {
-            padding-left: 0;
-            margin-top: 2rem;
-        }
+		@media (max-width: 820px) {
+			padding-left: 0;
+			margin-top: 2rem;
+		}
 
-        p {
-            font-size: .9rem;
-        }
+		p {
+			font-size: 0.9rem;
+		}
 
-        .booking_sub_head {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: .5rem;
-            color: #000;
-        }
+		.booking_sub_head {
+			font-size: 1.2rem;
+			font-weight: 500;
+			margin-bottom: 0.5rem;
+			color: #000;
+		}
 
-        .booking_price {
-            font-size: 1.5rem;
-            margin: 1rem 0;
+		.booking_price {
+			font-size: 1.5rem;
+			margin: 1rem 0;
 
-            span {
-                font-weight: 500;
-                color: #000;
-                margin-right: .2rem;
-            }
-        }
+			span {
+				font-weight: 500;
+				color: #000;
+				margin-right: 0.2rem;
+			}
+		}
 
-        button {
-            font-size: .9rem;
-            margin-top: 1rem;
-        }
-    }
+		button {
+			font-size: 0.9rem;
+			margin-top: 1rem;
+		}
+	}
 }
