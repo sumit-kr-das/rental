@@ -210,6 +210,10 @@
 			p {
 				font-size: 0.8rem;
 			}
+			p:first-child{
+				color: #000;
+				font-weight: 600;
+			}
 		}
 		ul {
 			list-style-type: none;

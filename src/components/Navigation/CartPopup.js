@@ -19,7 +19,7 @@ const CartPopup = ({ setCart }) => {
 	return (
 		<Backdop>
 			<div className="cartPopup" ref={cartRef}>
-				<h3>Fevorites:</h3>
+				<h3>Favorites (2):</h3>
 				<div className="cartPopup_container">
 					<div className="cartPopup_hotel">
 						<div>
