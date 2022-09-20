@@ -1,0 +1,37 @@
+.myBookings {
+    padding: 4rem;
+    min-height: 100vh;
+
+    .booking_container {
+        margin-top: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 4rem;
+        .booking {
+            display: flex;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            // background-color: rgb(183, 183, 183);
+            flex: 0 1 45%;
+            img{
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
+            }
+            &>div{
+                padding: 2rem;
+                div{
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

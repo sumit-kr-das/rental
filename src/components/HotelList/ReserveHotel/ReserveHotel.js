@@ -3,11 +3,13 @@ import useFetch from "../../../services/apiRequest";
 import { BiXCircle } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../../context/SearchContext";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	const [selectedRooms, setSelectedRooms] = useState([]);
-	const { data, loading, error } = useFetch(`/v1/hotel/room/${hotelId}`);
+	const navigate = useNavigate()
+	const { data } = useFetch(`/v1/hotel/room/${hotelId}`);
 	const { dates } = useContext(SearchContext);
 
 	const getDateInRange = (startDate, endDate) => {
@@ -34,13 +36,20 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	const handleSelect = (e) => {
 		const checked = e.target.checked;
 		const value = e.target.value;
+		console.log("no",selectedRooms)
 		setSelectedRooms(
 			checked
 				? [...selectedRooms, value]
 				: selectedRooms.filter((item) => item !== value)
 		);
 	};
-	// console.log(selectedRooms);
+	
+	let token;
+	let user = JSON.parse(localStorage.getItem("user"));
+	if (user && user.access_token) {
+		token = { Authorization: `Bearer ${user.access_token}` };
+	}
+	
 
 	const handleClick = async () => {
 		try {
@@ -50,14 +59,17 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 						`${process.env.REACT_APP_BASE_URL}/v1/rooms/updateAvailability/${roomId}`,
 						{
 							dates: allDates,
-						}
+						},
+						{ headers: token }
 					);
 					return res.data;
 				})
+				
 			);
 			setOpenModel(false);
+			navigate("/bookings")
 		} catch (err) {
-			console.log();
+			console.log("Error from reserve hotel");
 		}
 	};
 
@@ -70,21 +82,21 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 						onClick={() => setOpenModel(false)}
 					/>
 					<span className="main_heading">Select your rooms:</span>
-					{data.map((item, index) => (
+					{data?.map((item, index) => (
 						<div key={index} className="r_wrapper">
 							<div className="des">
-								<div>{item.title}</div>
-								<div>{item.desc}</div>
-								<div>Max People: {item.maxPeople}</div>
-								<div>{item.price}</div>
+								<div>{item?.title}</div>
+								<div>{item?.desc}</div>
+								<div>Max People: {item?.maxPeople}</div>
+								<div>{item?.price}</div>
 							</div>
 							<div className="room">
-								{item.roomNumbers.map((roomNumber, index) => (
+								{item?.roomNumbers.map((roomNumber, index) => (
 									<div key={index} className="room_wrapper">
-										<label>{roomNumber.number}</label>
+										<label>{roomNumber?.number}</label>
 										<input
 											type="checkbox"
-											value={roomNumber._id}
+											value={roomNumber?._id}
 											onChange={handleSelect}
 											disabled={!isAvailable(roomNumber)}
 										/>

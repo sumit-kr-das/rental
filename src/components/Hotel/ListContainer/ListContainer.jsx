@@ -41,8 +41,8 @@ const ListContainer = () => {
 		refetch();
 	};
 
-	console.log("data", data.length);
-	console.log("error", error);
+	// console.log("data", data.length);
+	// console.log("error", error);
 
 	return (
 		<section className="listContainer">

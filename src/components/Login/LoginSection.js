@@ -12,7 +12,6 @@ const LoginSection = () => {
 		email: undefined,
 		password: undefined 
 	});
-
 	const { user, loading, error, dispatch } = useContext(AuthContext);
 
 	const handleChange = (e) => {

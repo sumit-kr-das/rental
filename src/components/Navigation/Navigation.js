@@ -6,12 +6,15 @@ import "./navigation.scss";
 import { AuthContext } from "../../context/AuthContext";
 import CartPopup from "./CartPopup";
 import Settings from "./Settings";
+import { Cart } from "../../context/CartContext";
 
 const Navigation = () => {
 	const [nav, setNav] = useState(false);
 	const [mobNav, setMobNav] = useState(false);
-	const [cart, setCart] = useState(false);
+	const [cartCon, setCartCon] = useState(false);
 	const [settings, setSettings] = useState(false);
+
+	const { cart } = useContext(Cart);
 
 	function changeBackground() {
 		if (window.scrollY >= 90) {
@@ -49,12 +52,17 @@ const Navigation = () => {
 					</ul>
 				</div>
 				<div className="right_wrapper">
+					<div className="cart_con_wa">
+
 					<img
-						onClick={() => setCart(true)}
+						onClick={() => setCartCon(true)}
 						className="wishlist_icon"
 						src="/assets/icons/wishlist.svg"
 						alt="wishlist"
 					/>
+					<div className="cart_len">{cart.length}</div>
+					</div>
+
 					{user ? (
 						<Avatar setSettings={setSettings} />
 					) : (
@@ -71,7 +79,7 @@ const Navigation = () => {
 				</div>
 			</nav>
 			<MobileNav mobNav={mobNav} setMobNav={setMobNav} />
-			{cart && <CartPopup cart={cart} setCart={setCart} />}
+			{cartCon && <CartPopup cart={cartCon} setCart={setCartCon} />}
 			{settings && <Settings setSettings={setSettings} />}
 		</>
 	);

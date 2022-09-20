@@ -10,7 +10,9 @@ import {
 	Register,
 	Error,
 	Blog,
-	BlogDetails
+	BlogDetails,
+	Account,
+	Bookings
 } from "./Pages";
 import Footer from "./components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
@@ -30,6 +32,8 @@ function App() {
 				<Route path="/register" element={<Register />} />
 				<Route path="/blog" element={<Blog />} />
 				<Route path="/blog/:id" element={<BlogDetails />} />
+				<Route path="/account" element={<Account />} />
+				<Route path="/bookings" element={<Bookings />} />
 				<Route path="/*" element={<Error />} />
 			</Routes>
 			<Footer />

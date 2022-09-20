@@ -29,10 +29,20 @@ const Settings = ({ setSettings }) => {
 				<div className="cartPopup_container">
 					<ul>
 						<li>
-							<Link to={"/"}>User Profile</Link>
+							<Link 
+								onClick={() => setSettings(false)} 
+								to="/account"
+							>
+								User Profile
+							</Link>
 						</li>
 						<li>
-							<Link to={"/"}>Checkout</Link>
+							<Link 
+								onClick={() => setSettings(false)} 
+								to="/bookings"
+							>
+								My Bookings
+							</Link>
 						</li>
 						<li>
 							<Link onClick={logOut} to={"/"}>
