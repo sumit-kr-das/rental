@@ -12,7 +12,7 @@ const LoginSection = () => {
 		email: undefined,
 		password: undefined 
 	});
-	const { user, loading, error, dispatch } = useContext(AuthContext);
+	const { dispatch } = useContext(AuthContext);
 
 	const handleChange = (e) => {
 		setCredentials((prev) => ({ ...prev, [e.target.name]: e.target.value}))

@@ -6,7 +6,7 @@ import { SearchContext } from "../../../context/SearchContext";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-const ReserveHotel = ({ setOpenModel, hotelId }) => {
+const ReserveHotel = ({ setOpenModel, hotelId, hotelTitle, hotelAdd }) => {
 	const [selectedRooms, setSelectedRooms] = useState([]);
 	const navigate = useNavigate()
 	const { data } = useFetch(`/v1/hotel/room/${hotelId}`);
@@ -36,7 +36,7 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	const handleSelect = (e) => {
 		const checked = e.target.checked;
 		const value = e.target.value;
-		console.log("no",selectedRooms)
+		
 		setSelectedRooms(
 			checked
 				? [...selectedRooms, value]
@@ -49,7 +49,6 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 	if (user && user.access_token) {
 		token = { Authorization: `Bearer ${user.access_token}` };
 	}
-	
 
 	const handleClick = async () => {
 		try {
@@ -59,6 +58,9 @@ const ReserveHotel = ({ setOpenModel, hotelId }) => {
 						`${process.env.REACT_APP_BASE_URL}/v1/rooms/updateAvailability/${roomId}`,
 						{
 							dates: allDates,
+							hotelId: hotelId,
+							title: hotelTitle,
+							address: hotelAdd
 						},
 						{ headers: token }
 					);

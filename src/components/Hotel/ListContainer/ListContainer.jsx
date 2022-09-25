@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import HotelList from "../HotelList/HotelList";
 import "./listContainer.scss";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useFetch from "../../../services/apiRequest";
 
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import NotFound from "../../NotFound/NotFound";
 
 const ListContainer = () => {
 	const location = useLocation();
@@ -34,15 +35,12 @@ const ListContainer = () => {
 	});
 
 	// fetch api data
-	const { data, loading, error, refetch } = useFetch(
+	const { data, loading, refetch } = useFetch(
 		`/v1/hotel?city=${destination}&min=${min || 1}&max=${max || 999}`
 	);
 	const handleClick = () => {
 		refetch();
 	};
-
-	// console.log("data", data.length);
-	// console.log("error", error);
 
 	return (
 		<section className="listContainer">
@@ -164,10 +162,10 @@ const ListContainer = () => {
 					</div>
 				</div>
 			) : (
-				<div className="not_found">
-					<img src="/assets/search_not_found.jpg" alt="search_404" />
-					<p>Sorry, no result found! <Link to="/">Back to the home</Link></p>
-				</div>
+				<NotFound 
+					details="Sorry, no result found!"
+					link="Back to the home"
+				/>
 			)}
 		</section>
 	);

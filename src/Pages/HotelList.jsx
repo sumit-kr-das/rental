@@ -3,7 +3,6 @@ import ListSlider from "../components/HotelList/ListSlider/ListSlider";
 import HotelDetails from "../components/HotelList/HotelDetails/HotelDetails";
 import NewsLetter from "../components/NewsLetter/NewsLetter";
 
-import useFetch from "../services/apiRequest";
 import { useLocation } from 'react-router-dom';
 import { Cart } from "../context/CartContext";
 import axios from "axios";
@@ -36,5 +35,4 @@ const HotelList = () => {
 		</>
 	);
 };
-
 export default HotelList;

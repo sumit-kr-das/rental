@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./userDetails.scss";
 
 const UserDetails = () => {

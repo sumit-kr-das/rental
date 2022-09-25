@@ -137,7 +137,14 @@ const HotelDetails = ({ item, loading, id }) => {
 					</>
 				)}
 			</div>
-			{openModel && <ReserveHotel setOpenModel={setOpenModel} hotelId={id} />}
+			{openModel && (
+				<ReserveHotel
+					setOpenModel={setOpenModel}
+					hotelId={id}
+					hotelTitle={item?.title}
+					hotelAdd={item?.address}
+				/>
+			)}
 		</section>
 	);
 };
