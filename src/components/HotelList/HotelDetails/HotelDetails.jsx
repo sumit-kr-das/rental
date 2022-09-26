@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import {
 	BiGroup,
@@ -8,6 +8,7 @@ import {
 	BiShareAlt,
 	BiHeart,
 } from "react-icons/bi";
+import { AiFillHeart } from "react-icons/ai";
 import { SearchContext } from "../../../context/SearchContext";
 import { AuthContext } from "../../../context/AuthContext";
 import "./hotelDetails.scss";
@@ -68,9 +69,9 @@ const HotelDetails = ({ item, loading, id }) => {
 												payload: { product: item._id },
 											})
 										}
-										className="hd_share_icn hd_heart_img"
+										className="hd_share_icn"
 									>
-										<img src="/assets/icons/heart_fill.png" alt="heart" />
+										<AiFillHeart className="heart_logo" />
 									</div>
 								) : (
 									<div
@@ -80,9 +81,9 @@ const HotelDetails = ({ item, loading, id }) => {
 												payload: { product: item },
 											})
 										}
-										className="hd_share_icn hd_heart_img"
+										className="hd_share_icn"
 									>
-										<img src="/assets/icons/heart.png" alt="heart" />
+										<BiHeart  />
 									</div>
 								)}
 							</div>

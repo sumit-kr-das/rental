@@ -10,7 +10,6 @@ const SingleBlog = () => {
 	const blogId = location.pathname.split("/")[2];
 	const filteredData = blogPost.find((arr) => arr.id === blogId);
 
-	console.log(filteredData);
 
 	return (
 		<div className="single_blog_container">

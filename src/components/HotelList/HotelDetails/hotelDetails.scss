@@ -57,26 +57,25 @@
 				display: flex;
 				align-items: center;
 				.hd_share_icn {
+					width: 40px;
+					height: 40px;
 					font-size: 2.5rem;
 					padding: 10px;
 					border-radius: 50%;
 					box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
 						rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 					margin-left: 1rem;
-					color: #B8BBC2;
+					color: #b8bbc2;
 					cursor: pointer;
-
+					display: flex;
+					align-items: center;
+					justify-content: center;
 					@media (max-width: 481px) {
 						margin-left: 0;
 					}
 				}
-				.hd_heart_img {
-					display: flex;
-					align-items: center;
-					img {
-						width: 20px;
-						height: 20px;
-					}
+				.heart_logo {
+					color: red;
 				}
 			}
 		}

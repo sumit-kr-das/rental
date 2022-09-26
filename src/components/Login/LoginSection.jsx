@@ -44,7 +44,7 @@ const LoginSection = () => {
 					<p>Password</p>
 					<input type="password" name="password" onChange={handleChange} />
 				</div>
-				<button onClick={handleSubmit} className="btn_primary">Register</button>
+				<button onClick={handleSubmit} className="btn_primary">Login</button>
 				<p className="reg_option">
 					New user? <Link to="/register">Create an account</Link>
 				</p>

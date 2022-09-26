@@ -21,7 +21,7 @@ const MyBookings = () => {
 					headers: token,
 				}
 			);
-			setBookings(res.data);	
+			setBookings(res.data);
 		};
 		getBookings();
 	}, [bookings]);
@@ -57,10 +57,16 @@ const MyBookings = () => {
 										<p>{item?.address}</p>
 									</div>
 									<p className="booking_dates">
+										{item?.reserveDates.map((date, indx) => (
+											<span key={indx}>{date}</span>
+										))}
 										<span>Booking Dates:</span> 15Aug - 25Aug
 									</p>
 									<div className="btn_container">
-										<Link className="btn_primary" to={`/hotel/${item.hotelId}`}>
+										<Link
+											className="btn_primary"
+											to={`/hotel/${item?.hotelId}`}
+										>
 											View Details
 										</Link>
 										<div
@@ -77,10 +83,7 @@ const MyBookings = () => {
 						))}
 					</>
 				) : (
-					<NotFound 
-					details="Sorry, no bookings found!"
-					link="Book now"
-				/>
+					<NotFound details="Sorry, no bookings found!" link="Book now" />
 				)}
 			</div>
 		</section>
