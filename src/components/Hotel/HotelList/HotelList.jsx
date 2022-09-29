@@ -1,8 +1,11 @@
 import "./hotelList.scss";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { SearchContext } from "../../../context/SearchContext";
 
 const HotelList = ({ item }) => {
+	const { dates } = useContext(SearchContext);
 	return (
 		<div className="hotel_single_list">
 			<div className="main_hotel_img">
@@ -39,7 +42,7 @@ const HotelList = ({ item }) => {
 						<p className="hoptel_price">${item.cheapestPrice}/Night</p>
 						<div className="hotel_right_con_fst_cld">
 							<p className="taxes">Includes taxis and fees</p>
-							<Link to={`/hotel/${item._id}`}>
+							<Link to={`/hotel/${item._id}?start=${dates[0].startDate}&end=${dates[0].endDate}`}>
 								<button className="btn_primary">See availability</button>
 							</Link>
 						</div>

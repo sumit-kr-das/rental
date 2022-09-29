@@ -9,16 +9,24 @@ import { format } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import NotFound from "../../NotFound/NotFound";
+import { useContext } from "react";
+import { SearchContext } from "../../../context/SearchContext";
 
 const ListContainer = () => {
 	const location = useLocation();
 	const [destination, setDestination] = useState(location.state.destination);
 	const [dates, setDates] = useState(location.state.dates);
-	const [option, setoption] = useState(location.state.options);
+	const [options, setoptions] = useState(location.state.options);
 	const [min, setMin] = useState(undefined);
 	const [max, setMax] = useState(undefined);
 	const [openDate, setOpenDate] = useState(false);
 	const [openMenu, setOpenMenu] = useState(false);
+	console.log(dates);
+
+	function handleChange(e) {
+		setoptions(values => ({...values,[e.target.name]:e.target.value}))
+	}
+	const { dispatch } = useContext(SearchContext)
 
 	// close dropDown
 	let menuRef = useRef();
@@ -39,6 +47,7 @@ const ListContainer = () => {
 		`/v1/hotel?city=${destination}&min=${min || 1}&max=${max || 999}`
 	);
 	const handleClick = () => {
+		dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
 		refetch();
 	};
 
@@ -61,6 +70,7 @@ const ListContainer = () => {
 							className="se_input_box"
 							type="text"
 							placeholder={destination}
+							onChange={(e) => setDestination(e.target.value)}
 						/>
 					</div>
 					<div className="input_section">
@@ -105,9 +115,11 @@ const ListContainer = () => {
 							<input
 								min={1}
 								max={10}
-								placeholder={option.adult}
+								placeholder={options.adult}
 								className="se_input_box"
 								type="number"
+								name="adult"
+								onChange={handleChange}
 							/>
 						</div>
 						<div className="input_section">
@@ -115,9 +127,11 @@ const ListContainer = () => {
 							<input
 								min={0}
 								max={9}
-								placeholder={option.children}
+								placeholder={options.children}
 								className="se_input_box"
 								type="number"
+								name="children"
+								onChange={handleChange}
 							/>
 						</div>
 						<div className="input_section">
@@ -125,9 +139,11 @@ const ListContainer = () => {
 							<input
 								min={1}
 								max={9}
-								placeholder={option.room}
+								placeholder={options.room}
 								className="se_input_box"
 								type="number"
+								name="room"
+								onChange={handleChange}
 							/>
 						</div>
 						<button onClick={handleClick} className="btn_primary">
