@@ -3,12 +3,19 @@ import useFetch from "../../../services/apiRequest";
 import { BiXCircle } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../../context/SearchContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const ReserveHotel = ({ setOpenModel, hotelId, hotelTitle, hotelAdd }) => {
+const ReserveHotel = ({
+	setOpenModel,
+	hotelId,
+	hotelTitle,
+	hotelAdd,
+	options,
+	totalPrice,
+}) => {
 	const [selectedRooms, setSelectedRooms] = useState([]);
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 	const { data } = useFetch(`/v1/hotel/room/${hotelId}`);
 	const { dates } = useContext(SearchContext);
 
@@ -36,14 +43,14 @@ const ReserveHotel = ({ setOpenModel, hotelId, hotelTitle, hotelAdd }) => {
 	const handleSelect = (e) => {
 		const checked = e.target.checked;
 		const value = e.target.value;
-		
+
 		setSelectedRooms(
 			checked
 				? [...selectedRooms, value]
 				: selectedRooms.filter((item) => item !== value)
 		);
 	};
-	
+
 	let token;
 	let user = JSON.parse(localStorage.getItem("user"));
 	if (user && user.access_token) {
@@ -60,16 +67,17 @@ const ReserveHotel = ({ setOpenModel, hotelId, hotelTitle, hotelAdd }) => {
 							dates: allDates,
 							hotelId: hotelId,
 							title: hotelTitle,
-							address: hotelAdd
+							address: hotelAdd,
+							options,
+							totalPrice,
 						},
 						{ headers: token }
 					);
 					return res.data;
 				})
-				
 			);
 			setOpenModel(false);
-			navigate("/bookings")
+			navigate("/bookings");
 		} catch (err) {
 			console.log("Error from reserve hotel");
 		}

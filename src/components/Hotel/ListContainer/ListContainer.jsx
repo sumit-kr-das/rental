@@ -21,7 +21,6 @@ const ListContainer = () => {
 	const [max, setMax] = useState(undefined);
 	const [openDate, setOpenDate] = useState(false);
 	const [openMenu, setOpenMenu] = useState(false);
-	console.log(dates);
 
 	function handleChange(e) {
 		setoptions(values => ({...values,[e.target.name]:e.target.value}))

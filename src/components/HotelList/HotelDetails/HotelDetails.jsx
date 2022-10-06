@@ -23,21 +23,23 @@ export function getValidDate(nud) {
 
 const useQuery = () => {
 	return new URLSearchParams(useLocation().search);
-}
+};
 
 const HotelDetails = ({ item, loading, id }) => {
 	const query = useQuery();
-	const sDate = new Date(query.get("start")) || ""
-	const eDate = new Date(query.get("end")) || ""
+	const sDate = new Date(query.get("start")) || "";
+	const eDate = new Date(query.get("end")) || "";
 
 	const navigate = useNavigate();
 	const [openModel, setOpenModel] = useState(false);
 	const [openDate, setOpenDate] = useState(false);
-	const [dates, setDates] = useState(	[{
-		startDate: sDate,
-		endDate: eDate,
-		key: 'selection'
-	}]);
+	const [dates, setDates] = useState([
+		{
+			startDate: sDate,
+			endDate: eDate,
+			key: "selection",
+		},
+	]);
 	const [openOptions, setOpenOptions] = useState(false);
 	const [options, setOptions] = useState({
 		adult: 1,
@@ -45,13 +47,8 @@ const HotelDetails = ({ item, loading, id }) => {
 		room: 1,
 	});
 
-
-
-
-
 	// context api
 	const { dispatch, destination } = useContext(SearchContext);
-
 	const { user } = useContext(AuthContext);
 
 	const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
@@ -73,7 +70,10 @@ const HotelDetails = ({ item, loading, id }) => {
 	const handleClick = () => {
 		if (user) {
 			setOpenModel(true);
-			dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
+			dispatch({
+				type: "NEW_SEARCH",
+				payload: { destination, dates, options },
+			});
 		} else {
 			navigate("/login");
 		}
@@ -93,6 +93,8 @@ const HotelDetails = ({ item, loading, id }) => {
 		};
 	});
 
+	const totalPrice = days * item.cheapestPrice * Number(options.room);
+
 	return (
 		<section className="hotel_contents">
 			<div className="hotel_content">
@@ -110,10 +112,8 @@ const HotelDetails = ({ item, loading, id }) => {
 						</p>
 						<div className="booking_price">
 							<div>
-								<span>₹{days * item.cheapestPrice * Number(options.room)}</span>
-								<span className="line_through">
-									₹{days * item.cheapestPrice * Number(options.room) + 170}
-								</span>
+								<span>₹{totalPrice}</span>
+								<span className="line_through">₹{totalPrice + 170}</span>
 							</div>
 							inclusive of all taxes
 						</div>
@@ -123,8 +123,8 @@ const HotelDetails = ({ item, loading, id }) => {
 								className="booking_date"
 								onClick={() => setOpenDate(!openDate)}
 							>
-								{`${format(sDate, "dd/MM/yyyy")} to ${format(
-									eDate,
+								{`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(
+									dates[0].endDate,
 									"dd/MM/yyyy"
 								)}`}
 							</p>
@@ -244,6 +244,8 @@ const HotelDetails = ({ item, loading, id }) => {
 					hotelId={id}
 					hotelTitle={item?.title}
 					hotelAdd={item?.address}
+					options={options}
+					totalPrice={totalPrice}
 				/>
 			)}
 		</section>

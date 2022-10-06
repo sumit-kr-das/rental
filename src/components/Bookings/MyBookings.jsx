@@ -1,11 +1,12 @@
-import "./myBookings.scss";
-import { FiMapPin } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import "./myBookings.scss";
 import NotFound from "../NotFound/NotFound";
-import { getValidDate } from "../HotelList/HotelDetails/HotelDetails";
 import GenerateQrcode from "./GenerateQrcode";
+import { getValidDate } from "../HotelList/HotelDetails/HotelDetails";
+import { FiMapPin } from "react-icons/fi";
+import { BiHotel } from "react-icons/bi";
 
 const BookingDetails = ({ item }) => {
 	let token;
@@ -28,6 +29,16 @@ const BookingDetails = ({ item }) => {
 				<FiMapPin className="icn" />
 				<p>{item?.address}</p>
 			</div>
+			<div className="address">
+				<BiHotel className="icn" />
+				<p>
+					Adult {item?.options.adult} . Children {item?.options.children} . room{" "}
+					{item?.options.room}
+				</p>
+			</div>
+			<div className="address">
+				<p>₹{item?.price}</p>
+			</div>
 			<div className="timeline">
 				<div className="timeline_line">
 					<span className="timeline_innerline"></span>
@@ -37,15 +48,15 @@ const BookingDetails = ({ item }) => {
 						<span className="timeline_point"></span>
 						<p>Checkin</p>
 						<p className="date">
-							{getValidDate(item?.reserveDates[0])} <span>11:00am</span>
+							{getValidDate(item?.reserveDates[0])}<span>(11:00am)</span>
 						</p>
 					</li>
 					<li>
 						<span className="timeline_point"></span>
 						<p>Checkout</p>
 						<p className="date">
-							{getValidDate(item?.reserveDates[item?.reserveDates.length - 1])}{" "}
-							<span>12:00pm</span>
+							{getValidDate(item?.reserveDates[item?.reserveDates.length - 1])}
+							<span>(12:00pm)</span>
 						</p>
 					</li>
 				</ul>
@@ -82,7 +93,7 @@ const MyBookings = () => {
 			setBookings(res.data);
 		};
 		getBookings();
-	}, [bookings]);
+	}, []);
 
 	return (
 		<section className="myBookings">
