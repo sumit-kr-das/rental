@@ -7,8 +7,6 @@ import { Link } from "react-router-dom";
 const CartPopup = ({ setCart }) => {
 	const { cart, dispatch } = useContext(Cart);
 
-	console.log("log", cart);
-
 	// close dropDown
 	let cartRef = useRef();
 	useEffect(() => {
@@ -31,11 +29,7 @@ const CartPopup = ({ setCart }) => {
 					{cart.length !== 0 ? (
 						<>
 							{cart?.map((item, index) => (
-								<Link
-									to={`/hotel/${item._id}`}
-									key={index}
-									
-								>
+								<Link to={`/hotel/${item._id}`} key={index}>
 									<div className="cartPopup_hotel">
 										<div>
 											<img
@@ -45,7 +39,9 @@ const CartPopup = ({ setCart }) => {
 											/>
 										</div>
 										<div>
-											<p onClick={() => setCart(false)} className="header_ho">{item.title}</p>
+											<p onClick={() => setCart(false)} className="header_ho">
+												{item.title}
+											</p>
 											<p>${item.cheapestPrice}/Night</p>
 										</div>
 										<div
