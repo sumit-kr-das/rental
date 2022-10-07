@@ -5,6 +5,9 @@
 	flex-direction: column;
 	justify-content: center;
 	margin-bottom: 6rem;
+	@media(max-width:600px) {
+		padding: 0 4rem;
+	}
 
 	.main_heading {
 		margin-top: 4rem;
@@ -18,7 +21,9 @@
 	.reg_container {
 		width: 25%;
 		margin-top: 2rem;
-
+		@media(max-width:600px) {
+			width: 100%;
+		}
 		.reg_input {
 			margin-bottom: 1rem;
 

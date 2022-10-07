@@ -178,15 +178,12 @@
 	padding: 1rem 2rem;
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 	border-radius: 10px;
-	@media(max-width: 600px) {
-		top: 50%;
+	@media (max-width: 600px) {
+		width: 95%;
+		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		-webkit-transform: translate(-50%, -50%);
-		-moz-transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		-o-transform: translate(-50%, -50%);
-}
+	}
 	h3 {
 		margin-bottom: 1rem;
 	}

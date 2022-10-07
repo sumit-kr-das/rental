@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import './listSlider.scss';
+import "./listSlider.scss";
 
 const ListSlider = () => {
 	return (

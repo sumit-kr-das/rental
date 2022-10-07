@@ -36,8 +36,8 @@ const BookingDetails = ({ item }) => {
 					{item?.options.room}
 				</p>
 			</div>
-			<div className="address">
-				<p>₹{item?.price}</p>
+			<div >
+				<p className="price">₹{item?.price}</p>
 			</div>
 			<div className="timeline">
 				<div className="timeline_line">
