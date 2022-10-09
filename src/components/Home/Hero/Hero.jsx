@@ -18,7 +18,6 @@ const Hero = () => {
 	const [destination, setDestination] = useState("london");
 	const [openDate, setOpenDate] = useState(false);
 	const [openOptions, setOpenOptions] = useState(false);
-	const [searchRes, setSearchRes] = useState([]);
 	const [searchCon, setSearchCon] = useState(false);
 
 	const [dates, setDate] = useState([

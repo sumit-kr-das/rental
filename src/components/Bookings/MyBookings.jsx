@@ -91,6 +91,7 @@ const MyBookings = () => {
 				{ headers: token }
 			);
 			setBookings(res.data);
+			console.log(res.data);
 		};
 		getBookings();
 	}, []);

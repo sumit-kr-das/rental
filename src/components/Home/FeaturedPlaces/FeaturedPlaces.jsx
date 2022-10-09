@@ -5,11 +5,15 @@ import { AiFillStar } from "react-icons/ai";
 import useFetch from "../../../services/apiRequest";
 import { Link } from "react-router-dom";
 import Skeleton from "../../Skeleton/Skeleton";
+import { addDays } from "date-fns";
 
 const FeaturedPlaces = () => {
 	const { data, loading } = useFetch(
 		"/v1/hotel?featured=true&limit=4"
 	);
+	
+	const today = new Date()
+	const nextDay = addDays(new Date(), 1)
 	return (
 		<section className="featured">
 			<p className="main_heading">Featured places to stay</p>
@@ -20,7 +24,7 @@ const FeaturedPlaces = () => {
 				) : (
 					<>
 						{data.map((item, index) => (
-							<Link to={`/hotel/${item._id}`} className="fe_cards" key={index}>
+							<Link to={`/hotel/${item._id}?start=${today}&end=${nextDay}`} className="fe_cards" key={index}>
 								<img src="/assets/hotels/hotel_1.jpeg" alt="hotel_img" />
 								<div className="fe_content">
 									<div className="fa_de">
