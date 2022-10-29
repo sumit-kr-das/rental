@@ -17,7 +17,7 @@ const Navigation = () => {
 	const { cart } = useContext(Cart);
 
 	function changeBackground() {
-		if (window.scrollY >= 90) {
+		if (window.scrollY >= 500) {
 			setNav(true);
 		} else {
 			setNav(false);
@@ -57,7 +57,7 @@ const Navigation = () => {
 					<img
 						onClick={() => setCartCon(true)}
 						className="wishlist_icon"
-						src="/assets/icons/wishlist.svg"
+						src="/assets/icons/heart.png"
 						alt="wishlist"
 					/>
 					<div className="cart_len">{cart.length}</div>

@@ -13,7 +13,7 @@ const HotelList = ({ item }) => {
 			</div>
 			<div className="hotel_details">
 				<div className="hotel_heading">
-					<p className="hotel_name">{item.name}</p>
+					<p className="hotel_name">{item.title}</p>
 					<div className="hotel_details_fst_cld">
 						<p className="hotel_rev">Excellent</p>
 						{item.rating && (

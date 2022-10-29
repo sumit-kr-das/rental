@@ -12,7 +12,7 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	scroll-behavior: smooth;
-	overflow-x: hidden;
+	// overflow-x: hidden;
 }
 
 p {
@@ -22,12 +22,12 @@ p {
 }
 
 .main_container {
-	max-width: 1660px;
-	margin: 0 auto;
+	// max-width: 1660px;
+	// margin: 0 auto;
 }
 
 .btn_primary {
-	background-color: rgb(79, 70, 229);
+	background: linear-gradient(265deg, #ef4123, #ee3f25 48%, #d11450);
 	font-family: "DM Sans", sans-serif;
 	padding: 0.6rem 1.2rem;
 	color: #fff;
@@ -40,7 +40,7 @@ p {
 	font-size: 1.1rem;
 	cursor: pointer;
 	&:hover {
-		background-color: rgb(61, 53, 215);
+		background: linear-gradient(-265deg, #ef4123, #ee3f25 48%, #d11450);
 	}
 }
 
