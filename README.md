@@ -189,8 +189,8 @@ To run this project, you will need to add the following environment variables to
 
 If you want to contact me, you can reach me through below handles.
 
-[![linkedin](https://img.shields.io/badge/Mohit_Sehrawat-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/m-sehrawat/)
-[![Twitter](https://img.shields.io/badge/Mohit_Sehrawat-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/m-sehrawat/)
+[![linkedin](https://img.shields.io/badge/Sumit_Kumar_Das-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sumit_kumar_das)
+[![Twitter](https://img.shields.io/badge/Sumit_Kumar_Das-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/sumit-kr-das)
 
 © 2022 Sumit Kumar Das
 
