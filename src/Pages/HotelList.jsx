@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import ListSlider from "../components/HotelList/ListSlider/ListSlider";
 import HotelDetails from "../components/HotelList/HotelDetails/HotelDetails";
 import NewsLetter from "../components/NewsLetter/NewsLetter";
+import TopShades from '../components/TopShades/TopShades'
 
 import { useLocation } from 'react-router-dom';
 import { Cart } from "../context/CartContext";
@@ -29,6 +30,7 @@ const HotelList = () => {
 	
 	return (
 		<>
+			<TopShades />
 			<ListSlider photos={products.photos} loading={loading} />
 			<HotelDetails item={products} loading={loading} id={id} />
 			<NewsLetter />
