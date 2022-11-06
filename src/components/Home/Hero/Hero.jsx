@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./hero.scss";
 import { useNavigate } from "react-router-dom";
-import { format, addDays } from "date-fns";
+import { addDays } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { useContext } from "react";

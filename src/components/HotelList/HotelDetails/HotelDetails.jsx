@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import ReserveHotel from "../ReserveHotel/ReserveHotel";
 import LeftContainer from "./LeftContainer";
 
-import { BiMap, BiCalendar, BiMale, BiPlus, BiMinus } from "react-icons/bi";
+import { BiMale, BiPlus, BiMinus } from "react-icons/bi";
 
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
