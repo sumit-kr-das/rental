@@ -1,8 +1,7 @@
 import { BiMap, BiCalendar, BiMale, BiPlus, BiMinus } from "react-icons/bi";
-import { FaLocationArrow } from "react-icons/fa";
 import { FaSistrix } from "react-icons/fa";
 import { DateRange } from "react-date-range";
-import { format, addDays } from "date-fns";
+import { format } from "date-fns";
 
 const Search = ({ setDestination, setSearchCon, searchCon, setOpenDate, openDate, dates, menuRef, setDate, handleSearch, setOpenOptions, options, openOptions, handleClick }) => {
 	return (
@@ -16,16 +15,6 @@ const Search = ({ setDestination, setSearchCon, searchCon, setOpenDate, openDate
 						onChange={(e) => setDestination(e.target.value)}
 						onClick={() => { setSearchCon(!searchCon) }}
 					/>
-					{/* {searchCon && (
-					<div className="input_section_res">
-						{searchRes?.map((seRe, i) => (
-							<div onClick={assignCity(seRe.city)} key={i}>
-								<FaLocationArrow className="icon" />
-								<p key={i}>{seRe?.city}</p>
-							</div>
-						))}
-					</div>
-				)} */}
 				</div>
 
 				<div className="input_section">

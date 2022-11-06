@@ -33,17 +33,28 @@ const Navigation = () => {
 			<nav className={nav ? "container active" : "container"}>
 				<div className="left_wrapper">
 					<Link to="/">
-						<img
-							className="main_nav_img"
-							src="/assets/logo.png"
-							alt="main_logo"
-						/>
+						{
+							nav ?
+								<img
+									className="main_nav_img"
+									src="/assets/logo_black.png"
+									alt="main_logo"
+								/>
+								:
+								<img
+									className="main_nav_img"
+									src="/assets/logo.png"
+									alt="main_logo"
+								/>
+						}
+
 					</Link>
 					<ul>
 						{["Home", "Destination", "Blog", "About"].map((item, index) => (
 							<li key={index}>
 								<Link
 									to={`${item === "Home" ? "/" : item.trim().toLowerCase()}`}
+									style={nav ? { color: "#000" } : { color: "#fff" }}
 								>
 									{item}
 								</Link>
@@ -53,14 +64,22 @@ const Navigation = () => {
 				</div>
 				<div className="right_wrapper">
 					<div className="cart_con_wa">
-
-					<img
-						onClick={() => setCartCon(true)}
-						className="wishlist_icon"
-						src="/assets/icons/heart.png"
-						alt="wishlist"
-					/>
-					<div className="cart_len">{cart.length}</div>
+						{
+							nav ?
+								<img
+									onClick={() => setCartCon(true)}
+									className="wishlist_icon"
+									src="/assets/icons/heart_black.png"
+									alt="wishlist" />
+								:
+								<img
+									onClick={() => setCartCon(true)}
+									className="wishlist_icon"
+									src="/assets/icons/heart.png"
+									alt="wishlist"
+								/>
+						}
+						<div className="cart_len">{cart.length}</div>
 					</div>
 
 					{user ? (
@@ -70,12 +89,23 @@ const Navigation = () => {
 							Sign in
 						</Link>
 					)}
-					<img
-						onClick={() => setMobNav(!mobNav)}
-						className="wishlist_icon nav_ham_burger"
-						src="/assets/icons/grid-outline.svg"
-						alt="grid_outline"
-					/>
+					{
+						nav ?
+							<img
+								onClick={() => setMobNav(!mobNav)}
+								className="wishlist_icon nav_ham_burger"
+								src="/assets/icons/menu_black.png"
+								alt="grid_outline"
+							/>
+							:
+							<img
+								onClick={() => setMobNav(!mobNav)}
+								className="wishlist_icon nav_ham_burger"
+								src="/assets/icons/menu.png"
+								alt="grid_outline"
+							/>
+					}
+
 				</div>
 			</nav>
 			<MobileNav mobNav={mobNav} setMobNav={setMobNav} />
