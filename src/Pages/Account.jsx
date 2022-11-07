@@ -1,10 +1,12 @@
 import React from 'react'
-import UserDetails from '../components/Account/UserDetails/UserDetails'
+import UserDetails from '../components/Account/UserDetails/UserDetails';
+import TopShades from '../components/TopShades/TopShades';
 
 const Account = () => {
   return (
     <>
-        <UserDetails />
+      <TopShades />
+      <UserDetails />
     </>
   )
 }

@@ -130,11 +130,14 @@
 			display: flex;
 			justify-content: space-between;
 			margin-bottom: 2rem;
-
-			p:first-child {
-				margin-right: 1rem;
-				color: #000000;
-				font-weight: 600;
+			div{
+				.search_city {
+					margin-right: 5rem;
+					color: #fff;
+				}
+				p{
+					color: #fff;
+				}
 			}
 
 			.filter_btn {

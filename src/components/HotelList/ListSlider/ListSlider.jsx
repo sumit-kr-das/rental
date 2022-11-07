@@ -8,57 +8,59 @@ import "./listSlider.scss";
 
 const ListSlider = () => {
 	return (
-		<div className="list_slider_container">
-			<Swiper
-				slidesPerView={1}
-				centeredSlides={false}
-				slidesPerGroupSkip={1}
-				grabCursor={true}
-				keyboard={{
-					enabled: true,
-				}}
-				breakpoints={{
-					769: {
-						slidesPerView: 2,
-						slidesPerGroup: 2,
-					},
-				}}
-				// scrollbar={true}
-				navigation={true}
-				pagination={{
-					clickable: true,
-				}}
-				modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-				className="mySwiper"
-			>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_1.jpeg" alt="slider_img" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_2.jpeg" alt="slider_img" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_3.jpeg" alt="slider_img" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_4.jpeg" alt="slider_img" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_5.jpeg" alt="slider_img" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_6.jpeg" alt="slider_img" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_7.jpeg" alt="slider_img" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_1.jpeg" alt="slider_img" />
-				</SwiperSlide>
-				<SwiperSlide>
-					<img src="/assets/hotels/hotel_2.jpeg" alt="slider_img" />
-				</SwiperSlide>
-			</Swiper>
+		<div className="slider_container">
+			<div className="list_slider_container">
+				<Swiper
+					slidesPerView={1}
+					centeredSlides={false}
+					slidesPerGroupSkip={1}
+					grabCursor={true}
+					keyboard={{
+						enabled: true,
+					}}
+					breakpoints={{
+						769: {
+							slidesPerView: 2,
+							slidesPerGroup: 2,
+						},
+					}}
+					// scrollbar={true}
+					navigation={true}
+					pagination={{
+						clickable: true,
+					}}
+					modules={[Keyboard, Scrollbar, Navigation, Pagination]}
+					className="mySwiper"
+				>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_1.jpeg" alt="slider_img" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_2.jpeg" alt="slider_img" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_3.jpeg" alt="slider_img" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_4.jpeg" alt="slider_img" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_5.jpeg" alt="slider_img" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_6.jpeg" alt="slider_img" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_7.jpeg" alt="slider_img" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_1.jpeg" alt="slider_img" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<img src="/assets/hotels/hotel_2.jpeg" alt="slider_img" />
+					</SwiperSlide>
+				</Swiper>
+			</div>
 		</div>
 	);
 };

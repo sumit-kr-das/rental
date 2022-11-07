@@ -155,7 +155,7 @@ const ListContainer = () => {
 				<div className="hotel_list">
 					<div className="hotel_list_heading">
 						<div>
-							<p>{data[0]?.city}</p>
+							<h2 className="search_city">{data[0]?.city}</h2>
 							<p>{data?.length} properties found</p>
 						</div>
 						<div className="filter_btn">
