@@ -62,7 +62,7 @@
 ## Glimpses of Mini-Store 🙈 :
 
 
-[//]:<table>
+[//]: <table>
  [//]: <tr>
  [//]:   <td><img src="https://user-images.githubusercontent.com/91532881/168818978-a574a3fb-b4d1-49e6-9c3a-99d8a6f7031a.png" alt="home" /></td>
  [//]:   <td><img src="https://user-images.githubusercontent.com/91532881/168818986-59e2dad1-5b2b-4054-8f34-bd3f8f26c624.png" alt="signup" /></td>
@@ -79,7 +79,7 @@
   [//]:  <td><img src="https://user-images.githubusercontent.com/91532881/168818999-0c58ad51-4502-4f5f-8ee3-39c6384b9843.png" alt="checkout" /></td>
   [//]:  <td><img src="https://user-images.githubusercontent.com/91532881/168819001-10bfbb16-b6fe-474a-a10a-820a08255c10.png" alt="order-summary" /></td>
  [//]: </tr>
-[//]:</table>
+[//]: </table>
 
 <br />
 
