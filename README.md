@@ -41,8 +41,8 @@
    - Book Summary
 
 
-![2](https://user-images.githubusercontent.com/91532881/168818963-328399b4-c459-472f-b452-7ce6a91adcf6.png)
-![3](https://user-images.githubusercontent.com/91532881/168818970-ef2e11a5-9409-408e-ad43-961b238d0ec1.png)
+[//]: ![2](https://user-images.githubusercontent.com/91532881/168818963-328399b4-c459-472f-b452-7ce6a91adcf6.png)
+[//]: ![3](https://user-images.githubusercontent.com/91532881/168818970-ef2e11a5-9409-408e-ad43-961b238d0ec1.png)
 
 <br />
 
@@ -62,24 +62,24 @@
 ## Glimpses of Mini-Store 🙈 :
 
 
-<table>
-  <tr>
-    <td><img src="https://user-images.githubusercontent.com/91532881/168818978-a574a3fb-b4d1-49e6-9c3a-99d8a6f7031a.png" alt="home" /></td>
-    <td><img src="https://user-images.githubusercontent.com/91532881/168818986-59e2dad1-5b2b-4054-8f34-bd3f8f26c624.png" alt="signup" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://user-images.githubusercontent.com/91532881/168818988-c4868232-3071-4026-a465-decf75a093d2.png" alt="products" /></td>
-    <td><img src="https://user-images.githubusercontent.com/91532881/168818990-08f7e469-ad9a-4077-9c47-f56e1e848d59.png" alt="product-details" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://user-images.githubusercontent.com/91532881/168818993-625d446b-aa8d-4d56-88f8-0c68d0a10132.png" alt="wishlist" /></td>
-    <td><img src="https://user-images.githubusercontent.com/91532881/168818994-f1ae1fc2-6cb9-4017-8b87-341f4bbb1af3.png" alt="cart" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://user-images.githubusercontent.com/91532881/168818999-0c58ad51-4502-4f5f-8ee3-39c6384b9843.png" alt="checkout" /></td>
-    <td><img src="https://user-images.githubusercontent.com/91532881/168819001-10bfbb16-b6fe-474a-a10a-820a08255c10.png" alt="order-summary" /></td>
-  </tr>
-</table>
+[//]:<table>
+ [//]: <tr>
+ [//]:   <td><img src="https://user-images.githubusercontent.com/91532881/168818978-a574a3fb-b4d1-49e6-9c3a-99d8a6f7031a.png" alt="home" /></td>
+ [//]:   <td><img src="https://user-images.githubusercontent.com/91532881/168818986-59e2dad1-5b2b-4054-8f34-bd3f8f26c624.png" alt="signup" /></td>
+ [//]: </tr>
+[//]:  <tr>
+[//]:    <td><img src="https://user-images.githubusercontent.com/91532881/168818988-c4868232-3071-4026-a465-decf75a093d2.png" alt="products" /></td>
+ [//]:   <td><img src="https://user-images.githubusercontent.com/91532881/168818990-08f7e469-ad9a-4077-9c47-f56e1e848d59.png" alt="product-details" /></td>
+ [//]: </tr>
+ [//]: <tr>
+ [//]:   <td><img src="https://user-images.githubusercontent.com/91532881/168818993-625d446b-aa8d-4d56-88f8-0c68d0a10132.png" alt="wishlist" /></td>
+ [//]:   <td><img src="https://user-images.githubusercontent.com/91532881/168818994-f1ae1fc2-6cb9-4017-8b87-341f4bbb1af3.png" alt="cart" /></td>
+ [//]: </tr>
+ [//]: <tr>
+  [//]:  <td><img src="https://user-images.githubusercontent.com/91532881/168818999-0c58ad51-4502-4f5f-8ee3-39c6384b9843.png" alt="checkout" /></td>
+  [//]:  <td><img src="https://user-images.githubusercontent.com/91532881/168819001-10bfbb16-b6fe-474a-a10a-820a08255c10.png" alt="order-summary" /></td>
+ [//]: </tr>
+[//]:</table>
 
 <br />
 
