@@ -26,7 +26,7 @@
   
  
   
-  [//] ![1](https://user-images.githubusercontent.com/91532881/168818920-09cbf179-2ac5-489c-9cdf-e99653f9a5b9.png)
+  [//]: ![1](https://user-images.githubusercontent.com/91532881/168818920-09cbf179-2ac5-489c-9cdf-e99653f9a5b9.png)
   
   <br />
   
