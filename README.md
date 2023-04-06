@@ -59,7 +59,7 @@
 
 <br />
 
-## Glimpses of Mini-Store 🙈 :
+<!-- ## Glimpses of Mini-Store 🙈 :
 
 
 [//]: <table>
@@ -79,7 +79,7 @@
   [//]:  <td><img src="https://user-images.githubusercontent.com/91532881/168818999-0c58ad51-4502-4f5f-8ee3-39c6384b9843.png" alt="checkout" /></td>
   [//]:  <td><img src="https://user-images.githubusercontent.com/91532881/168819001-10bfbb16-b6fe-474a-a10a-820a08255c10.png" alt="order-summary" /></td>
  [//]: </tr>
-[//]: </table>
+[//]: </table> -->
 
 <br />
 
