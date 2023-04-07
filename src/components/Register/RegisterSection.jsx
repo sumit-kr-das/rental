@@ -19,7 +19,7 @@ const RegisterSection = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		try{
-			await axios.post(`${process.env.REACT_APP_BASE_URL}/v1/register`, credentials)
+			await axios.post(`${process.env.REACT_APP_BASE_URL}/v1/auth/register`, credentials)
 			toast.success('Registration Successful')
 			navigate("/login")
 		}catch(err){

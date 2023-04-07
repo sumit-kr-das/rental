@@ -22,7 +22,7 @@ const LoginSection = () => {
 		e.preventDefault();
 		dispatch({ type: "LOGIN_START" });
 		try{
-			const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/v1/login`, credentials);
+			const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/v1/auth/login`, credentials);
 			dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
 			toast.success('Login Successful')
 			navigate("/");
