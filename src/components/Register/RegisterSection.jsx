@@ -1,58 +1,101 @@
-import React, { useState } from "react";
 import axios from "axios";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { FaAngleLeft } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from 'react-hot-toast'
 import "./register.scss";
 
 const RegisterSection = () => {
-	const navigate = useNavigate();
-	const [credentials, setCredentials] = useState({
-		name: undefined,
-		email: undefined,
-		password: undefined,
-	});
+  const navigate = useNavigate();
 
-	const handleChange = (e) => {
-		setCredentials((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-	}
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-	const handleSubmit = async (e) => {
-		e.preventDefault()
-		try {
-			await axios.post(`${process.env.REACT_APP_BASE_URL}/v1/auth/register`, credentials)
-			toast.success('Registration Successful')
-			navigate("/login")
-		} catch (err) {
-			toast.error("Input is not valid")
-		}
-	};
-	return (
-		<section className="register">
-			<div className="reg_main_container">
-				<p className="main_heading">Signup</p>
-				<div className="reg_container">
-					<div className="reg_input">
-						<p>Your name</p>
-						<input name="name" type="text" onChange={handleChange} />
-					</div>
-					<div className="reg_input">
-						<p>Email address</p>
-						<input name="email" type="email" onChange={handleChange} />
-					</div>
-					<div className="reg_input">
-						<p>Password</p>
-						<input type="password" name="password" onChange={handleChange} />
-					</div>
-					<button onClick={handleSubmit} className="btn_primary">
-						Register
-					</button>
-					<p className="reg_option">
-						Already have an account? <Link to="/login"> Sign in</Link>
-					</p>
-				</div>
-			</div>
-		</section>
-	);
+  const onSubmit = async (data) => {
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/v1/auth/register`,
+        data
+      );
+      toast.success("Registration Successful");
+      navigate("/login");
+    } catch (err) {
+      toast.error("Input is not valid");
+    }
+  };
+  return (
+    <section className="login">
+      <Link to={"/"}>
+        <div className="reg_back" title="Back to home">
+          <FaAngleLeft />
+        </div>
+      </Link>
+      <div className="reg_main_container">
+        <img className="reg_logo_main" src="/assets/logo.png" alt="logo" />
+        <p className="main_heading">Register in your Rental account</p>
+        <form onSubmit={handleSubmit(onSubmit)} className="reg_container">
+          <div className="reg_input">
+            <p className="label">Full name</p>
+            <input
+              className="input_primary"
+              type="text"
+              placeholder="Enter your name"
+              {...register("name", {
+                required: "Name is required",
+                minLength: {
+                  value: 4,
+                  message: "Name must be at least 4 characters long",
+                },
+              })}
+            />
+            {errors.name && (
+              <div className="input_error">{errors.name.message}</div>
+            )}
+          </div>
+          <div className="reg_input">
+            <p className="label">Email address</p>
+            <input
+              className="input_primary"
+              type="email"
+              placeholder="Enter email address"
+              {...register("email", { required: "Email is required" })}
+            />
+            {errors.email && (
+              <div className="input_error">{errors.email.message}</div>
+            )}
+          </div>
+          <div className="reg_input">
+            <p className="label">Password</p>
+            <input
+              className="input_primary"
+              type="password"
+              placeholder="Enter password"
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters long",
+                },
+              })}
+            />
+            {errors.password && (
+              <div className="input_error">{errors.password.message}</div>
+            )}
+          </div>
+          <button type="submit" className="btn_primary">
+            Submit
+          </button>
+          <p className="reg_option">
+            Already have an account? <Link to="/login">Login now</Link>
+          </p>
+        </form>
+      </div>
+    </section>
+  );
 };
 
 export default RegisterSection;
