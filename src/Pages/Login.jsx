@@ -1,13 +1,13 @@
-import LoginSection from "../components/Login/LoginSection"
-import TopShades from '../components/TopShades/TopShades'
+import LoginSection from "../components/Login/LoginSection";
+import TopShades from "../components/TopShades/TopShades";
 
 const Login = () => {
   return (
     <>
-      <TopShades />
+      {/* <TopShades /> */}
       <LoginSection />
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
