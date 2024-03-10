@@ -20,7 +20,6 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <Router>
-      <Navigation />
       <Toaster position="top-right" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -36,7 +35,6 @@ function App() {
         <Route path="/bookings" element={<Bookings />} />
         <Route path="/*" element={<Error />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }

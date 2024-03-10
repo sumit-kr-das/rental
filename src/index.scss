@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+// e5e5e5  006ce4
 body,
 html {
   font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -42,6 +42,31 @@ input {
   &:hover {
     background: #003b95;
   }
+}
+
+.label {
+  color: #676767;
+  font-size: 0.9rem;
+}
+
+.input_primary {
+  border: none;
+  border: 1px solid rgba(229, 231, 235, 1);
+  outline: none;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0 1rem;
+  font-family: "DM Sans", sans-serif;
+}
+
+.input_primary::placeholder {
+  color: rgb(189, 189, 189);
+}
+
+.input_error {
+  color: red;
+  margin: 0.5rem 0;
 }
 
 .des_container {
