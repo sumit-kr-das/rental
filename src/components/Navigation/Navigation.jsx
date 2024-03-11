@@ -14,6 +14,7 @@ const Navigation = () => {
   const [cartCon, setCartCon] = useState(false);
   const [settings, setSettings] = useState(false);
 
+  const { user } = useContext(AuthContext);
   const { cart } = useContext(Cart);
 
   function changeBackground() {
@@ -25,8 +26,6 @@ const Navigation = () => {
   }
 
   window.addEventListener("scroll", changeBackground);
-
-  const { user } = useContext(AuthContext);
 
   return (
     <>
@@ -81,8 +80,8 @@ const Navigation = () => {
               <div className="cart_len">{cart.length}</div>
             </div>
 
-            {user ? (
-              <Avatar setSettings={setSettings} />
+            {user.access_token ? (
+              <Avatar name={user.name} setSettings={setSettings} />
             ) : (
               <Link className="btn_primary" to="/login">
                 Sign in
