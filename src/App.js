@@ -1,21 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
+import { Toaster } from "react-hot-toast";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import {
+  Account,
+  Blog,
+  BlogDetails,
+  Bookings,
+  Destination,
+  Error,
   Home,
   Hotel,
-  Destination,
   HotelList,
   HotelType,
   Login,
   Register,
-  Error,
-  Blog,
-  BlogDetails,
-  Account,
-  Bookings,
 } from "./Pages";
-import Footer from "./components/Footer/Footer";
-import { Toaster } from "react-hot-toast";
+import AddHotel from "./Pages/private/admin/AddHotel";
+import PrivateRoute from "./privateRoutes/PrivateRoute";
 
 function App() {
   return (
@@ -33,6 +33,11 @@ function App() {
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/account" element={<Account />} />
         <Route path="/bookings" element={<Bookings />} />
+        {/* Admin page */}
+        <Route
+          path="/add"
+          element={<PrivateRoute element={<AddHotel />} roles={["admin"]} />}
+        />
         <Route path="/*" element={<Error />} />
       </Routes>
     </Router>
