@@ -16,6 +16,7 @@ import {
 } from "./Pages";
 import AddHotel from "./Pages/private/admin/AddHotel";
 import PrivateRoute from "./privateRoutes/PrivateRoute";
+import Layout from "./Pages/private/admin/layout/Layout";
 
 function App() {
   return (
@@ -34,10 +35,12 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/bookings" element={<Bookings />} />
         {/* Admin page */}
-        <Route
-          path="/add"
-          element={<PrivateRoute element={<AddHotel />} roles={["admin"]} />}
-        />
+        <Route path="/" element={<Layout />}>
+          <Route
+            path="/add"
+            element={<PrivateRoute element={<AddHotel />} roles={["admin"]} />}
+          />
+        </Route>
         <Route path="/*" element={<Error />} />
       </Routes>
     </Router>
