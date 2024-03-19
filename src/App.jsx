@@ -2,6 +2,8 @@ import { Toaster } from "react-hot-toast";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import {
   Account,
+  AddHotel,
+  AddRoom,
   Blog,
   BlogDetails,
   Bookings,
@@ -11,12 +13,12 @@ import {
   Hotel,
   HotelList,
   HotelType,
+  Layout,
+  ListHotel,
   Login,
   Register,
 } from "./Pages";
-import AddHotel from "./Pages/private/admin/AddHotel";
 import PrivateRoute from "./privateRoutes/PrivateRoute";
-import Layout from "./Pages/private/admin/layout/Layout";
 
 function App() {
   return (
@@ -35,11 +37,13 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/bookings" element={<Bookings />} />
         {/* Admin page */}
-        <Route path="/" element={<Layout />}>
-          <Route
-            path="/add"
-            element={<PrivateRoute element={<AddHotel />} roles={["admin"]} />}
-          />
+        <Route
+          path="/dashboard/hotel"
+          element={<PrivateRoute element={<Layout />} roles={["hotel"]} />}
+        >
+          <Route path="/dashboard/hotel" element={<ListHotel />} />
+          <Route path="/dashboard/hotel/add-hotel" element={<AddHotel />} />
+          <Route path="/dashboard/hotel/add-room" element={<AddRoom />} />
         </Route>
         <Route path="/*" element={<Error />} />
       </Routes>
