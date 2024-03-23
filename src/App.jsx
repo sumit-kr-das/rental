@@ -15,6 +15,7 @@ import {
   HotelType,
   Layout,
   ListHotel,
+  ListRooms,
   Login,
   Register,
 } from "./Pages";
@@ -44,6 +45,7 @@ function App() {
           <Route path="/dashboard/hotel" element={<ListHotel />} />
           <Route path="/dashboard/hotel/add-hotel" element={<AddHotel />} />
           <Route path="/dashboard/hotel/add-room" element={<AddRoom />} />
+          <Route path="/dashboard/hotel/list-room" element={<ListRooms />} />
         </Route>
         <Route path="/*" element={<Error />} />
       </Routes>

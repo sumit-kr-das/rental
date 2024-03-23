@@ -16,5 +16,6 @@ export { default as Layout } from "./private/hotel/layout/Layout";
 export { default as ListHotel } from "./private/hotel/ListHotel";
 export { default as AddHotel } from "./private/hotel/AddHotel";
 export { default as AddRoom } from "./private/hotel/AddRoom";
+export { default as ListRooms } from "./private/hotel/ListRooms";
 
 export { default as Error } from "./Error";

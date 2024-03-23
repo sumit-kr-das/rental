@@ -16,13 +16,13 @@ const Layout = () => {
         </div>
         <ul>
           <li>
-            <Link to="/dashboard/hotel">Hotel List</Link>
-          </li>
-          <li>
-            <Link to="/dashboard/hotel/add-hotel">Add Hotel</Link>
+            <Link to="/dashboard/hotel/add-hotel">My Profile</Link>
           </li>
           <li>
             <Link to="/dashboard/hotel/add-room">Add Room</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/hotel/list-room">View Rooms</Link>
           </li>
           <li>
             <Link to="/">Logout</Link>
