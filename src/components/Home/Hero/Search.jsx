@@ -1,7 +1,6 @@
-import { BiMap, BiCalendar, BiMale, BiPlus, BiMinus } from "react-icons/bi";
-import { FaSistrix } from "react-icons/fa";
-import { DateRange } from "react-date-range";
 import { format } from "date-fns";
+import { DateRange } from "react-date-range";
+import { BiCalendar, BiMale, BiMap, BiMinus, BiPlus } from "react-icons/bi";
 
 const Search = ({
   setDestination,
