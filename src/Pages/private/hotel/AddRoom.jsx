@@ -111,7 +111,7 @@ const AddRoom = () => {
             )}
           </div>
           <div className="reg_input">
-            <p className="label">Room size</p>
+            <p className="label">Room size in sq.ft</p>
             <input
               className="input_primary"
               type="text"

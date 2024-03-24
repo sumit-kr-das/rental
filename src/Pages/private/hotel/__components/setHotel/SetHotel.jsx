@@ -158,13 +158,18 @@ const SetHotel = () => {
           )}
         </div>
         <div className="reg_input">
-          <p className="label">Your city</p>
-          <input
-            className="input_primary"
-            type="text"
-            placeholder="Enter city"
-            {...register("city", { required: "City is required" })}
-          />
+          <p className="label">City</p>
+          <select
+            className="select_primary"
+            {...register("city", { required: "Type is required" })}
+          >
+            <option value="delhi">Delhi</option>
+            <option value="kolkata">Kolkata</option>
+            <option value="uttar-pradesh">Uttar Pradesh</option>
+            <option value="gujarat">Gujarat</option>
+            <option value="rajasthan">Rajasthan</option>
+            <option value="bengaluru">Bengaluru</option>
+          </select>
           {errors.city && (
             <div className="input_error">{errors.city.message}</div>
           )}

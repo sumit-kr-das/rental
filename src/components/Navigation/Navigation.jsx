@@ -33,22 +33,14 @@ const Navigation = () => {
         <div className="nav_wrapper">
           <div className="left_wrapper">
             <Link to="/">
-              {nav ? (
-                <img
-                  className="main_nav_img"
-                  src="/assets/logo_black.png"
-                  alt="main_logo"
-                />
-              ) : (
-                <img
-                  className="main_nav_img"
-                  src="/assets/logo.png"
-                  alt="main_logo"
-                />
-              )}
+              <img
+                className="main_nav_img"
+                src="/assets/logo.png"
+                alt="main_logo"
+              />
             </Link>
-            <ul>
-              {["Home", "Destination", "Blog", "About"].map((item, index) => (
+            {/* <ul>
+              {["Home", "Blog"].map((item, index) => (
                 <li key={index}>
                   <Link
                     to={`${item === "Home" ? "/" : item.trim().toLowerCase()}`}
@@ -58,34 +50,20 @@ const Navigation = () => {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
           <div className="right_wrapper">
-            <div className="cart_con_wa">
-              {nav ? (
-                <img
-                  onClick={() => setCartCon(true)}
-                  className="wishlist_icon"
-                  src="/assets/icons/heart_black.png"
-                  alt="wishlist"
-                />
-              ) : (
-                <img
-                  onClick={() => setCartCon(true)}
-                  className="wishlist_icon"
-                  src="/assets/icons/heart_black.png"
-                  alt="wishlist"
-                />
-              )}
-              <div className="cart_len">{cart.length}</div>
-            </div>
-
             {user.access_token ? (
               <Avatar name={user.name} setSettings={setSettings} />
             ) : (
-              <Link className="btn_primary" to="/login">
-                Sign in
-              </Link>
+              <div className="btn_group">
+                <Link className="btn_secondary" to="/register">
+                  Sign up
+                </Link>
+                <Link className="btn_primary" to="/login">
+                  Log in
+                </Link>
+              </div>
             )}
             {nav ? (
               <img
