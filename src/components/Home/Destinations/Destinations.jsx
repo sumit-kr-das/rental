@@ -8,159 +8,160 @@ import "swiper/css";
 import { Link } from "react-router-dom";
 
 const Destinations = () => {
-	const { data, loading } = useFetch(
-		"/v1/hotel/countByCity?cities=virginia,losangeles,newjersy,newyork,sanfrancisco,wilmington"
-	);
+  const { data, loading } = useFetch(
+    "/v1/hotel/countByCity?cities=delhi,kolkata,uttar-pradesh,gujarat,rajasthan,bengaluru"
+  );
 
-	return (
-		<section className="destination">
-			<p className="main_heading">Top Destinations</p>
-			{loading ? (
-				<div className="des_container">
-					<Swiper
-						spaceBetween={60}
-						// slidesPerView={5}
-						breakpoints={{
-							"@0.00": {
-								slidesPerView: 2,
-								spaceBetween: 50,
-							},
-							"@0.75": {
-								slidesPerView: 2,
-								spaceBetween: 50,
-							},
-							"@1.00": {
-								slidesPerView: 3,
-								spaceBetween: 50,
-							},
-							"@1.50": {
-								slidesPerView: 4,
-								spaceBetween: 50,
-							},
-						}}
-					>
-						<>
-							{[...Array(4)].map((x, i) => (
-								<SwiperSlide key={i}>
-									<Skeleton type="destination" />
-								</SwiperSlide>
-							))}
-						</>
-					</Swiper>
-				</div>
-			) : (
-				<div className="des_container">
-					<Swiper
-						spaceBetween={60}
-						// slidesPerView={5}
-						breakpoints={{
-							"@0.00": {
-								slidesPerView: 2,
-								spaceBetween: 50,
-							},
-							"@0.75": {
-								slidesPerView: 2,
-								spaceBetween: 50,
-							},
-							"@1.00": {
-								slidesPerView: 3,
-								spaceBetween: 50,
-							},
-							"@1.50": {
-								slidesPerView: 4,
-								spaceBetween: 50,
-							},
-						}}
-					>
-						<SwiperSlide>
-							<Link to={"/find/virginia"}>
-								<div className="des_card">
-									<div className="img_container">
-										<img
-											src="/assets/top_destinations/beach.jpg"
-											alt="destination"
-										/>
-									</div>
-									<p className="heading">Virginia Beach</p>
-									<p>{data[0]} Rentals</p>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link to={"/find/losangeles"}>
-								<div className="des_card">
-									<div className="img_container">
-										<img
-											src="/assets/top_destinations/Los-Angeles.jpg"
-											alt="destination"
-										/>
-									</div>
-									<p className="heading">Los Angeles</p>
-									<p>{data[1]} Rentals</p>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link to={"/find/newjersy"}>
-								<div className="des_card">
-									<div className="img_container">
-										<img
-											src="/assets/top_destinations/New-Jersey.jpg"
-											alt="destination"
-										/>
-									</div>
-									<p className="heading">New Jersey</p>
-									<p>{data[2]} Rentals</p>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link to={"/find/newyork"}>
-								<div className="des_card">
-									<div className="img_container">
-										<img
-											src="/assets/top_destinations/New-York-City.jpg"
-											alt="destination"
-										/>
-									</div>
-									<p className="heading">New York</p>
-									<p>{data[3]} Rentals</p>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link to={"/find/sanfrancisco"}>
-								<div className="des_card">
-									<div className="img_container">
-										<img
-											src="/assets/top_destinations/San-Francisco.jpg"
-											alt="destination"
-										/>
-									</div>
-									<p className="heading">San Francisco</p>
-									<p>{data[4]} Rentals</p>
-								</div>
-							</Link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<Link to={"/find/wilmington"}>
-								<div className="des_card">
-									<div className="img_container">
-										<img
-											src="/assets/top_destinations/Wilmington.jpg"
-											alt="destination"
-										/>
-									</div>
-									<p className="heading">Wilmington</p>
-									<p>{data[5]} Rentals</p>
-								</div>
-							</Link>
-						</SwiperSlide>
-					</Swiper>
-				</div>
-			)}
-		</section>
-	);
+  return (
+    <section className="destination">
+      <h2 className="main_heading">Top Destinations</h2>
+      <p className="heading_des">Top trending destinations</p>
+      {loading ? (
+        <div className="des_container">
+          <Swiper
+            spaceBetween={60}
+            // slidesPerView={5}
+            breakpoints={{
+              "@0.00": {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              "@0.75": {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              "@1.00": {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+              "@1.50": {
+                slidesPerView: 6,
+                spaceBetween: 50,
+              },
+            }}
+          >
+            <>
+              {[...Array(4)].map((x, i) => (
+                <SwiperSlide key={i}>
+                  <Skeleton type="destination" />
+                </SwiperSlide>
+              ))}
+            </>
+          </Swiper>
+        </div>
+      ) : (
+        <div className="des_container">
+          <Swiper
+            spaceBetween={60}
+            // slidesPerView={5}
+            breakpoints={{
+              "@0.00": {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              "@0.75": {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              "@1.00": {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+              "@1.50": {
+                slidesPerView: 6,
+                spaceBetween: 50,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <Link to={"/find/delhi"}>
+                <div className="des_card">
+                  <div className="img_container">
+                    <img
+                      src="/assets/top_destinations/beach.jpg"
+                      alt="destination"
+                    />
+                  </div>
+                  <p className="heading">Delhi</p>
+                  <p>{data[0]} Rentals</p>
+                </div>
+              </Link>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Link to={"/find/kolkata"}>
+                <div className="des_card">
+                  <div className="img_container">
+                    <img
+                      src="/assets/top_destinations/Los-Angeles.jpg"
+                      alt="destination"
+                    />
+                  </div>
+                  <p className="heading">Kolkata</p>
+                  <p>{data[1]} Rentals</p>
+                </div>
+              </Link>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Link to={"/find/uttar-pradesh"}>
+                <div className="des_card">
+                  <div className="img_container">
+                    <img
+                      src="/assets/top_destinations/New-Jersey.jpg"
+                      alt="destination"
+                    />
+                  </div>
+                  <p className="heading">Uttar Pradesh</p>
+                  <p>{data[2]} Rentals</p>
+                </div>
+              </Link>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Link to={"/find/gujarat"}>
+                <div className="des_card">
+                  <div className="img_container">
+                    <img
+                      src="/assets/top_destinations/New-York-City.jpg"
+                      alt="destination"
+                    />
+                  </div>
+                  <p className="heading">Gujarat</p>
+                  <p>{data[3]} Rentals</p>
+                </div>
+              </Link>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Link to={"/find/rajasthan"}>
+                <div className="des_card">
+                  <div className="img_container">
+                    <img
+                      src="/assets/top_destinations/San-Francisco.jpg"
+                      alt="destination"
+                    />
+                  </div>
+                  <p className="heading">Rajasthan</p>
+                  <p>{data[4]} Rentals</p>
+                </div>
+              </Link>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Link to={"/find/bengaluru"}>
+                <div className="des_card">
+                  <div className="img_container">
+                    <img
+                      src="/assets/top_destinations/Wilmington.jpg"
+                      alt="destination"
+                    />
+                  </div>
+                  <p className="heading">Bengaluru</p>
+                  <p>{data[5]} Rentals</p>
+                </div>
+              </Link>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      )}
+    </section>
+  );
 };
 
 export default Destinations;

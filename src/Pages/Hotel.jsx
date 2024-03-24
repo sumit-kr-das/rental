@@ -1,15 +1,17 @@
+import Footer from "../components/Footer/Footer";
 import ListContainer from "../components/Hotel/ListContainer/ListContainer";
-import NewsLetter from '../components/NewsLetter/NewsLetter';
-import TopShades from '../components/TopShades/TopShades'
+import Navigation from "../components/Navigation/Navigation";
+import NewsLetter from "../components/NewsLetter/NewsLetter";
 
 const Hotel = () => {
-	return (
-		<>
-			<TopShades />
-			<ListContainer />
-			<NewsLetter />
-		</>
-	);
+  return (
+    <>
+      <Navigation />
+      <ListContainer />
+      <NewsLetter />
+      <Footer />
+    </>
+  );
 };
 
 export default Hotel;
