@@ -3,17 +3,17 @@
   position: relative;
   z-index: 2;
   background-color: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  // border-bottom: 1px solid #e5e5e5;
 
   @media (max-width: 460px) {
     padding: 1.2rem 2rem;
   }
   .nav_wrapper {
-    max-width: 1600px;
+    max-width: 1800px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.2rem 4rem;
+    padding: 1.2rem 1rem;
     margin: 0 auto;
     .left_wrapper {
       display: flex;
