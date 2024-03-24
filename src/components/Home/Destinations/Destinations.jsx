@@ -14,7 +14,8 @@ const Destinations = () => {
 
   return (
     <section className="destination">
-      <p className="main_heading">Top Destinations</p>
+      <h2 className="main_heading">Top Destinations</h2>
+      <p className="heading_des">Top trending destinations</p>
       {loading ? (
         <div className="des_container">
           <Swiper
@@ -34,7 +35,7 @@ const Destinations = () => {
                 spaceBetween: 50,
               },
               "@1.50": {
-                slidesPerView: 4,
+                slidesPerView: 6,
                 spaceBetween: 50,
               },
             }}
@@ -67,7 +68,7 @@ const Destinations = () => {
                 spaceBetween: 50,
               },
               "@1.50": {
-                slidesPerView: 4,
+                slidesPerView: 6,
                 spaceBetween: 50,
               },
             }}
