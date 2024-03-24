@@ -5,6 +5,7 @@ import Properties from "../components/Home/Properties/Properties";
 import Navigation from "../components/Navigation/Navigation";
 import NewsLetter from "../components/NewsLetter/NewsLetter";
 import Footer from "../components/Footer/Footer";
+import WorkProgress from "../components/Home/WorkProgress/WorkProgress";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Destinations />
       <Properties />
       <FeaturedPlaces />
+      <WorkProgress />
       <NewsLetter />
       <Footer />
     </div>
