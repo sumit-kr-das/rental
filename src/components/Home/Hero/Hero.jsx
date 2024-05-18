@@ -64,11 +64,6 @@ const Hero = () => {
   return (
     <header className="hero">
       <div className="hero_search_container">
-        <img
-          className="buttom_graphics"
-          src="/assets/hero_bottom.svg"
-          alt="bottom-graphics"
-        />
         <div className="hero_search_max_width">
           <p>Over 102,000 hotels and homes across 10+ countries</p>
           <h1>

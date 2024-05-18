@@ -5,7 +5,7 @@ import ViewHotel from "./__components/viewHotel/ViewHotel";
 import SetHotel from "./__components/setHotel/SetHotel";
 
 const AddHotel = () => {
-  const [hotelData, setHotelData] = useState({});
+  const [hotelData, setHotelData] = useState(null);
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
@@ -20,7 +20,6 @@ const AddHotel = () => {
             },
           }
         );
-        console.log("data", hotelRes.data[0]);
         setHotelData(hotelRes.data[0]);
       } catch (err) {
         console.log(err);

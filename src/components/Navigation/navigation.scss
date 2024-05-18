@@ -3,7 +3,6 @@
   position: relative;
   z-index: 2;
   background-color: #fff;
-  // border-bottom: 1px solid #e5e5e5;
 
   @media (max-width: 460px) {
     padding: 1.2rem 2rem;
@@ -47,11 +46,9 @@
             padding: 0.5rem 1rem;
             transition: 0.4s;
             border-radius: 20px;
-            font-weight: 500;
 
             &:hover {
-              background-color: #003b95;
-              color: #fff;
+              color: #003b95;
             }
           }
         }

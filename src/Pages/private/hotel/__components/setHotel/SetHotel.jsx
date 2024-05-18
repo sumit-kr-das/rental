@@ -47,8 +47,6 @@ const SetHotel = () => {
     setImages((prev) => prev.filter((_, i) => i !== index));
   }
 
-  console.log(images);
-
   /* image functionality end */
 
   async function submitForm(data) {

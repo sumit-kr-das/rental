@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
-import MobileNav from "./MobileNav";
-import Avatar from "../Avatar/Avatar";
 import { Link } from "react-router-dom";
-import "./navigation.scss";
 import { AuthContext } from "../../context/AuthContext";
+import Avatar from "../Avatar/Avatar";
 import CartPopup from "./CartPopup";
+import MobileNav from "./MobileNav";
 import Settings from "./Settings";
-import { Cart } from "../../context/CartContext";
+import "./navigation.scss";
 
 const Navigation = () => {
   const [nav, setNav] = useState(false);
@@ -15,7 +14,7 @@ const Navigation = () => {
   const [settings, setSettings] = useState(false);
 
   const { user } = useContext(AuthContext);
-  const { cart } = useContext(Cart);
+  // const { cart } = useContext(Cart);
 
   function changeBackground() {
     if (window.scrollY >= 500) {
@@ -39,8 +38,8 @@ const Navigation = () => {
                 alt="main_logo"
               />
             </Link>
-            {/* <ul>
-              {["Home", "Blog"].map((item, index) => (
+            <ul>
+              {["Home", "Listing", "About", "Contact"].map((item, index) => (
                 <li key={index}>
                   <Link
                     to={`${item === "Home" ? "/" : item.trim().toLowerCase()}`}
@@ -50,7 +49,7 @@ const Navigation = () => {
                   </Link>
                 </li>
               ))}
-            </ul> */}
+            </ul>
           </div>
           <div className="right_wrapper">
             {user.access_token ? (

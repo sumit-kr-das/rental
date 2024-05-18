@@ -12,7 +12,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  // background: #f8f9fa;
+  background: #f9f9fe;
 }
 
 p {
@@ -132,6 +132,30 @@ option::placeholder {
   .swiper {
     @media (max-width: 662px) {
       height: 100%;
+    }
+  }
+}
+
+.not_found_page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .not_found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    img {
+      width: 40%;
+      margin-bottom: 4rem;
+    }
+    a {
+      display: block;
+      margin-top: 1rem;
+      cursor: pointer;
     }
   }
 }

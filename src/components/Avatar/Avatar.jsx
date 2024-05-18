@@ -1,7 +1,6 @@
 import "./avatar.scss";
 
 const Avatar = ({ name, setSettings }) => {
-  console.log(name);
   return (
     <div onClick={() => setSettings(true)} className="avatar_container">
       <div className="avatar">
