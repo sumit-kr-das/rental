@@ -63,7 +63,7 @@ const HotelDetails = ({ item, loading, id }) => {
     });
   }
   const handleClick = () => {
-    if (user) {
+    if (user.access_token) {
       setOpenModel(true);
       dispatch({
         type: "NEW_SEARCH",
