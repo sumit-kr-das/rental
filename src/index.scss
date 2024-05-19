@@ -12,13 +12,13 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  // background: #f8f9fa;
+  background: #f9f9fe;
 }
 
 p {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  color: rgb(107, 114, 128);
+  color: #243757;
 }
 
 a,
@@ -38,12 +38,12 @@ input {
   padding: 0.6rem 1.2rem;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
   transition: 0.4s;
   border: none;
   outline: none;
   display: inline-block;
   font-size: 15px;
+  border-radius: 2rem;
   cursor: pointer;
   &:hover {
     background: #003b95;
@@ -57,15 +57,14 @@ input {
   padding: 0.6rem 1.2rem;
   color: #006ce4;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 2rem;
   transition: 0.4s;
-  // border: none;
   outline: none;
   display: inline-block;
   font-size: 15px;
   cursor: pointer;
   &:hover {
-    background: #003b95;
+    background: #006ce4;
     color: #fff;
   }
 }
@@ -132,6 +131,30 @@ option::placeholder {
   .swiper {
     @media (max-width: 662px) {
       height: 100%;
+    }
+  }
+}
+
+.not_found_page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .not_found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    img {
+      width: 40%;
+      margin-bottom: 4rem;
+    }
+    a {
+      display: block;
+      margin-top: 1rem;
+      cursor: pointer;
     }
   }
 }
