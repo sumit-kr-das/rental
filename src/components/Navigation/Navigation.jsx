@@ -6,6 +6,7 @@ import CartPopup from "./CartPopup";
 import MobileNav from "./MobileNav";
 import Settings from "./Settings";
 import "./navigation.scss";
+import Container from "../../layout/container/Container";
 
 const Navigation = () => {
   const [nav, setNav] = useState(false);
@@ -29,58 +30,62 @@ const Navigation = () => {
   return (
     <>
       <nav className={nav ? "container active" : "container"}>
-        <div className="nav_wrapper">
-          <div className="left_wrapper">
-            <Link to="/">
-              <img
-                className="main_nav_img"
-                src="/assets/logo.png"
-                alt="main_logo"
-              />
-            </Link>
-            <ul>
-              {["Home", "Listing", "About", "Contact"].map((item, index) => (
-                <li key={index}>
-                  <Link
-                    to={`${item === "Home" ? "/" : item.trim().toLowerCase()}`}
-                    style={nav ? { color: "#000" } : { color: "#000" }}
-                  >
-                    {item}
+        <Container>
+          <div className="nav_wrapper">
+            <div className="left_wrapper">
+              <Link to="/">
+                <img
+                  className="main_nav_img"
+                  src="/assets/logo.png"
+                  alt="main_logo"
+                />
+              </Link>
+              <ul>
+                {["Home", "Listing", "About", "Contact"].map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      to={`${
+                        item === "Home" ? "/" : item.trim().toLowerCase()
+                      }`}
+                      style={nav ? { color: "#000" } : { color: "#000" }}
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="right_wrapper">
+              {user.access_token ? (
+                <Avatar name={user.name} setSettings={setSettings} />
+              ) : (
+                <div className="btn_group">
+                  <Link className="btn_secondary" to="/register">
+                    Sign up
                   </Link>
-                </li>
-              ))}
-            </ul>
+                  <Link className="btn_primary" to="/login">
+                    Log in
+                  </Link>
+                </div>
+              )}
+              {nav ? (
+                <img
+                  onClick={() => setMobNav(!mobNav)}
+                  className="wishlist_icon nav_ham_burger"
+                  src="/assets/icons/menu_black.png"
+                  alt="grid_outline"
+                />
+              ) : (
+                <img
+                  onClick={() => setMobNav(!mobNav)}
+                  className="wishlist_icon nav_ham_burger"
+                  src="/assets/icons/menu.png"
+                  alt="grid_outline"
+                />
+              )}
+            </div>
           </div>
-          <div className="right_wrapper">
-            {user.access_token ? (
-              <Avatar name={user.name} setSettings={setSettings} />
-            ) : (
-              <div className="btn_group">
-                <Link className="btn_secondary" to="/register">
-                  Sign up
-                </Link>
-                <Link className="btn_primary" to="/login">
-                  Log in
-                </Link>
-              </div>
-            )}
-            {nav ? (
-              <img
-                onClick={() => setMobNav(!mobNav)}
-                className="wishlist_icon nav_ham_burger"
-                src="/assets/icons/menu_black.png"
-                alt="grid_outline"
-              />
-            ) : (
-              <img
-                onClick={() => setMobNav(!mobNav)}
-                className="wishlist_icon nav_ham_burger"
-                src="/assets/icons/menu.png"
-                alt="grid_outline"
-              />
-            )}
-          </div>
-        </div>
+        </Container>
       </nav>
       <MobileNav mobNav={mobNav} setMobNav={setMobNav} />
       {cartCon && <CartPopup cart={cartCon} setCart={setCartCon} />}

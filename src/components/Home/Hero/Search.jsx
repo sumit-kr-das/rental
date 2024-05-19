@@ -1,7 +1,13 @@
-import { BiMap, BiCalendar, BiMale, BiPlus, BiMinus } from "react-icons/bi";
-import { FaSistrix } from "react-icons/fa";
-import { DateRange } from "react-date-range";
 import { format } from "date-fns";
+import { DateRange } from "react-date-range";
+import {
+  BiCalendar,
+  BiMale,
+  BiMap,
+  BiMinus,
+  BiPlus,
+  BiSearchAlt,
+} from "react-icons/bi";
 
 const Search = ({
   setDestination,
@@ -21,11 +27,14 @@ const Search = ({
   return (
     <div className="search_container">
       <div className="search_wrapper">
+        <div className="input_label">
+          <h2>Where</h2>
+        </div>
         <div className="input_section">
-          <BiMap className="input_icons" />
+          <BiSearchAlt className="input_icons" />
           <input
             type="text"
-            placeholder="Where are you going?"
+            placeholder="e.g.-Area, Landmark or Property Name"
             onChange={(e) => setDestination(e.target.value)}
             onClick={() => {
               setSearchCon(!searchCon);
@@ -33,6 +42,9 @@ const Search = ({
           />
         </div>
 
+        <div className="input_label">
+          <h2>Check-in and Check-out</h2>
+        </div>
         <div className="input_section">
           <BiCalendar className="input_icons" />
           <span onClick={() => setOpenDate(!openDate)}>
@@ -52,6 +64,9 @@ const Search = ({
               />
             )}
           </div>
+        </div>
+        <div className="input_label">
+          <h2>Guests & Rooms</h2>
         </div>
         <div className="input_section">
           <BiMale className="input_icons" />
