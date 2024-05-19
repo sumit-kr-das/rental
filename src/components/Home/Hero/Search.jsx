@@ -3,7 +3,6 @@ import { DateRange } from "react-date-range";
 import {
   BiCalendar,
   BiMale,
-  BiMap,
   BiMinus,
   BiPlus,
   BiSearchAlt,
@@ -47,7 +46,10 @@ const Search = ({
         </div>
         <div className="input_section">
           <BiCalendar className="input_icons" />
-          <span onClick={() => setOpenDate(!openDate)}>
+          <span
+            className="specific_title"
+            onClick={() => setOpenDate(!openDate)}
+          >
             {`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(
               dates[0].endDate,
               "dd/MM/yyyy"
@@ -70,7 +72,10 @@ const Search = ({
         </div>
         <div className="input_section">
           <BiMale className="input_icons" />
-          <span onClick={() => setOpenOptions(!openOptions)}>
+          <span
+            className="specific_title"
+            onClick={() => setOpenOptions(!openOptions)}
+          >
             {`${options.adult} adult . ${options.children} children . ${options.room} room`}
           </span>
           {openOptions && (

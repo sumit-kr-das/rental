@@ -106,10 +106,12 @@
         padding: 10px 0;
 
         span {
-          cursor: pointer;
           font-size: 18px;
-          font-weight: 500;
+          cursor: pointer;
           color: rgb(51, 51, 51);
+          .specific_title {
+            font-weight: 500;
+          }
         }
 
         input {
@@ -168,9 +170,10 @@
 
       .date_container_box {
         position: absolute;
-        top: 108px;
+        top: 180px;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
           rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        z-index: 2;
         @media (max-width: 1000px) {
           width: 100%;
           top: 138px;
@@ -188,13 +191,14 @@
       .options {
         width: 260px;
         position: absolute;
-        top: 108px;
+        top: 270px;
         background-color: #ffffff;
         display: flex;
         flex-direction: column;
         padding: 10px 20px;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
           rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        z-index: 2;
         @media (max-width: 1000px) {
           top: 200px;
         }
@@ -256,6 +260,7 @@
       width: 220px;
       font-size: 18px;
       font-weight: 500;
+      z-index: 1;
     }
   }
 }
