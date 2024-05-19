@@ -25,7 +25,7 @@ const FeaturedPlaces = () => {
             </>
           ) : (
             <>
-              {data.map((item, index) => (
+              {data?.map((item, index) => (
                 <Link
                   to={`/hotel/${item._id}?start=${today}&end=${nextDay}`}
                   className="fe_cards"
