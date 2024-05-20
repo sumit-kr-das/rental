@@ -79,7 +79,7 @@ const Navigation = () => {
                 <img
                   onClick={() => setMobNav(!mobNav)}
                   className="wishlist_icon nav_ham_burger"
-                  src="/assets/icons/menu.png"
+                  src="/assets/icons/menu_black.png"
                   alt="grid_outline"
                 />
               )}

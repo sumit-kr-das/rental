@@ -3,8 +3,6 @@
 
   .work_progress_container {
     position: relative;
-    max-width: 1400px;
-    margin: auto;
 
     .heading {
       text-align: center;
@@ -30,12 +28,16 @@
       position: absolute;
       top: 40%;
       z-index: 5;
+      width: 100%;
     }
 
     .work_progress_wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media screen and (max-width: 1170px) {
+        flex-wrap: wrap;
+      }
       .work_progress_item {
         position: relative;
         z-index: 10;
