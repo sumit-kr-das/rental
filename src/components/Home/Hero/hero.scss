@@ -8,15 +8,36 @@
     margin-top: 5%;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 850px) {
+      margin-top: 10%;
+    }
     .hero_search_placement {
       width: 100%;
       position: absolute;
-      bottom: -6rem;
+      bottom: 0;
       left: 0;
+      @media screen and (max-width: 1500px) {
+        bottom: -2rem;
+      }
+      @media screen and (max-width: 1500px) {
+        bottom: -4rem;
+      }
+      @media screen and (max-width: 1500px) {
+        bottom: -6rem;
+      }
+      @media screen and (max-width: 1160px) {
+        top: 250px;
+      }
+      @media screen and (max-width: 564px) {
+        top: 300px;
+      }
     }
     .hero_left_container {
       position: relative;
       width: 50%;
+      @media screen and (max-width: 1160px) {
+        width: 100%;
+      }
       .blurry_bg {
         .blurry_crimson_circle {
           display: block;
@@ -58,16 +79,29 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          @media screen and (max-width: 564px) {
+            width: 30px;
+            height: 30px;
+            font-size: 0.8rem;
+          }
         }
         p {
           color: #243757;
           font-weight: 500;
-          font-size: 1.4rem;
+          @media screen and (max-width: 564px) {
+            font-size: 1.2rem;
+          }
         }
       }
       h1 {
         font-size: 4rem;
         margin: 2rem 0;
+        @media screen and (max-width: 1500px) {
+          font-size: 3rem;
+        }
+        @media screen and (max-width: 850px) {
+          font-size: 2rem;
+        }
       }
     }
     .hero_right_container {
@@ -75,7 +109,10 @@
       display: flex;
       justify-content: flex-end;
       img {
-        width: 80%;
+        width: 90%;
+      }
+      @media screen and (max-width: 1160px) {
+        display: none;
       }
     }
   }
@@ -83,6 +120,9 @@
   .search_container {
     position: relative;
     width: 40%;
+    @media screen and (max-width: 850px) {
+      width: 100%;
+    }
     .search_wrapper {
       background-color: #ffffff;
       position: relative;
