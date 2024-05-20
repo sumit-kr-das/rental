@@ -1,13 +1,8 @@
-import "./hotelList.scss";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { SearchContext } from "../../../context/SearchContext";
+import "./hotelList.scss";
 
 const HotelList = ({ item }) => {
-  const { dates } = useContext(SearchContext);
-
-  console.log(item);
   return (
     <div className="hotel_single_list">
       <div className="main_hotel_img">

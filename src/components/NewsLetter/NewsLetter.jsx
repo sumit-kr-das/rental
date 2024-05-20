@@ -19,7 +19,6 @@ const NewsLetter = () => {
       });
       toast.success("Email submit successfully");
     } catch (err) {
-      console.log(err);
       toast.error("Enter a vaild email *");
     }
     setEmail("");
