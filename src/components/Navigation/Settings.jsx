@@ -2,6 +2,11 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Backdop from "../Backdop/Backdop";
 
+export const logOut = () => {
+  localStorage.removeItem("user");
+  window.location.reload(false);
+};
+
 const Settings = ({ setSettings }) => {
   // close dropDown
   let settingRef = useRef();
@@ -17,11 +22,6 @@ const Settings = ({ setSettings }) => {
     };
   });
 
-  const logOut = () => {
-    localStorage.removeItem("user");
-    window.location.reload(false);
-  };
-
   return (
     <Backdop>
       <div className="cartPopup" ref={settingRef}>
@@ -29,12 +29,12 @@ const Settings = ({ setSettings }) => {
         <div className="cartPopup_container">
           <ul>
             <li>
-              <Link onClick={() => setSettings(false)} to="/account">
+              <Link onClick={() => setSettings(false)} to="/user/my-account">
                 User Profile
               </Link>
             </li>
             <li>
-              <Link onClick={() => setSettings(false)} to="/bookings">
+              <Link onClick={() => setSettings(false)} to="/user/my-bookings">
                 My Bookings
               </Link>
             </li>
