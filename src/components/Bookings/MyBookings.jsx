@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import "./myBookings.scss";
+import { useEffect, useState } from "react";
+import { BiHotel } from "react-icons/bi";
+import { FiMapPin } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { getValidDate } from "../HotelList/HotelDetails/HotelDetails";
 import NotFound from "../NotFound/NotFound";
 import GenerateQrcode from "./GenerateQrcode";
-import { getValidDate } from "../HotelList/HotelDetails/HotelDetails";
-import { FiMapPin } from "react-icons/fi";
-import { BiHotel } from "react-icons/bi";
+import "./myBookings.scss";
 
 const BookingDetails = ({ item }) => {
   let token;
@@ -102,7 +102,7 @@ const MyBookings = () => {
 
   return (
     <section className="myBookings">
-      <h2>Active Booking</h2>
+      <h2>My Bookings</h2>
       <div className="booking_container">
         {bookings.length !== 0 ? (
           <>

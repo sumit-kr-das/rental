@@ -14,14 +14,15 @@ const Login = lazy(() => import("./Pages/Login"));
 const Register = lazy(() => import("./Pages/Register"));
 const Blog = lazy(() => import("./Pages/Blog"));
 const BlogDetails = lazy(() => import("./Pages/BlogDetails"));
-const Account = lazy(() => import("./Pages/Account"));
-const Bookings = lazy(() => import("./Pages/Bookings"));
+const Account = lazy(() => import("./Pages/private/user/Account"));
+const Bookings = lazy(() => import("./Pages/private/user/Bookings"));
 const ListHotel = lazy(() => import("./Pages/private/hotel/ListHotel"));
 const AddHotel = lazy(() => import("./Pages/private/hotel/AddHotel"));
 const AddRoom = lazy(() => import("./Pages/private/hotel/AddRoom"));
 const ListRooms = lazy(() => import("./Pages/private/hotel/ListRooms"));
 const Error = lazy(() => import("./Pages/Error"));
 const Layout = lazy(() => import("./Pages/private/hotel/layout/Layout"));
+const UserLayout = lazy(() => import("./Pages/private/user/layout/UserLayout"));
 
 function App() {
   return (
@@ -100,22 +101,38 @@ function App() {
             </Suspense>
           }
         />
+
+        {/* User page */}
         <Route
-          path="/account"
+          path="/user"
           element={
-            <Suspense fallback={<Loader />}>
-              <Account />
-            </Suspense>
+            <PrivateRoute
+              element={
+                <Suspense fallback={<Loader />}>
+                  <UserLayout />
+                </Suspense>
+              }
+              roles={["user"]}
+            />
           }
-        />
-        <Route
-          path="/bookings"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Bookings />
-            </Suspense>
-          }
-        />
+        >
+          <Route
+            path="/user/my-account"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Account />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/user/my-bookings"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Bookings />
+              </Suspense>
+            }
+          />
+        </Route>
         {/* Admin page */}
         <Route
           path="/dashboard/hotel"
