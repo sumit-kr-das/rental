@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import "./footer.scss";
 
 import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
-import { GoMarkGithub } from "react-icons/go";
+import { AiFillGithub } from "react-icons/ai";
+
 import Container from "../../layout/container/Container";
 
 const Footer = () => {
@@ -91,7 +92,7 @@ const Footer = () => {
         <div className="copyright">
           <p>© Copyright Rental 2022 | Educational Project | Sumit Kumar Das</p>
           <a href="https://github.com/sumit-kr-das">
-            <GoMarkGithub />
+            <AiFillGithub />
           </a>
         </div>
       </Container>

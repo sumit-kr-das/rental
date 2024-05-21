@@ -163,16 +163,16 @@ function App() {
             </HotelRoute>
           }
         >
-          <Route
+          {/* <Route
             path="/dashboard/hotel"
             element={
               <Suspense fallback={<Loader />}>
                 <ListHotel />
               </Suspense>
             }
-          />
+          /> */}
           <Route
-            path="/dashboard/hotel/add-hotel"
+            path="/dashboard/hotel"
             element={
               <Suspense fallback={<Loader />}>
                 <AddHotel />

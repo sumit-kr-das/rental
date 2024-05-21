@@ -12,7 +12,6 @@ import { Cart } from "../../../context/CartContext";
 
 const LeftContainer = ({ item }) => {
   const { cart, dispatch } = useContext(Cart);
-  console.log(item);
   return (
     <>
       <div className="hd_title">
