@@ -2,14 +2,31 @@ import React, { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
-const PrivateRoute = ({ element, roles }) => {
+export const UserRoute = ({ children }) => {
   const { user } = useContext(AuthContext);
-
-  if (!user.access_token || !user.role) {
-    return <Navigate to="/login" />;
-  } else if (roles && !roles.includes(user.role)) {
-    return <Navigate to="/unauthorized" />;
-  } else return <>{element}</>;
+  return user.access_token && user.role === "user" ? (
+    <>{children}</>
+  ) : (
+    <Navigate to="/login" />
+  );
 };
 
-export default PrivateRoute;
+export const HotelRoute = ({ children }) => {
+  const { user } = useContext(AuthContext);
+  return user.access_token && user.role === "hotel" ? (
+    <>{children}</>
+  ) : (
+    <Navigate to="/login" />
+  );
+};
+
+export const PrivateRoute = ({ children }) => {
+  const { user } = useContext(AuthContext);
+  return !user.access_token ? (
+    <>{children}</>
+  ) : user.role === "user" ? (
+    <>{children}</>
+  ) : (
+    <Navigate to="/dashboard/hotel" />
+  );
+};

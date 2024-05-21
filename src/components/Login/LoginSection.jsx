@@ -10,7 +10,7 @@ import "./login.scss";
 const LoginSection = () => {
   const navigate = useNavigate();
   const { dispatch } = useContext(AuthContext);
-
+  const { user } = useContext(AuthContext);
   const {
     register,
     handleSubmit,

@@ -89,7 +89,7 @@ const Footer = () => {
         </div>
         <div className="underline"></div>
         <div className="copyright">
-          <p>© Copyright Sumit 2022 | Educational Project</p>
+          <p>© Copyright Rental 2022 | Educational Project | Sumit Kumar Das</p>
           <a href="https://github.com/sumit-kr-das">
             <GoMarkGithub />
           </a>
