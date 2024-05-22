@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const ViewHotel = ({ data }) => {
   return (
     <div className="view_hotel_container">
-      <Link to="">
+      <Link to="/dashboard/hotel/update-hotel">
         <div className="edit_profile">
           <BsFillPencilFill />
         </div>
@@ -45,15 +45,23 @@ const ViewHotel = ({ data }) => {
         <div className="features_con">
           <div className="single_features">
             <BiGroup className="features_icn" />
-            <p>Featured: 6</p>
+            <p>
+              <b>Featured:</b>
+              {data?.featured ? " Available" : " Not Available"}
+            </p>
           </div>
           <div className="single_features">
             <BiCheckboxMinus className="features_icn" />
-            <p>Free Cancel: 3</p>
+            <p>
+              <b> Free Cancel:</b>
+              {data?.freeCancel ? " Available" : " Not Available"}
+            </p>
           </div>
           <div className="single_features">
             <BiSolidTaxi className="features_icn" />
-            <p>Free Taxi: 2</p>
+            <p>
+              <b>Free Taxi:</b> {data?.freeTaxi ? "Available" : "Not Available"}
+            </p>
           </div>
         </div>
       </div>

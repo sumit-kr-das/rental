@@ -22,6 +22,7 @@ const Account = lazy(() => import("./Pages/private/user/Account"));
 const Bookings = lazy(() => import("./Pages/private/user/Bookings"));
 const ListHotel = lazy(() => import("./Pages/private/hotel/ListHotel"));
 const AddHotel = lazy(() => import("./Pages/private/hotel/AddHotel"));
+const UpdateHotel = lazy(() => import("./Pages/private/hotel/UpdateHotel"));
 const AddRoom = lazy(() => import("./Pages/private/hotel/AddRoom"));
 const ListRooms = lazy(() => import("./Pages/private/hotel/ListRooms"));
 const Error = lazy(() => import("./Pages/Error"));
@@ -176,6 +177,14 @@ function App() {
             element={
               <Suspense fallback={<Loader />}>
                 <AddHotel />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/dashboard/hotel/update-hotel"
+            element={
+              <Suspense fallback={<Loader />}>
+                <UpdateHotel />
               </Suspense>
             }
           />
