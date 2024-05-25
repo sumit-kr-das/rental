@@ -1,13 +1,12 @@
 import { useContext } from "react";
+import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import {
+  BiCheckboxMinus,
   BiGroup,
-  BiBed,
-  BiBath,
-  BiArea,
-  BiShareAlt,
   BiHeart,
+  BiShareAlt,
+  BiSolidTaxi,
 } from "react-icons/bi";
-import { AiFillStar, AiFillHeart } from "react-icons/ai";
 import { Cart } from "../../../context/CartContext";
 
 const LeftContainer = ({ item }) => {
@@ -55,19 +54,23 @@ const LeftContainer = ({ item }) => {
       <div className="features_con">
         <div className="single_features">
           <BiGroup className="features_icn" />
-          <p>People: 6</p>
+          <p>
+            <b>Type: </b>
+            {item?.type}
+          </p>
         </div>
         <div className="single_features">
-          <BiBed className="features_icn" />
-          <p>Beds: 3</p>
+          <BiCheckboxMinus className="features_icn" />
+          <p>
+            <b> Free Cancel:</b>
+            {item?.freeCancel ? " Available" : " Not Available"}
+          </p>
         </div>
         <div className="single_features">
-          <BiBath className="features_icn" />
-          <p>Bath: 2</p>
-        </div>
-        <div className="single_features">
-          <BiArea className="features_icn" />
-          <p>Area: 312m2</p>
+          <BiSolidTaxi className="features_icn" />
+          <p>
+            <b>Free Taxi:</b> {item?.freeTaxi ? "Available" : "Not Available"}
+          </p>
         </div>
       </div>
       <div className="u_line"></div>

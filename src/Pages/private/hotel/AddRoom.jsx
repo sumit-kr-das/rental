@@ -33,7 +33,6 @@ const AddRoom = () => {
           },
         }
       );
-      console.log("data", res.data);
       toast.success("Hotel added successfully");
     } catch (err) {
       toast.error("Something went wrong");

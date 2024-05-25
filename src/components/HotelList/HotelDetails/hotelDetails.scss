@@ -43,6 +43,7 @@
           display: flex;
           align-items: center;
           font-size: 0.9rem;
+          text-transform: capitalize;
 
           .star_icn {
             color: #ef4444;
@@ -87,7 +88,7 @@
     .features_con {
       display: flex;
       align-items: center;
-      margin-top: 2rem;
+      margin-top: 1rem;
       flex-wrap: wrap;
 
       .single_features {
@@ -101,6 +102,7 @@
 
         p {
           font-size: 0.9rem;
+          text-transform: capitalize;
         }
 
         .features_icn {

@@ -8,7 +8,6 @@ import "./listSlider.scss";
 import Container from "../../../layout/container/Container";
 
 const ListSlider = ({ photos }) => {
-  console.log(photos);
   return (
     <Container>
       <div className="slider_container">
