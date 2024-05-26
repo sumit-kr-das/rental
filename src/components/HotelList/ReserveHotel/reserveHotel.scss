@@ -8,8 +8,6 @@
   left: 0;
   z-index: 1000;
   .reserveHotel {
-    height: 100%;
-    overflow-y: scroll;
     background-color: #ffffff;
     position: fixed;
     top: 50%;
@@ -118,7 +116,7 @@
                 width: 0;
               }
               .checkbox.style-h input:checked ~ .checkbox__checkmark {
-                background-color: #f7cb15;
+                background-color: #06b6d4;
               }
               .checkbox.style-h input:checked ~ .checkbox__checkmark:after {
                 opacity: 1;
@@ -129,10 +127,10 @@
                 color: #fff;
               }
               .checkbox.style-h:hover input ~ .checkbox__checkmark {
-                background-color: #f7cb15;
+                background-color: #06b6d4;
               }
               .checkbox.style-h:hover input:checked ~ .checkbox__checkmark {
-                background-color: #f7cb15;
+                background-color: #06b6d4;
               }
               .checkbox.style-h:hover .checkbox__body {
                 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -144,7 +142,7 @@
                 left: 15px;
                 height: 22px;
                 width: 22px;
-                background-color: #f7cb15;
+                background-color: #06b6d4;
                 transition: background-color 0.25s ease;
                 border-radius: 4px;
                 box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1),
@@ -172,10 +170,10 @@
                 color: #333;
                 background: linear-gradient(
                   45deg,
-                  #ff0070 0%,
-                  #f7cb15 50%,
-                  #f7cb15 50%,
-                  #f7cb15 100%
+                  #0284c7 0%,
+                  #06b6d4 50%,
+                  #06b6d4 50%,
+                  #06b6d4 100%
                 );
                 background-size: 200% 100%;
                 background-position: 100% 0;
@@ -192,6 +190,7 @@
       }
 
       button {
+        margin: 0 2rem;
         font-size: 0.9rem;
         margin-top: 1rem;
       }

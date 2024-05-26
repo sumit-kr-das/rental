@@ -95,6 +95,20 @@ const AddRoom = () => {
               <div className="input_error">{errors.beds.message}</div>
             )}
           </div>
+          <div className="reg_input">
+            <p className="label">Total bathrooms</p>
+            <input
+              className="input_primary"
+              type="text"
+              placeholder="Enter total no of baths"
+              {...register("bathroom", {
+                required: "Bathroom number is required",
+              })}
+            />
+            {errors.bathroom && (
+              <div className="input_error">{errors.bathroom.message}</div>
+            )}
+          </div>
         </div>
         <div style={{ display: "flex", gap: "1rem" }}>
           <div className="reg_input">
