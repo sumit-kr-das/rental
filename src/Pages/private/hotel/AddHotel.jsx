@@ -28,6 +28,8 @@ const AddHotel = () => {
     getHotel();
   }, []);
 
+  console.log("hotelData", hotelData);
+
   return <div>{hotelData ? <ViewHotel data={hotelData} /> : <SetHotel />}</div>;
 };
 

@@ -3,7 +3,6 @@
   min-height: 100vh;
 
   h2 {
-    // color: #fff;
     margin-bottom: 2rem;
   }
   .booking_container {
@@ -67,7 +66,6 @@
             font-weight: 500;
           }
           .booking_title {
-            font-family: "DM Sans";
             font-weight: 600;
             color: #000;
             margin-bottom: 0.5rem;
@@ -180,9 +178,17 @@
       .qr_code_container {
         margin-right: 1rem;
         flex: 0 1 20%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        .qr_code_wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .qr_alert {
+            color: red;
+            font-size: 15px;
+            text-align: center;
+          }
+        }
       }
     }
   }

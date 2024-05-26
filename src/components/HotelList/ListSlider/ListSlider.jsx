@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "./listSlider.scss";
 import Container from "../../../layout/container/Container";
 
-const ListSlider = () => {
+const ListSlider = ({ photos }) => {
   return (
     <Container>
       <div className="slider_container">
@@ -34,33 +34,27 @@ const ListSlider = () => {
             modules={[Keyboard, Scrollbar, Navigation, Pagination]}
             className="mySwiper"
           >
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_1.jpeg" alt="slider_img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_2.jpeg" alt="slider_img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_3.jpeg" alt="slider_img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_4.jpeg" alt="slider_img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_5.jpeg" alt="slider_img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_6.jpeg" alt="slider_img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_7.jpeg" alt="slider_img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_1.jpeg" alt="slider_img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/assets/hotels/hotel_2.jpeg" alt="slider_img" />
-            </SwiperSlide>
+            {photos ? (
+              <>
+                {photos?.map((photo, index) => (
+                  <SwiperSlide key={index}>
+                    <img src={photo} alt="slider_img" />
+                  </SwiperSlide>
+                ))}
+              </>
+            ) : (
+              <>
+                <SwiperSlide>
+                  <img src="/assets/hotels/hotel_1.jpeg" alt="slider_img" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src="/assets/hotels/hotel_2.jpeg" alt="slider_img" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src="/assets/hotels/hotel_3.jpeg" alt="slider_img" />
+                </SwiperSlide>
+              </>
+            )}
           </Swiper>
         </div>
       </div>

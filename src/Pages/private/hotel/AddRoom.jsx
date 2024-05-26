@@ -33,7 +33,6 @@ const AddRoom = () => {
           },
         }
       );
-      console.log("data", res.data);
       toast.success("Hotel added successfully");
     } catch (err) {
       toast.error("Something went wrong");
@@ -94,6 +93,20 @@ const AddRoom = () => {
             />
             {errors.beds && (
               <div className="input_error">{errors.beds.message}</div>
+            )}
+          </div>
+          <div className="reg_input">
+            <p className="label">Total bathrooms</p>
+            <input
+              className="input_primary"
+              type="text"
+              placeholder="Enter total no of baths"
+              {...register("bathroom", {
+                required: "Bathroom number is required",
+              })}
+            />
+            {errors.bathroom && (
+              <div className="input_error">{errors.bathroom.message}</div>
             )}
           </div>
         </div>

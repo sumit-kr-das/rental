@@ -1,6 +1,10 @@
 import { Toaster } from "react-hot-toast";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import PrivateRoute from "./privateRoutes/PrivateRoute";
+import {
+  PrivateRoute,
+  HotelRoute,
+  UserRoute,
+} from "./privateRoutes/PrivateRoute";
 import Loader from "./components/Loader/Loader";
 import { Suspense, lazy } from "react";
 
@@ -18,6 +22,7 @@ const Account = lazy(() => import("./Pages/private/user/Account"));
 const Bookings = lazy(() => import("./Pages/private/user/Bookings"));
 const ListHotel = lazy(() => import("./Pages/private/hotel/ListHotel"));
 const AddHotel = lazy(() => import("./Pages/private/hotel/AddHotel"));
+const UpdateHotel = lazy(() => import("./Pages/private/hotel/UpdateHotel"));
 const AddRoom = lazy(() => import("./Pages/private/hotel/AddRoom"));
 const ListRooms = lazy(() => import("./Pages/private/hotel/ListRooms"));
 const Error = lazy(() => import("./Pages/Error"));
@@ -32,73 +37,91 @@ function App() {
         <Route
           path="/"
           element={
-            <Suspense fallback={<Loader />}>
-              <Home />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <Home />
+              </Suspense>
+            </PrivateRoute>
           }
         />
         <Route
           path="/hotels"
           element={
-            <Suspense fallback={<Loader />}>
-              <Hotel />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <Hotel />
+              </Suspense>
+            </PrivateRoute>
           }
         />
         <Route
           path="/hotel/:id"
           element={
-            <Suspense fallback={<Loader />}>
-              <HotelList />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <HotelList />
+              </Suspense>
+            </PrivateRoute>
           }
         />
         <Route
           path="/find/:destination"
           element={
-            <Suspense fallback={<Loader />}>
-              <Destination />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <Destination />
+              </Suspense>
+            </PrivateRoute>
           }
         />
         <Route
           path="/type/:type/:count"
           element={
-            <Suspense fallback={<Loader />}>
-              <HotelType />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <HotelType />
+              </Suspense>
+            </PrivateRoute>
           }
         />
         <Route
           path="/login"
           element={
-            <Suspense fallback={<Loader />}>
-              <Login />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <Login />
+              </Suspense>
+            </PrivateRoute>
           }
         />
         <Route
           path="/register"
           element={
-            <Suspense fallback={<Loader />}>
-              <Register />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <Register />
+              </Suspense>
+            </PrivateRoute>
           }
         />
         <Route
           path="/blog"
           element={
-            <Suspense fallback={<Loader />}>
-              <Blog />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <Blog />
+              </Suspense>
+            </PrivateRoute>
           }
         />
         <Route
           path="/blog/:id"
           element={
-            <Suspense fallback={<Loader />}>
-              <BlogDetails />
-            </Suspense>
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <BlogDetails />
+              </Suspense>
+            </PrivateRoute>
           }
         />
 
@@ -106,14 +129,11 @@ function App() {
         <Route
           path="/user"
           element={
-            <PrivateRoute
-              element={
-                <Suspense fallback={<Loader />}>
-                  <UserLayout />
-                </Suspense>
-              }
-              roles={["user"]}
-            />
+            <UserRoute>
+              <Suspense fallback={<Loader />}>
+                <UserLayout />
+              </Suspense>
+            </UserRoute>
           }
         >
           <Route
@@ -137,29 +157,34 @@ function App() {
         <Route
           path="/dashboard/hotel"
           element={
-            <PrivateRoute
-              element={
-                <Suspense fallback={<Loader />}>
-                  <Layout />
-                </Suspense>
-              }
-              roles={["hotel"]}
-            />
+            <HotelRoute>
+              <Suspense fallback={<Loader />}>
+                <Layout />
+              </Suspense>
+            </HotelRoute>
           }
         >
-          <Route
+          {/* <Route
             path="/dashboard/hotel"
             element={
               <Suspense fallback={<Loader />}>
                 <ListHotel />
               </Suspense>
             }
-          />
+          /> */}
           <Route
-            path="/dashboard/hotel/add-hotel"
+            path="/dashboard/hotel"
             element={
               <Suspense fallback={<Loader />}>
                 <AddHotel />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/dashboard/hotel/update-hotel"
+            element={
+              <Suspense fallback={<Loader />}>
+                <UpdateHotel />
               </Suspense>
             }
           />
