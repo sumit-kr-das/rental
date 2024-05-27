@@ -20,7 +20,6 @@ const Blog = lazy(() => import("./Pages/Blog"));
 const BlogDetails = lazy(() => import("./Pages/BlogDetails"));
 const Account = lazy(() => import("./Pages/private/user/Account"));
 const Bookings = lazy(() => import("./Pages/private/user/Bookings"));
-const ListHotel = lazy(() => import("./Pages/private/hotel/ListHotel"));
 const AddHotel = lazy(() => import("./Pages/private/hotel/AddHotel"));
 const UpdateHotel = lazy(() => import("./Pages/private/hotel/UpdateHotel"));
 const AddRoom = lazy(() => import("./Pages/private/hotel/AddRoom"));
@@ -164,14 +163,6 @@ function App() {
             </HotelRoute>
           }
         >
-          {/* <Route
-            path="/dashboard/hotel"
-            element={
-              <Suspense fallback={<Loader />}>
-                <ListHotel />
-              </Suspense>
-            }
-          /> */}
           <Route
             path="/dashboard/hotel"
             element={
