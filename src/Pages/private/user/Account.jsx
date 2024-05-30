@@ -1,12 +1,14 @@
 import React from "react";
 import UserDetails from "../../../components/Account/UserDetails/UserDetails";
-import TopShades from "../../../components/TopShades/TopShades";
+import Footer from "../../../components/Footer/Footer";
+import Navigation from "../../../components/Navigation/Navigation";
 
 const Account = () => {
   return (
     <>
-      <TopShades />
+      <Navigation />
       <UserDetails />
+      <Footer />
     </>
   );
 };

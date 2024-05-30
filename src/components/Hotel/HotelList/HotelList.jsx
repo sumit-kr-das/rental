@@ -6,7 +6,10 @@ const HotelList = ({ item }) => {
   return (
     <div className="hotel_single_list">
       <div className="main_hotel_img">
-        <img src="/assets/hotels/hotel_2.jpeg" alt="hotel_image" />
+        <img
+          src={item?.photos[0] || "/assets/hotels/hotel_2.jpeg"}
+          alt="hotel_image"
+        />
       </div>
       <div className="hotel_details">
         <div className="hotel_heading">

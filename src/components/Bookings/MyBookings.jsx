@@ -92,7 +92,6 @@ const MyBookings = () => {
           { headers: token }
         );
         setBookings(res.data);
-        console.log("my booking", res, process.env.REACT_APP_BASE_URL);
       } catch (err) {
         console.log("My booking error");
       }

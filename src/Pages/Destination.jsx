@@ -27,8 +27,6 @@ const Destination = () => {
     fetchData();
   }, [place]);
 
-  console.log(data);
-
   return (
     <>
       <Navigation />

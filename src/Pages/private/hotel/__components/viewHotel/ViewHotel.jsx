@@ -4,6 +4,7 @@ import { BsFillPencilFill } from "react-icons/bs";
 
 import "./viewHotel.scss";
 import { Link } from "react-router-dom";
+import Maps from "../../../../../components/Maps/Maps";
 
 const ViewHotel = ({ data }) => {
   return (
@@ -24,6 +25,9 @@ const ViewHotel = ({ data }) => {
       </div>
       <h3>Description</h3>
       <p>{data?.description}</p>
+      <div className="leaflet_add_input">
+        <Maps lat={data?.latitude} lon={data?.longitude} />
+      </div>
       <div className="hotel_view_details_continer">
         <div>
           <h3>Price(INR)</h3>
