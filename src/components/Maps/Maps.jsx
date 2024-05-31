@@ -27,11 +27,6 @@ function ResetCenterView({ lat, lon }) {
 
 const Maps = ({ lat, lon }) => {
   const locationSelection = [lat, lon];
-  console.log(
-    process.env.MAPTILER_KEY,
-    process.env.REACT_APP_BASE_URL,
-    process.env.NOMINATIM_BASE_URL
-  );
   return (
     <div className="leaflet_map_container">
       <MapContainer
@@ -41,6 +36,7 @@ const Maps = ({ lat, lon }) => {
         style={{
           width: "100%",
           height: "100%",
+          borderRadius: "20px",
         }}
       >
         <TileLayer
