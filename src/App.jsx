@@ -16,6 +16,7 @@ const Destination = lazy(() => import("./Pages/Destination"));
 const HotelType = lazy(() => import("./Pages/HotelType"));
 const Login = lazy(() => import("./Pages/Login"));
 const Register = lazy(() => import("./Pages/Register"));
+const HotelRegister = lazy(() => import("./Pages/RegisterHotel"));
 const Blog = lazy(() => import("./Pages/Blog"));
 const BlogDetails = lazy(() => import("./Pages/BlogDetails"));
 const Account = lazy(() => import("./Pages/private/user/Account"));
@@ -99,6 +100,16 @@ function App() {
             <PrivateRoute>
               <Suspense fallback={<Loader />}>
                 <Register />
+              </Suspense>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/register-hotel"
+          element={
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <HotelRegister />
               </Suspense>
             </PrivateRoute>
           }
