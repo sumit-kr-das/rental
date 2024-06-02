@@ -6,6 +6,7 @@ import NewsLetter from "../components/NewsLetter/NewsLetter";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
+import ShowMap from "../components/HotelList/ShowMap/ShowMap";
 import Navigation from "../components/Navigation/Navigation";
 import { Cart } from "../context/CartContext";
 
@@ -33,8 +34,9 @@ const HotelList = () => {
   return (
     <>
       <Navigation />
-      <ListSlider photos={products.photos} loading={loading} />
+      <ListSlider photos={products?.photos} loading={loading} />
       <HotelDetails item={products} loading={loading} id={id} />
+      <ShowMap products={products} />
       <NewsLetter />
       <Footer />
     </>

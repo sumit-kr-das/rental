@@ -6,7 +6,7 @@ import { FaAngleLeft } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.scss";
 
-const RegisterSection = () => {
+const RegisterSection = ({ accountType, title }) => {
   const navigate = useNavigate();
 
   const {
@@ -16,11 +16,13 @@ const RegisterSection = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    console.log(accountType);
+    console.log({ ...data, role: accountType });
     try {
-      await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/v1/auth/register`,
-        data
-      );
+      await axios.post(`${process.env.REACT_APP_BASE_URL}/v1/auth/register`, {
+        ...data,
+        role: accountType,
+      });
       toast.success("Registration Successful");
       navigate("/login");
     } catch (err) {
@@ -36,7 +38,7 @@ const RegisterSection = () => {
       </Link>
       <div className="reg_main_container">
         <img className="reg_logo_main" src="/assets/logo.png" alt="logo" />
-        <p className="main_heading">Register in your Rental account</p>
+        <p className="main_heading">{title}</p>
         <form onSubmit={handleSubmit(onSubmit)} className="reg_container">
           <div className="reg_input">
             <p className="label">Full name</p>
@@ -92,6 +94,17 @@ const RegisterSection = () => {
           <p className="reg_option">
             Already have an account? <Link to="/login">Login now</Link>
           </p>
+          {accountType === "user" && (
+            <p className="reg_option reg_option_sub">
+              Are you a hotel?
+              <Link to="/register-hotel"> Register as hotel</Link>
+            </p>
+          )}
+          {accountType === "hotel" && (
+            <p className="reg_option reg_option_sub">
+              Are you a user? <Link to="/register">Register now</Link>
+            </p>
+          )}
         </form>
       </div>
     </section>

@@ -16,11 +16,11 @@ const Destination = lazy(() => import("./Pages/Destination"));
 const HotelType = lazy(() => import("./Pages/HotelType"));
 const Login = lazy(() => import("./Pages/Login"));
 const Register = lazy(() => import("./Pages/Register"));
+const HotelRegister = lazy(() => import("./Pages/RegisterHotel"));
 const Blog = lazy(() => import("./Pages/Blog"));
 const BlogDetails = lazy(() => import("./Pages/BlogDetails"));
 const Account = lazy(() => import("./Pages/private/user/Account"));
 const Bookings = lazy(() => import("./Pages/private/user/Bookings"));
-const ListHotel = lazy(() => import("./Pages/private/hotel/ListHotel"));
 const AddHotel = lazy(() => import("./Pages/private/hotel/AddHotel"));
 const UpdateHotel = lazy(() => import("./Pages/private/hotel/UpdateHotel"));
 const AddRoom = lazy(() => import("./Pages/private/hotel/AddRoom"));
@@ -105,6 +105,16 @@ function App() {
           }
         />
         <Route
+          path="/register-hotel"
+          element={
+            <PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <HotelRegister />
+              </Suspense>
+            </PrivateRoute>
+          }
+        />
+        <Route
           path="/blog"
           element={
             <PrivateRoute>
@@ -164,14 +174,6 @@ function App() {
             </HotelRoute>
           }
         >
-          {/* <Route
-            path="/dashboard/hotel"
-            element={
-              <Suspense fallback={<Loader />}>
-                <ListHotel />
-              </Suspense>
-            }
-          /> */}
           <Route
             path="/dashboard/hotel"
             element={

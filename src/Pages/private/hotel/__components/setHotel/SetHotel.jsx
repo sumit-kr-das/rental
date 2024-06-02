@@ -4,9 +4,12 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { AuthContext } from "../../../../../context/AuthContext";
 import "./setHotel.scss";
+import Maps from "../../../../../components/Maps/Maps";
+import SearchLocation from "./SearchLocation";
 
 const SetHotel = () => {
   const [images, setImages] = useState([]);
+  const [listPlace, setListPlace] = useState(null);
   const fileInputRef = useRef(null);
   const { user } = useContext(AuthContext);
   const {
@@ -50,12 +53,20 @@ const SetHotel = () => {
   /* image functionality end */
 
   async function submitForm(data) {
+    if (!listPlace) {
+      toast.error("Please select address");
+      return;
+    }
+
+    console.log(listPlace?.lat);
     try {
       const formData = new FormData();
       // Append form data
       formData.append("title", data.title);
       formData.append("description", data.description);
-      formData.append("address", data.address);
+      formData.append("address", listPlace?.display_name);
+      formData.append("latitude", listPlace?.lat);
+      formData.append("longitude", listPlace?.lon);
       formData.append("city", data.city);
       formData.append("type", data.type);
       formData.append("distance", data.distance);
@@ -78,7 +89,6 @@ const SetHotel = () => {
           },
         }
       );
-      console.log("data", res.data);
       toast.success("Hotel added successful");
     } catch (err) {
       toast.error("Something went wrong");
@@ -143,18 +153,13 @@ const SetHotel = () => {
             <div className="input_error">{errors.description.message}</div>
           )}
         </div>
-        <div className="reg_input">
-          <p className="label">Full address</p>
-          <input
-            className="input_primary"
-            type="text"
-            placeholder="Enter full address"
-            {...register("address", { required: "Address is required" })}
-          />
-          {errors.address && (
-            <div className="input_error">{errors.address.message}</div>
-          )}
+
+        <div className="leaflet_add_input">
+          <Maps lat={listPlace?.lat} lon={listPlace?.lon} />
         </div>
+
+        <SearchLocation listPlace={listPlace} setListPlace={setListPlace} />
+
         <div className="reg_input">
           <p className="label">City</p>
           <select

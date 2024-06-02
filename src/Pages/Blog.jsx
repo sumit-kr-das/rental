@@ -1,14 +1,16 @@
 import React from "react";
 import Blogs from "../components/Blog/Blogs/Blogs";
-import TopShades from '../components/TopShades/TopShades'
+import Footer from "../components/Footer/Footer";
+import Navigation from "../components/Navigation/Navigation";
 
 const Blog = () => {
-	return (
-		<>
-		<TopShades />
-			<Blogs />
-		</>
-	);
+  return (
+    <>
+      <Navigation />
+      <Blogs />
+      <Footer />
+    </>
+  );
 };
 
 export default Blog;

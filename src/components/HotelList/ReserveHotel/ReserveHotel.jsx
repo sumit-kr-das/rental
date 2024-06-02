@@ -1,18 +1,10 @@
-import "./reserveHotel.scss";
-import useFetch from "../../../services/apiRequest";
-import { BiXCircle } from "react-icons/bi";
-import { useContext, useState } from "react";
-import { SearchContext } from "../../../context/SearchContext";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import {
-  BiGroup,
-  BiBed,
-  BiBath,
-  BiArea,
-  BiShareAlt,
-  BiHeart,
-} from "react-icons/bi";
+import { useContext, useState } from "react";
+import { BiArea, BiBath, BiBed, BiGroup, BiXCircle } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../../context/SearchContext";
+import useFetch from "../../../services/apiRequest";
+import "./reserveHotel.scss";
 
 const ReserveHotel = ({
   setOpenModel,
@@ -90,7 +82,6 @@ const ReserveHotel = ({
       console.log("Error from reserve hotel");
     }
   };
-  console.log("data", data);
   return (
     <div className="reserveHotelCon">
       <div className="reserveHotel">

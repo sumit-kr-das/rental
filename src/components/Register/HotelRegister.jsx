@@ -1,16 +1,14 @@
 import axios from "axios";
-import React, { useContext } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { FaAngleLeft } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
-import "./login.scss";
+import "./register.scss";
 
-const LoginSection = () => {
+const HotelRegister = () => {
   const navigate = useNavigate();
-  const { dispatch } = useContext(AuthContext);
-  const { user } = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
@@ -18,21 +16,18 @@ const LoginSection = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    dispatch({ type: "LOGIN_START" });
+    console.log(data);
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/v1/auth/login`,
-        data
-      );
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-      toast.success("Login Successful");
-      navigate("/");
+      //   await axios.post(
+      //     `${process.env.REACT_APP_BASE_URL}/v1/auth/register`,
+      //     data
+      //   );
+      toast.success("Registration Successful");
+      navigate("/login");
     } catch (err) {
-      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
-      toast.error("Invalid username or password");
+      toast.error("Input is not valid");
     }
   };
-
   return (
     <section className="login">
       <Link to={"/"}>
@@ -42,8 +37,26 @@ const LoginSection = () => {
       </Link>
       <div className="reg_main_container">
         <img className="reg_logo_main" src="/assets/logo.png" alt="logo" />
-        <p className="main_heading">Log in your Rental account</p>
+        <p className="main_heading">Register in your Rental account</p>
         <form onSubmit={handleSubmit(onSubmit)} className="reg_container">
+          <div className="reg_input">
+            <p className="label">Full name</p>
+            <input
+              className="input_primary"
+              type="text"
+              placeholder="Enter your name"
+              {...register("name", {
+                required: "Name is required",
+                minLength: {
+                  value: 4,
+                  message: "Name must be at least 4 characters long",
+                },
+              })}
+            />
+            {errors.name && (
+              <div className="input_error">{errors.name.message}</div>
+            )}
+          </div>
           <div className="reg_input">
             <p className="label">Email address</p>
             <input
@@ -75,10 +88,10 @@ const LoginSection = () => {
             )}
           </div>
           <button type="submit" className="btn_primary">
-            Login
+            Submit
           </button>
           <p className="reg_option">
-            New user? <Link to="/register">Create an account</Link>
+            Already have an account? <Link to="/login">Login now</Link>
           </p>
         </form>
       </div>
@@ -86,4 +99,4 @@ const LoginSection = () => {
   );
 };
 
-export default LoginSection;
+export default HotelRegister;

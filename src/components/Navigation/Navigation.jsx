@@ -41,18 +41,18 @@ const Navigation = () => {
                 />
               </Link>
               <ul>
-                {["Home", "Listing", "About", "Contact"].map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      to={`${
-                        item === "Home" ? "/" : item.trim().toLowerCase()
-                      }`}
-                      style={nav ? { color: "#000" } : { color: "#000" }}
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/">Listing</Link>
+                </li>
+                <li>
+                  <Link to="/">About</Link>
+                </li>
+                <li>
+                  <Link to="/">Contact</Link>
+                </li>
               </ul>
             </div>
             <div className="right_wrapper">
