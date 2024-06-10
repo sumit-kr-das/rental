@@ -8,7 +8,6 @@ const SearchLocation = ({ listPlace, setListPlace }) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(searchAddress);
 
     const params = {
       q: searchAddress,

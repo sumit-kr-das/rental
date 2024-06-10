@@ -96,10 +96,14 @@
     justify-content: space-between;
 
     p {
+      flex: 3;
       font-size: 0.9rem;
     }
 
     a {
+      flex: 1;
+      display: flex;
+      justify-content: end;
       color: #727272;
     }
   }

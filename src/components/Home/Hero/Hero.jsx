@@ -12,7 +12,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Hero = () => {
   const navigate = useNavigate();
-  const [destination, setDestination] = useState("london");
+  const [destination, setDestination] = useState("delhi");
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
   const [searchCon, setSearchCon] = useState(false);
