@@ -13,6 +13,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   background: #f9f9fe;
+  overflow-x: hidden;
 }
 
 p {
@@ -24,6 +25,10 @@ p {
 a,
 input {
   font-family: "Rubik", sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 .btn_group {
@@ -148,13 +153,16 @@ option::placeholder {
     justify-content: center;
     flex-direction: column;
     img {
-      width: 40%;
+      width: 20%;
       margin-bottom: 4rem;
     }
     a {
       display: block;
       margin-top: 1rem;
       cursor: pointer;
+      button {
+        cursor: pointer;
+      }
     }
   }
 }

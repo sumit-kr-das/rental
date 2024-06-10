@@ -10,7 +10,7 @@ import "./login.scss";
 const LoginSection = () => {
   const navigate = useNavigate();
   const { dispatch } = useContext(AuthContext);
-
+  const { user } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -24,7 +24,6 @@ const LoginSection = () => {
         `${process.env.REACT_APP_BASE_URL}/v1/auth/login`,
         data
       );
-      console.log("data", res.data.data);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       toast.success("Login Successful");
       navigate("/");

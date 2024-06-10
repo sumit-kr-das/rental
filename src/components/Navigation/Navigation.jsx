@@ -41,18 +41,18 @@ const Navigation = () => {
                 />
               </Link>
               <ul>
-                {["Home", "Listing", "About", "Contact"].map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      to={`${
-                        item === "Home" ? "/" : item.trim().toLowerCase()
-                      }`}
-                      style={nav ? { color: "#000" } : { color: "#000" }}
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/">Listing</Link>
+                </li>
+                <li>
+                  <Link to="/">About</Link>
+                </li>
+                <li>
+                  <Link to="/">Contact</Link>
+                </li>
               </ul>
             </div>
             <div className="right_wrapper">
@@ -79,7 +79,7 @@ const Navigation = () => {
                 <img
                   onClick={() => setMobNav(!mobNav)}
                   className="wishlist_icon nav_ham_burger"
-                  src="/assets/icons/menu.png"
+                  src="/assets/icons/menu_black.png"
                   alt="grid_outline"
                 />
               )}

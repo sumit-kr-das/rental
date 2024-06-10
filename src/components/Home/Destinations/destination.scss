@@ -1,7 +1,5 @@
 .destination {
-  padding: 0 4rem;
   width: 100%;
-  max-width: 1800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +27,13 @@
       font-size: 1.2rem;
     }
     @media (max-width: 1001px) {
-      margin-top: 20%;
+      // margin-top: 20%;
+    }
+    // @media (max-width: 600px) {
+    //   margin-top: 40%;
+    // }
+    @media (max-width: 600px) {
+      // margin-top: 40%;
     }
   }
 
@@ -47,8 +51,8 @@
       text-decoration: none;
 
       .img_container {
-        max-width: 200px;
-        height: 200px;
+        max-width: 180px;
+        height: 180px;
         cursor: pointer;
         overflow: hidden;
         border-radius: 50%;

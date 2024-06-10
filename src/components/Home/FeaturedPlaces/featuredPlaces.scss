@@ -1,12 +1,7 @@
 .featured {
   background-color: #f3f4f6;
-  padding: 0 4rem;
   padding-top: 4rem;
   border-radius: 1rem;
-
-  @media (max-width: 460px) {
-    padding: 1.2rem 2rem;
-  }
 
   .featured_wrapper {
     max-width: 1800px;

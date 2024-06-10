@@ -1,4 +1,4 @@
-<h1 align="center">Rental</h1> 
+<h1 align="center">Rental</h1>
 
 <h2 align="center">It's a MERN Stack Hotel Booking web application with all the major functionalities</h2>
 
@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb"/>
 </p>
 
-<h3 align="center"><a href="http://rent-al.herokuapp.com"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://on-rental.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
 
 <p align="center"> 
     <br />&#10023;
@@ -26,7 +26,7 @@
   
  
   
-  [//]: ![1](https://user-images.githubusercontent.com/91532881/168818920-09cbf179-2ac5-489c-9cdf-e99653f9a5b9.png)
+ ![1](./preview/preview.png)
   
   <br />
   
@@ -40,14 +40,13 @@
    - Signup
    - Book Summary
 
-
 [//]: ![2](https://user-images.githubusercontent.com/91532881/168818963-328399b4-c459-472f-b452-7ce6a91adcf6.png)
 [//]: ![3](https://user-images.githubusercontent.com/91532881/168818970-ef2e11a5-9409-408e-ad43-961b238d0ec1.png)
 
 <br />
 
-
 ## 🚀 Features
+
 - Login/Signup User Account
 - Hotel Sorting Based on Price, Place, Date
 - Products Pagination (Default 6 Products Per Page)
@@ -83,31 +82,25 @@
 
 <br />
 
-
 <!-- ## Demo
 
 [Check here to see the presentation video of this project](https://www.linkedin.com/posts/sumit_programming-marketing-computerscience-activity-6932731204051816448-q0vg?utm_source=linkedin_share&utm_medium=member_desktop_web) -->
 
-
 <br/>
-
 
 ## Getting Started
 
 This project was built using React v 17.0.2, SASS, JavaScript, Rest API, Node JS, Express and MongoDB. It is a hotel booking web application and for running on your local environment you should follow these guidelines.
 
-
 ### Prerequisites
 
-- NPM 
+- NPM
 - Node JS
 - MongoDB
 
 ### Setup
 
-
-The project repository can be found in [GitHub link](https://github.com/sumit-kr-das/rental) or just clone the project using this command. 
-
+The project repository can be found in [GitHub link](https://github.com/sumit-kr-das/rental) or just clone the project using this command.
 
 ```
 Using HTTPS
@@ -115,12 +108,11 @@ Using HTTPS
 # git clone  https://github.com/sumit-kr-das/rental
 ```
 
-+ Open terminal on your workspace with
+- Open terminal on your workspace with
 
 ```
 cd /home/workspace/rental
 ```
-
 
 ## Install
 
@@ -130,13 +122,11 @@ Check that you have node and npm installed
 
 To check if you have Node.js installed, run this command in your terminal:
 
-
 ```
 node -v
 ```
 
 To confirm that you have npm installed you can run this command in your terminal:
-
 
 ```
 npm -v
@@ -144,14 +134,11 @@ npm -v
 
 To confirm that you have MongoDB installed you can run this command in your terminal:
 
-
 ```
 mongo -v
 ```
 
-
 To install all the dependences of the project, run the following command:
-
 
 ```
 cd https://github.com/sumit-kr-das/rental
@@ -159,7 +146,6 @@ cd https://github.com/sumit-kr-das/rental
 npm install
 
 ```
-
 
 To run the application got to the client folder and run the following command:
 
@@ -173,8 +159,6 @@ To run this project, you will need to add the following environment variables to
 
 `REACT_APP_BASE_URL`
 
-
-
 ### Tools used on this project
 
 - Visual Studio Code
@@ -182,8 +166,6 @@ To run this project, you will need to add the following environment variables to
 - MongoDB compass
 
 <br/>
-
-
 
 ## Contact
 
@@ -193,8 +175,6 @@ If you want to contact me, you can reach me through below handles.
 [![Twitter](https://img.shields.io/badge/Sumit_Kumar_Das-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/sumit-kr-das)
 
 © 2022 Sumit Kumar Das
-
-
 
 ## Show your support
 
