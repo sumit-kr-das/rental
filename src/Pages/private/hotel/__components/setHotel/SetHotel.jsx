@@ -58,7 +58,6 @@ const SetHotel = () => {
       return;
     }
 
-    console.log(listPlace?.lat);
     try {
       const formData = new FormData();
       // Append form data

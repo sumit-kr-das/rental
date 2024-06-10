@@ -27,7 +27,13 @@
       font-size: 1.2rem;
     }
     @media (max-width: 1001px) {
-      margin-top: 20%;
+      // margin-top: 20%;
+    }
+    // @media (max-width: 600px) {
+    //   margin-top: 40%;
+    // }
+    @media (max-width: 600px) {
+      // margin-top: 40%;
     }
   }
 
